@@ -22,16 +22,16 @@
   <div id="filter">
           <form action="" id="filter-form">
               <input type="text" name="artist" id="artist" placeholder="Artist">
-              <select name="genre" id="genre">
-                  <option style="display: none;" value="" selected>Genre</option>
+              <select name="genre" id="genre" title="genre">
+                  <option class="filter-placeholder" value="" selected>Genre</option>
                   <option value="rock">Rock</option>
                   <option value="pop">Pop</option>
                   <option value="country">Country</option>
                   <option value="hip-hop">Hip-Hop</option>
                   <option value="jazz">Jazz</option>
               </select>
-              <select name="decade" id="decade">
-                  <option style="display: none;" value="" selected>Decade</option>
+              <select name="decade" id="decade" title="genre">
+                  <option class="filter-placeholder" value="" selected>Decade</option>
                   <option value="1950-60">1950-60 рр.</option>
                   <option value="1960-70">1960-70 рр.</option>
                   <option value="1970-80">1970-80 рр.</option>
@@ -41,8 +41,8 @@
                   <option value="2010-20">2010-20 рр.</option>
                   <option value="2020-30">2020-30 рр.</option>
               </select>
-              <select name="country" id="country">
-                  <option style="display: none;" value="" selected>Country</option>
+              <select name="country" id="country" title="country">
+                  <option class="filter-placeholder" selected>Country</option>
                   <option value="usa">USA</option>
                   <option value="uk">UK</option>
                   <option value="france">France</option>
@@ -54,7 +54,7 @@
   </div>
   <div id="items-container">
       <div class="item" id="item-1">
-          <button type="button" id="like-button-add">
+          <button type="button" class="like-button-add" title="like-button-add">
               <i class="fa-regular fa-heart"></i>
           </button>
           <img src="https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg" alt="">
@@ -75,7 +75,7 @@
           </button>
       </div>
       <div class="item" id="item-2">
-          <button type="button" id="like-button-add">
+          <button type="button" class="like-button-add" title="like-button-add">
               <i class="fa-regular fa-heart"></i>
           </button>
           <img src="https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg" alt="">
@@ -96,7 +96,7 @@
           </button>
       </div>
       <div class="item" id="item-3">
-          <button type="button" id="like-button-add">
+          <button type="button" class="like-button-add" title="like-button-add">
               <i class="fa-regular fa-heart"></i>
           </button>
           <img src="https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg" alt="">
@@ -117,7 +117,7 @@
           </button>
       </div>
       <div class="item" id="item-4">
-          <button type="button" id="like-button-add">
+        <button type="button" class="like-button-add" title="like-button-add">
               <i class="fa-regular fa-heart"></i>
           </button>
           <img src="https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg" alt="">
@@ -138,7 +138,7 @@
           </button>
       </div>
       <div class="item" id="item-5">
-          <button type="button" id="like-button-add">
+        <button type="button" class="like-button-add" title="like-button-add">
               <i class="fa-regular fa-heart"></i>
           </button>
           <img src="https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg" alt="">
@@ -159,7 +159,7 @@
           </button>
       </div>
       <div class="item" id="item-6">
-          <button type="button" id="like-button-add">
+        <button type="button" class="like-button-add" title="like-button-add">
               <i class="fa-regular fa-heart"></i>
           </button>
           <img src="https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg" alt="">

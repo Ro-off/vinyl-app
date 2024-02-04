@@ -71,6 +71,7 @@
 }
 
 .item-info div p{
+  width: -moz-fit-content;
   width: fit-content;
   margin: 2px 0px;
   font-size: 14px;
@@ -175,7 +176,7 @@
 }
 
 
-.item #like-button-add{
+.item .like-button-add{
     position:absolute;
     display: inline-flex;
     width: 24px;
@@ -220,6 +221,7 @@
       transition-duration: 0.1s;
       transition-property: transform;
       transition-timing-function: ease-in-out;
+      -webkit-user-select: none;
       user-select: none;
   }
 
@@ -291,6 +293,10 @@
           flex-wrap: wrap;
           justify-content: space-between;
 
+      }
+
+      .filter-placeholder{
+        display: none;
       }
 
       #filter-form > *{
@@ -472,6 +478,7 @@
           font-weight: 500;
           transition-duration: 0.1s;
           transition-property: filter;
+          -webkit-user-select: none;
           user-select: none;
       }
 
