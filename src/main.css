@@ -398,29 +398,33 @@
 
 
 
-      @media  screen and (min-width: 100vh){
+      @media  screen and (min-width: 130vh){
               .item{
                   height: calc(169px + 44px + 10px);
                   flex-basis: calc(33.33% - 10px);
-                  flex-direction: row;
+                  /* flex-direction: row; */
                   flex-wrap: wrap;
                   margin: 7px 0px;
               }
 
               .item .info-container{
-                  width: calc(100% - 169px - 10px);
-                  height: 169px;
+                  width: calc(100% - 169px - 10px - 30px);
+                  height: calc(169px - 44px - 10px - 10px);
                   margin-top: 0px;
                   margin-left: 10px;
               }
 
               .item .add-button, .item .remove-button{
-                  margin-top: 10px;
+                  width: calc(100% - 169px - 10px - 30px);
+                  margin-top: 20px;
                   margin-bottom: 10px;
+                  margin-left: 10px;
+
               }
 
               .item .remove-button{
-                  transform: translate(0px, -64px) !important;
+                  transform: translate(calc(-100% - 10px), calc(169px - 44px - 10px - 10px)) !important;
+
               }
 
 
