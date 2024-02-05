@@ -148,6 +148,12 @@
 
 }
 
+.item .like-button-add i{
+  align-self: center;
+  margin-top: 2px;
+  font-size: 16px;
+}
+
 #back-button i{
   align-self: center;
   margin: 0px;
@@ -177,10 +183,13 @@
 
 .item .like-button-add{
     position:absolute;
-    display: inline-flex;
+    display: flex;
     width: 24px;
     height: 24px;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    padding: 0 0 0 0;
     border: none;
     border-radius: 4px;
     margin-top: 8px;
@@ -190,23 +199,14 @@
     outline: none;
 }
 
-.item #like-button-add:hover{
+.item .like-button-add:hover{
     cursor: pointer;
     filter: brightness(1.1);
 }
 
-.item #like-button-add:active{
+.item .like-button-add:active{
     filter: brightness(1.2);
 }
-
-.item #like-button-add i{
-    align-self: center;
-    margin: 0px;
-    font-size: 16px;
-
-}
-
-
 
   #back-button{
       display: inline-flex;
