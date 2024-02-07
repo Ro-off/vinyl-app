@@ -1,199 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/src/main.css" />
-    <title>Vinyl Store</title>
-    <script src="https://kit.fontawesome.com/89d5b9af7f.js" crossorigin="anonymous"></script>
-  </head>
-  <body>
-    <header>
-      <nav id="back-button" onclick="window.history.back();">
-          <i class="fa-solid fa-chevron-left"></i>
-          <p>Back</p>
-      </nav>
-      <div id="like-button">
-          <i class="fa-regular fa-heart"></i>
-      </div>
-      <div id="library-button"><i class="fa-regular fa-folder"></i></div>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/src/main.css" />
+  <title>Vinyl Store</title>
+  <script src="https://kit.fontawesome.com/89d5b9af7f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <nav id="back-button" onclick="window.history.back();">
+      <i class="fa-solid fa-chevron-left"></i>
+      <p>Back</p>
+    </nav>
+    <div id="like-button">
+      <i class="fa-regular fa-heart"></i>
+    </div>
+    <div id="library-button"><i class="fa-regular fa-folder"></i></div>
   </header>
 
   <div id="filter">
-          <form action="" id="filter-form">
-              <input type="text" name="artist" id="artist" placeholder="Artist">
-              <select name="genre" id="genre" title="genre">
-                  <option class="filter-placeholder" value="" selected>Genre</option>
-                  <option value="rock">Rock</option>
-                  <option value="pop">Pop</option>
-                  <option value="country">Country</option>
-                  <option value="hip-hop">Hip-Hop</option>
-                  <option value="jazz">Jazz</option>
-              </select>
-              <select name="decade" id="decade" title="genre">
-                  <option class="filter-placeholder" value="" selected>Decade</option>
-                  <option value="1950-60">1950-60 рр.</option>
-                  <option value="1960-70">1960-70 рр.</option>
-                  <option value="1970-80">1970-80 рр.</option>
-                  <option value="1980-90">1980-90 рр.</option>
-                  <option value="1990-00">1990-00 рр.</option>
-                  <option value="2000-10">2000-10 рр.</option>
-                  <option value="2010-20">2010-20 рр.</option>
-                  <option value="2020-30">2020-30 рр.</option>
-              </select>
-              <select name="country" id="country" title="country">
-                  <option class="filter-placeholder" selected>Country</option>
-                  <option value="usa">USA</option>
-                  <option value="uk">UK</option>
-                  <option value="france">France</option>
-                  <option value="germany">Germany</option>
-                  <option value="ukraine">Ukraine</option>
-              </select>
-              <input type="submit" value="Search" id="filter-search">
-          </form>
+    <form action="" id="filter-form">
+      <input type="text" name="artist" id="artist" placeholder="Artist">
+      <select name="genre" id="genre" title="genre">
+        <option class="filter-placeholder" value="" selected>Genre</option>
+        <option value="rock">Rock</option>
+        <option value="pop">Pop</option>
+        <option value="country">Country</option>
+        <option value="hip-hop">Hip-Hop</option>
+        <option value="jazz">Jazz</option>
+      </select>
+      <select name="decade" id="decade" title="genre">
+        <option class="filter-placeholder" value="" selected>Decade</option>
+        <option value="1950-60">1950-60 рр.</option>
+        <option value="1960-70">1960-70 рр.</option>
+        <option value="1970-80">1970-80 рр.</option>
+        <option value="1980-90">1980-90 рр.</option>
+        <option value="1990-00">1990-00 рр.</option>
+        <option value="2000-10">2000-10 рр.</option>
+        <option value="2010-20">2010-20 рр.</option>
+        <option value="2020-30">2020-30 рр.</option>
+      </select>
+      <select name="country" id="country" title="country">
+        <option class="filter-placeholder" selected>Country</option>
+        <option value="usa">USA</option>
+        <option value="uk">UK</option>
+        <option value="france">France</option>
+        <option value="germany">Germany</option>
+        <option value="ukraine">Ukraine</option>
+      </select>
+      <input type="submit" value="Search" id="filter-search">
+    </form>
   </div>
   <div id="items-container">
-      <div class="item" id="item-1">
-          <button type="button" class="like-button-add" title="like-button-add">
-              <i class="fa-regular fa-heart"></i>
-          </button>
-          <img src="https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg" alt="">
-          <div class="info-container">
-              <h5>Bohemian Rhapsody</h5>
-              <h6>Queen</h6>
-              <div class="item-info">
-                <div><p>Genre:</p><p>Rock</p></div>
-                <div><p>Decade:</p><p>1970-80</p></div>
-                <div><p>Country:</p><p>UK</p></div>
-              </div>
-          </div>
-          <button class="add-button" type="button">
-              <p>Add</p> <i class="fa-regular fa-plus"></i>
-          </button>
-          <button class="remove-button button-hidden">
-              <p>Remove</p> <i class="fa-solid fa-minus"></i>
-          </button>
+    <div class="item" id="item-1">
+      <button type="button" class="like-button-add" title="like-button-add">
+        <i class="fa-regular fa-heart"></i>
+      </button>
+      <img src="https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg" alt="">
+      <div class="info-container">
+        <h5>Bohemian Rhapsody</h5>
+        <h6>Queen</h6>
+        <div class="item-info">
+          <div><p>Genre:</p><p>Rock</p></div>
+          <div><p>Decade:</p><p>1970-80</p></div>
+          <div><p>Country:</p><p>UK</p></div>
+        </div>
       </div>
-      <div class="item" id="item-2">
-          <button type="button" class="like-button-add" title="like-button-add">
-              <i class="fa-regular fa-heart"></i>
-          </button>
-          <img src="https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg" alt="">
-          <div class="info-container">
-              <h5>Bohemian Rhapsody</h5>
-              <h6>Queen</h6>
-              <div class="item-info">
-                <div><p>Genre:</p><p>Rock</p></div>
-                <div><p>Decade:</p><p>1970-80</p></div>
-                <div><p>Country:</p><p>UK</p></div>
-              </div>
-          </div>
-          <button class="add-button" type="button">
-              <p>Add</p> <i class="fa-regular fa-plus"></i>
-          </button>
-          <button class="remove-button button-hidden">
-              <p>Remove</p> <i class="fa-solid fa-minus"></i>
-          </button>
+      <button class="add-button" type="button">
+        <p>Add</p> <i class="fa-regular fa-plus"></i>
+      </button>
+      <button class="remove-button button-hidden">
+        <p>Remove</p> <i class="fa-solid fa-minus"></i>
+      </button>
+    </div>
+    <div class="item" id="item-2">
+      <button type="button" class="like-button-add" title="like-button-add">
+        <i class="fa-regular fa-heart"></i>
+      </button>
+      <img src="https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg" alt="">
+      <div class="info-container">
+        <h5>Bohemian Rhapsody</h5>
+        <h6>Queen</h6>
+        <div class="item-info">
+          <div><p>Genre:</p><p>Rock</p></div>
+          <div><p>Decade:</p><p>1970-80</p></div>
+          <div><p>Country:</p><p>UK</p></div>
+        </div>
       </div>
-      <div class="item" id="item-3">
-          <button type="button" class="like-button-add" title="like-button-add">
-              <i class="fa-regular fa-heart"></i>
-          </button>
-          <img src="https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg" alt="">
-          <div class="info-container">
-              <h5>Bohemian Rhapsody</h5>
-              <h6>Queen</h6>
-              <div class="item-info">
-                <div><p>Genre:</p><p>Rock</p></div>
-                <div><p>Decade:</p><p>1970-80</p></div>
-                <div><p>Country:</p><p>UK</p></div>
-              </div>
-          </div>
-          <button class="add-button" type="button">
-              <p>Add</p> <i class="fa-regular fa-plus"></i>
-          </button>
-          <button class="remove-button button-hidden">
-              <p>Remove</p> <i class="fa-solid fa-minus"></i>
-          </button>
+      <button class="add-button" type="button">
+        <p>Add</p> <i class="fa-regular fa-plus"></i>
+      </button>
+      <button class="remove-button button-hidden">
+        <p>Remove</p> <i class="fa-solid fa-minus"></i>
+      </button>
+    </div>
+    <div class="item" id="item-3">
+      <button type="button" class="like-button-add" title="like-button-add">
+        <i class="fa-regular fa-heart"></i>
+      </button>
+      <img src="https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg" alt="">
+      <div class="info-container">
+        <h5>Bohemian Rhapsody</h5>
+        <h6>Queen</h6>
+        <div class="item-info">
+          <div><p>Genre:</p><p>Rock</p></div>
+          <div><p>Decade:</p><p>1970-80</p></div>
+          <div><p>Country:</p><p>UK</p></div>
+        </div>
       </div>
-      <div class="item" id="item-4">
-        <button type="button" class="like-button-add" title="like-button-add">
-              <i class="fa-regular fa-heart"></i>
-          </button>
-          <img src="https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg" alt="">
-          <div class="info-container">
-              <h5>Bohemian Rhapsody</h5>
-              <h6>Queen</h6>
-              <div class="item-info">
-                <div><p>Genre:</p><p>Rock</p></div>
-                <div><p>Decade:</p><p>1970-80</p></div>
-                <div><p>Country:</p><p>UK</p></div>
-              </div>
-          </div>
-          <button class="add-button" type="button">
-              <p>Add</p> <i class="fa-regular fa-plus"></i>
-          </button>
-          <button class="remove-button button-hidden">
-              <p>Remove</p> <i class="fa-solid fa-minus"></i>
-          </button>
+      <button class="add-button" type="button">
+        <p>Add</p> <i class="fa-regular fa-plus"></i>
+      </button>
+      <button class="remove-button button-hidden">
+        <p>Remove</p> <i class="fa-solid fa-minus"></i>
+      </button>
+    </div>
+    <div class="item" id="item-4">
+      <button type="button" class="like-button-add" title="like-button-add">
+        <i class="fa-regular fa-heart"></i>
+      </button>
+      <img src="https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg" alt="">
+      <div class="info-container">
+        <h5>Bohemian Rhapsody</h5>
+        <h6>Queen</h6>
+        <div class="item-info">
+          <div><p>Genre:</p><p>Rock</p></div>
+          <div><p>Decade:</p><p>1970-80</p></div>
+          <div><p>Country:</p><p>UK</p></div>
+        </div>
       </div>
-      <div class="item" id="item-5">
-        <button type="button" class="like-button-add" title="like-button-add">
-              <i class="fa-regular fa-heart"></i>
-          </button>
-          <img src="https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg" alt="">
-          <div class="info-container">
-              <h5>Bohemian Rhapsody</h5>
-              <h6>Queen</h6>
-              <div class="item-info">
-                <div><p>Genre:</p><p>Rock</p></div>
-                <div><p>Decade:</p><p>1970-80</p></div>
-                <div><p>Country:</p><p>UK</p></div>
-              </div>
-          </div>
-          <button class="add-button" type="button">
-              <p>Add</p> <i class="fa-regular fa-plus"></i>
-          </button>
-          <button class="remove-button button-hidden">
-              <p>Remove</p> <i class="fa-solid fa-minus"></i>
-          </button>
+      <button class="add-button" type="button">
+        <p>Add</p> <i class="fa-regular fa-plus"></i>
+      </button>
+      <button class="remove-button button-hidden">
+        <p>Remove</p> <i class="fa-solid fa-minus"></i>
+      </button>
+    </div>
+    <div class="item" id="item-5">
+      <button type="button" class="like-button-add" title="like-button-add">
+        <i class="fa-regular fa-heart"></i>
+      </button>
+      <img src="https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg" alt="">
+      <div class="info-container">
+        <h5>Bohemian Rhapsody</h5>
+        <h6>Queen</h6>
+        <div class="item-info">
+          <div><p>Genre:</p><p>Rock</p></div>
+          <div><p>Decade:</p><p>1970-80</p></div>
+          <div><p>Country:</p><p>UK</p></div>
+        </div>
       </div>
-      <div class="item" id="item-6">
-        <button type="button" class="like-button-add" title="like-button-add">
-              <i class="fa-regular fa-heart"></i>
-          </button>
-          <img src="https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg" alt="">
-          <div class="info-container">
-              <h5>Bohemian Rhapsody</h5>
-              <h6>Queen</h6>
-              <div class="item-info">
-                <div><p>Genre:</p><p>Rock</p></div>
-                <div><p>Decade:</p><p>1970-80</p></div>
-                <div><p>Country:</p><p>UK</p></div>
-              </div>
-          </div>
-          <button class="add-button" type="button">
-              <p>Add</p> <i class="fa-regular fa-plus"></i>
-          </button>
-          <button class="remove-button button-hidden">
-              <p>Remove</p> <i class="fa-solid fa-minus"></i>
-          </button>
+      <button class="add-button" type="button">
+        <p>Add</p> <i class="fa-regular fa-plus"></i>
+      </button>
+      <button class="remove-button button-hidden">
+        <p>Remove</p> <i class="fa-solid fa-minus"></i>
+      </button>
+    </div>
+    <div class="item" id="item-6">
+      <button type="button" class="like-button-add" title="like-button-add">
+        <i class="fa-regular fa-heart"></i>
+      </button>
+      <img src="https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg" alt="">
+      <div class="info-container">
+        <h5>Bohemian Rhapsody</h5>
+        <h6>Queen</h6>
+        <div class="item-info">
+          <div><p>Genre:</p><p>Rock</p></div>
+          <div><p>Decade:</p><p>1970-80</p></div>
+          <div><p>Country:</p><p>UK</p></div>
+        </div>
       </div>
-
-
-
+      <button class="add-button" type="button">
+        <p>Add</p> <i class="fa-regular fa-plus"></i>
+      </button>
+      <button class="remove-button button-hidden">
+        <p>Remove</p> <i class="fa-solid fa-minus"></i>
+      </button>
+    </div>
   </div>
-
   <div id="pages-container">
-      <div id="pages">
-          <p class="page-id" id="active-page" onclick="changePage(this)">1</p>
-          <p class="page-id" onclick="changePage(this)">2</p>
-          <p class="page-id" onclick="changePage(this)">3</p>
-          <p>...</p>
-          <p class="page-id" onclick="changePage(this)">10</p>
-      </div>
+    <div id="pages">
+      <p class="page-id" id="active-page" onclick="changePage(this)">1</p>
+      <p class="page-id" onclick="changePage(this)">2</p>
+      <p class="page-id" onclick="changePage(this)">3</p>
+      <p>...</p>
+      <p class="page-id" onclick="changePage(this)">10</p>
+    </div>
   </div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+  <script type="module" src="/src/main.js"></script>
+</body>
 </html>
