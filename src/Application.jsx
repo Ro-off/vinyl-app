@@ -6,7 +6,7 @@ export const Application = () => {
           role="button"
           id="back-button"
           tabIndex={0}
-          onClick="window.history.back();"
+          onClick={window.history.back()}
         >
           <img alt="" src="src/assets/icons/chevron_left.svg" />
           <p>Back</p>
@@ -21,9 +21,14 @@ export const Application = () => {
 
       <div id="filter">
         <form action="" id="filter-form">
-          <input type="text" name="artist" id="artist" placeholder="Artist" />
-          <select name="genre" id="genre" title="genre">
-            <option className="filter-placeholder" value="" selected>
+          <input type="text" name="artist" id="artist" placeholder="Genre" />
+          <select
+            name="genre"
+            id="genre"
+            title="genre"
+            defaultValue="placeholder"
+          >
+            <option className="filter-placeholder" value="placeholder">
               Genre
             </option>
             <option value="rock">Rock</option>
@@ -32,8 +37,13 @@ export const Application = () => {
             <option value="hip-hop">Hip-Hop</option>
             <option value="jazz">Jazz</option>
           </select>
-          <select name="decade" id="decade" title="genre">
-            <option className="filter-placeholder" value="" selected>
+          <select
+            name="decade"
+            id="decade"
+            title="genre"
+            defaultValue="placeholder"
+          >
+            <option className="filter-placeholder" value="placeholder">
               Decade
             </option>
             <option value="1950-60">1950-60 рр.</option>
@@ -45,8 +55,13 @@ export const Application = () => {
             <option value="2010-20">2010-20 рр.</option>
             <option value="2020-30">2020-30 рр.</option>
           </select>
-          <select name="country" id="country" title="country">
-            <option className="filter-placeholder" selected>
+          <select
+            name="country"
+            id="country"
+            title="country"
+            defaultValue="placeholder"
+          >
+            <option className="filter-placeholder" value="placeholder">
               Country
             </option>
             <option value="usa">USA</option>
@@ -285,23 +300,13 @@ export const Application = () => {
       </div>
       <div id="pages-container">
         <div id="pages">
-          <button
-            className="page-id"
-            id="active-page"
-            onClick="changePage(this)"
-          >
+          <button className="page-id" id="active-page">
             1
           </button>
-          <button className="page-id" onClick="changePage(this)">
-            2
-          </button>
-          <button className="page-id" onClick="changePage(this)">
-            3
-          </button>
+          <button className="page-id">2</button>
+          <button className="page-id">3</button>
           <p>...</p>
-          <button className="page-id" onClick="changePage(this)">
-            10
-          </button>
+          <button className="page-id">10</button>
         </div>
       </div>
     </div>
