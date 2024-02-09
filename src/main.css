@@ -374,96 +374,98 @@
     font-family: 'Plus Jakarta Sans', sans-serif;
   }
 
-  @media screen and (min-width: 100vh) {
-    .item {
-      height: calc(169px + 44px + 10px);
-      flex-basis: calc(33.33% - 10px);
+    @media screen and (min-width: 130vh) {
+      .item {
+        height: calc(169px + 10px + 10px);
+        flex-basis: calc(33.33% - 10px);
+        flex-wrap: wrap;
+        margin: 7px 0px;
+      }
+
+      .item .info-container {
+        width: calc(100% - 169px - 10px - 30px);
+        height: calc(169px - 44px - 10px - 10px);
+        margin-top: 0px;
+        margin-left: 10px;
+      }
+
+      .item .add-button,
+      .item .remove-button {
+        width: calc(100% - 169px - 10px - 30px);
+        margin-top: 20px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+      }
+
+      .item .remove-button {
+        transform: translate(calc(-100% - 10px), calc(169px - 44px - 10px - 10px)) !important;
+      }
+
+      #artist {
+        width: calc(50% - 30px);
+        order: 1;
+        padding-right: 0px;
+      }
+
+      #genre {
+        order: 3;
+      }
+
+      #decade {
+        order: 4;
+      }
+
+      #country {
+        width: calc(50% - 20px);
+        order: 2;
+      }
+
+      #filter-search {
+        order: 5;
+      }
+    }
+
+    #pages-container {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      margin: 20px 0px;
+    }
+
+    #pages {
+      display: flex;
+      width: auto;
+      height: 30px;
       flex-direction: row;
-      flex-wrap: wrap;
-      margin: 7px 0px;
+      flex-wrap: nowrap;
+      justify-content: space-evenly;
     }
 
-    .item .info-container {
-      width: calc(100% - 169px - 10px);
-      height: 169px;
-      margin-top: 0px;
-      margin-left: 10px;
+    #pages p {
+      display: inline-flex;
+      width: 40px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      margin: 0;
+      background: transparent;
+      color: var(--gray-text-1);
+      font-size: 16px;
+      font-weight: 500;
+      transition-duration: 0.1s;
+      transition-property: filter;
+      -webkit-user-select: none;
+      user-select: none;
     }
 
-    .item .add-button,
-    .item .remove-button {
-      margin-top: 10px;
-      margin-bottom: 10px;
+    #pages #active-page {
+      background: var(--accent-text);
+      color: var(--bg-color);
     }
 
-    .item .remove-button {
-      transform: translate(0px, -64px) !important;
+    #pages .page-id:hover {
+      cursor: pointer;
+      filter: brightness(1.2);
     }
 
-    #artist {
-      width: calc(50% - 30px);
-      order: 1;
-      padding-right: 0px;
-    }
-
-    #genre {
-      order: 3;
-    }
-
-    #decade {
-      order: 4;
-    }
-
-    #country {
-      width: calc(50% - 20px);
-      order: 2;
-    }
-
-    #filter-search {
-      order: 5;
-    }
-  }
-
-  #pages-container {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    margin: 20px 0px;
-  }
-
-  #pages {
-    display: flex;
-    width: auto;
-    height: 30px;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
-  }
-
-  #pages p {
-    display: inline-flex;
-    width: 40px;
-    height: 40px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    margin: 0;
-    background: transparent;
-    color: var(--gray-text-1);
-    font-size: 16px;
-    font-weight: 500;
-    transition-duration: 0.1s;
-    transition-property: filter;
-    -webkit-user-select: none;
-    user-select: none;
-  }
-
-  #pages #active-page {
-    background: var(--accent-text);
-    color: var(--bg-color);
-  }
-
-  #pages .page-id:hover {
-    cursor: pointer;
-    filter: brightness(1.2);
-  }
