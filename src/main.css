@@ -449,12 +449,13 @@
       justify-content: space-evenly;
     }
 
-    #pages p {
+    #pages button, #pages p {
       display: inline-flex;
       width: 40px;
       height: 40px;
       align-items: center;
       justify-content: center;
+      border: none;
       border-radius: 8px;
       margin: 0;
       background: transparent;
