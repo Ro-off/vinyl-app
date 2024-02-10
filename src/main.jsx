@@ -1,5 +1,5 @@
 import { createRoot } from "react-dom/client";
-import { Application } from "./Application.jsx";
+import { Application } from "./Application";
 import { StrictMode } from "react";
 
 //// import { renderToString } from "react-dom/server";
