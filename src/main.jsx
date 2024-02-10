@@ -2,12 +2,11 @@ import { createRoot } from "react-dom/client";
 import { Application } from "./Application.jsx";
 import { StrictMode } from "react";
 
-// !Remove after showcase
-import { renderToString } from "react-dom/server";
+//// import { renderToString } from "react-dom/server";
 
 const appElement = document.getElementById("app");
 const root = createRoot(appElement);
-const view = renderToString(<Application />);
+////const view = renderToString(<Application />);
 
 root.render(
   <StrictMode>
@@ -15,5 +14,4 @@ root.render(
   </StrictMode>
 );
 
-// !Remove after showcase
-console.log(view);
+////console.log(view);
