@@ -1,3 +1,5 @@
+import clsx from "clsx";
+
 export const Application = () => {
   return (
     <div>
@@ -73,6 +75,7 @@ export const Application = () => {
           <input type="submit" value="Search" id="filter-search" />
         </form>
       </div>
+
       <div id="items-container">
         <div className="item" id="item-1">
           <button
@@ -104,13 +107,14 @@ export const Application = () => {
               </div>
             </div>
           </div>
-          <button className="add-button" type="button">
+          <button className={clsx("add-button")} type="button">
             <p>Add</p> <img alt="" src="/src/assets/icons/plus.svg" />
           </button>
-          <button className="remove-button button-hidden">
+          <button className={clsx("remove-button button-hidden")}>
             <p>Remove</p> <i className="fa-solid fa-minus"></i>
           </button>
         </div>
+
         <div className="item" id="item-2">
           <button
             type="button"
@@ -141,13 +145,14 @@ export const Application = () => {
               </div>
             </div>
           </div>
-          <button className="add-button" type="button">
+          <button className={clsx("add-button")} type="button">
             <p>Add</p> <img alt="" src="/src/assets/icons/plus.svg" />
           </button>
-          <button className="remove-button button-hidden">
+          <button className={clsx("remove-button button-hidden")}>
             <p>Remove</p> <i className="fa-solid fa-minus"></i>
           </button>
         </div>
+
         <div className="item" id="item-3">
           <button
             type="button"
@@ -178,13 +183,14 @@ export const Application = () => {
               </div>
             </div>
           </div>
-          <button className="add-button" type="button">
+          <button className={clsx("add-button")} type="button">
             <p>Add</p> <img alt="" src="/src/assets/icons/plus.svg" />
           </button>
-          <button className="remove-button button-hidden">
+          <button className={clsx("remove-button button-hidden")}>
             <p>Remove</p> <i className="fa-solid fa-minus"></i>
           </button>
         </div>
+
         <div className="item" id="item-4">
           <button
             type="button"
@@ -215,13 +221,14 @@ export const Application = () => {
               </div>
             </div>
           </div>
-          <button className="add-button" type="button">
+          <button className={clsx("add-button")} type="button">
             <p>Add</p> <img alt="" src="/src/assets/icons/plus.svg" />
           </button>
-          <button className="remove-button button-hidden">
+          <button className={clsx("remove-button button-hidden")}>
             <p>Remove</p> <i className="fa-solid fa-minus"></i>
           </button>
         </div>
+
         <div className="item" id="item-5">
           <button
             type="button"
@@ -252,13 +259,14 @@ export const Application = () => {
               </div>
             </div>
           </div>
-          <button className="add-button" type="button">
+          <button className={clsx("add-button")} type="button">
             <p>Add</p> <img alt="" src="/src/assets/icons/plus.svg" />
           </button>
-          <button className="remove-button button-hidden">
+          <button className={clsx("remove-button button-hidden")}>
             <p>Remove</p> <i className="fa-solid fa-minus"></i>
           </button>
         </div>
+
         <div className="item" id="item-6">
           <button
             type="button"
@@ -289,15 +297,15 @@ export const Application = () => {
               </div>
             </div>
           </div>
-          <button className="add-button" type="button">
-            <p>Add</p>
-            <img alt="" src="/src/assets/icons/plus.svg" />
+          <button className={clsx("add-button")} type="button">
+            <p>Add</p> <img alt="" src="/src/assets/icons/plus.svg" />
           </button>
-          <button className="remove-button button-hidden">
+          <button className={clsx("remove-button button-hidden")}>
             <p>Remove</p> <i className="fa-solid fa-minus"></i>
           </button>
         </div>
       </div>
+
       <div id="pages-container">
         <div id="pages">
           <button className="page-id" id="active-page">
