@@ -130,7 +130,7 @@ export const Application = () => {
           <img alt="" src="src/assets/icons/chevron_left.svg" />
           <p>Back</p>
         </div>
-        <div id="like-button">
+        <div id="favorites-button">
           <img alt="Liked" src="src/assets/icons/liked.svg" />
         </div>
         <div id="library-button">
