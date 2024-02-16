@@ -15,18 +15,24 @@ function renderCard({
   let inCollection = collection.includes(itemId);
   let inFavorites = favorites.includes(itemId);
   return (
-    <div className="item" key={itemId}>
+    <div className="item" key={itemId} id={"item-" + itemId}>
       <button
         type="button"
-        className={clsx("like-button-add", { "button-hidden": inFavorites })}
-        title="like-button-add"
+        className={clsx("like-button", "like-button-add", {
+          "button-hidden": inFavorites,
+        })}
+        title="like-button"
+        onClick={() => addToFavorites(itemId)}
       >
         <img alt="Add to favorites" src="src/assets/icons/heart_outline.svg" />
       </button>
       <button
         type="button"
-        className={clsx("like-button-add", { "button-hidden": !inFavorites })}
-        title="like-button-add"
+        className={clsx("like-button", "like-button-rem", {
+          "button-hidden": !inFavorites,
+        })}
+        title="like-button"
+        onClick={() => removeFromFavorites(itemId)}
       >
         <img alt="Add to favorites" src="src/assets/icons/heart_filled.svg" />
       </button>
@@ -50,14 +56,20 @@ function renderCard({
         </div>
       </div>
       <button
-        className={clsx("add-button", { "button-hidden": inCollection })}
+        className={clsx("add-button", "collectionButton", {
+          "button-hidden": inCollection,
+        })}
         type="button"
+        onClick={() => addToCollection(itemId)}
       >
         <p>Add</p> <img alt="" src="/src/assets/icons/plus.svg" />
       </button>
       <button
-        className={clsx("remove-button", { "button-hidden": !inCollection })}
+        className={clsx("remove-button", "collectionButton", {
+          "button-hidden": !inCollection,
+        })}
         type="button"
+        onClick={() => removeFromCollection(itemId)}
       >
         <p>Remove</p> <img alt="" src="/src/assets/icons/done.svg" />
       </button>
@@ -68,6 +80,41 @@ function renderCard({
 //todo: add possibility to render only specified cards
 function renderCards(cardRenderer, itemList) {
   return itemList.map(cardRenderer);
+}
+
+function switchButtons(buttons) {
+  buttons.forEach((button) => {
+    button.classList.toggle("button-hidden");
+  });
+}
+
+function switchCollectionButtons(id) {
+  let collectionButtons = document.querySelectorAll(`
+    #item-${id} .collectionButton`);
+  switchButtons(collectionButtons);
+}
+
+//todo: implement different actions to delete and add data in json
+function addToCollection(id) {
+  switchCollectionButtons(id);
+}
+
+function removeFromCollection(id) {
+  switchCollectionButtons(id);
+}
+
+function switchFavoriteButtons(id) {
+  let favoriteButtons = document.querySelectorAll(`
+    #item-${id} .like-button`);
+  switchButtons(favoriteButtons);
+}
+
+function addToFavorites(id) {
+  switchFavoriteButtons(id);
+}
+
+function removeFromFavorites(id) {
+  switchFavoriteButtons(id);
 }
 
 export const Application = () => {

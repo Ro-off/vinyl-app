@@ -143,7 +143,7 @@
     pointer-events: none;
   }
 
-  .item .like-button-add img {
+  .item .like-button img {
     width: 20px;
     height: 16px;
     align-self: center;
@@ -176,7 +176,7 @@
     justify-self: center;
   }
 
-  .item .like-button-add {
+  .item .like-button {
     position: absolute;
     display: flex;
     width: 24px;
@@ -194,12 +194,12 @@
     outline: none;
   }
 
-  .item .like-button-add:hover {
+  .item .like-button:hover {
     cursor: pointer;
     filter: brightness(1.1);
   }
 
-  .item .like-button-add:active {
+  .item .like-button:active {
     filter: brightness(1.2);
   }
 
@@ -232,7 +232,7 @@
     transform: translate(-20px, 0px);
   }
 
-  #like-button {
+  /* .like-button-old {
     display: inline-flex;
     width: 50px;
     height: 50px;
@@ -243,14 +243,14 @@
     transition-timing-function: ease-in-out;
   }
 
-  #like-button:hover {
+  .like-button-old:hover {
     cursor: pointer;
     filter: drop-shadow(0px 0px 2px var(--gray-text-1));
   }
 
-  #like-button:active {
+  .like-button-old:active {
     filter: drop-shadow(0px 0px 2px var(--bg-color));
-  }
+  } */
 
   #library-button {
     display: inline-flex;
