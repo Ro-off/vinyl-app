@@ -89,7 +89,26 @@
       "decadeId": 5,
       "countryId": 10,
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
+    },
+    {
+      "itemId": 11,
+      "name": "Highway to Hell",
+      "author": "AC/DC",
+      "genreId": 4,
+      "decadeId": 5,
+      "countryId": 10,
+      "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
+    },
+    {
+      "itemId": 12,
+      "name": "Back in Black",
+      "author": "AC/DC",
+      "genreId": 4,
+      "decadeId": 5,
+      "countryId": 10,
+      "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     }
+
 
 
   ]
