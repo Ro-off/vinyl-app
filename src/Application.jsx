@@ -1,4 +1,74 @@
 import clsx from "clsx";
+import { musicList } from "./musicData";
+import { collection, favorites } from "./userData";
+import { genres, decades, countries } from "./describeData";
+
+function renderCard({
+  itemId,
+  name,
+  author,
+  genreId,
+  decadeId,
+  countryId,
+  imageSrc,
+}) {
+  let inCollection = collection.includes(itemId);
+  let inFavorites = favorites.includes(itemId);
+  return (
+    <div className="item" key={itemId}>
+      <button
+        type="button"
+        className={clsx("like-button-add", { "button-hidden": inFavorites })}
+        title="like-button-add"
+      >
+        <img alt="Add to favorites" src="src/assets/icons/heart_outline.svg" />
+      </button>
+      <button
+        type="button"
+        className={clsx("like-button-add", { "button-hidden": !inFavorites })}
+        title="like-button-add"
+      >
+        <img alt="Add to favorites" src="src/assets/icons/heart_filled.svg" />
+      </button>
+      <img src={imageSrc} alt="" />
+      <div className="info-container">
+        <h5>{name}</h5>
+        <h6>{author}</h6>
+        <div className="item-info">
+          <div>
+            <p>Genre:</p>
+            <p>{genres[genreId]}</p>
+          </div>
+          <div>
+            <p>Decade:</p>
+            <p>{decades[decadeId]}</p>
+          </div>
+          <div>
+            <p>Country:</p>
+            <p>{countries[countryId]}</p>
+          </div>
+        </div>
+      </div>
+      <button
+        className={clsx("add-button", { "button-hidden": inCollection })}
+        type="button"
+      >
+        <p>Add</p> <img alt="" src="/src/assets/icons/plus.svg" />
+      </button>
+      <button
+        className={clsx("remove-button", { "button-hidden": !inCollection })}
+        type="button"
+      >
+        <p>Remove</p> <img alt="" src="/src/assets/icons/done.svg" />
+      </button>
+    </div>
+  );
+}
+
+//todo: add possibility to render only specified cards
+function renderCards(cardRenderer, itemList) {
+  return itemList.map(cardRenderer);
+}
 
 export const Application = () => {
   return (
@@ -76,235 +146,7 @@ export const Application = () => {
         </form>
       </div>
 
-      <div id="items-container">
-        <div className="item" id="item-1">
-          <button
-            type="button"
-            className="like-button-add"
-            title="like-button-add"
-          >
-            <img alt="Like" src="src/assets/icons/heart_outline.svg" />
-          </button>
-          <img
-            src="https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
-            alt=""
-          />
-          <div className="info-container">
-            <h5>Bohemian Rhapsody</h5>
-            <h6>Queen</h6>
-            <div className="item-info">
-              <div>
-                <p>Genre:</p>
-                <p>Rock</p>
-              </div>
-              <div>
-                <p>Decade:</p>
-                <p>1970-80</p>
-              </div>
-              <div>
-                <p>Country:</p>
-                <p>UK</p>
-              </div>
-            </div>
-          </div>
-          <button className={clsx("add-button")} type="button">
-            <p>Add</p> <img alt="" src="/src/assets/icons/plus.svg" />
-          </button>
-          <button className={clsx("remove-button button-hidden")}>
-            <p>Remove</p> <i className="fa-solid fa-minus"></i>
-          </button>
-        </div>
-
-        <div className="item" id="item-2">
-          <button
-            type="button"
-            className="like-button-add"
-            title="like-button-add"
-          >
-            <img alt="Like" src="src/assets/icons/heart_outline.svg" />
-          </button>
-          <img
-            src="https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
-            alt=""
-          />
-          <div className="info-container">
-            <h5>Bohemian Rhapsody</h5>
-            <h6>Queen</h6>
-            <div className="item-info">
-              <div>
-                <p>Genre:</p>
-                <p>Rock</p>
-              </div>
-              <div>
-                <p>Decade:</p>
-                <p>1970-80</p>
-              </div>
-              <div>
-                <p>Country:</p>
-                <p>UK</p>
-              </div>
-            </div>
-          </div>
-          <button className={clsx("add-button")} type="button">
-            <p>Add</p> <img alt="" src="/src/assets/icons/plus.svg" />
-          </button>
-          <button className={clsx("remove-button button-hidden")}>
-            <p>Remove</p> <i className="fa-solid fa-minus"></i>
-          </button>
-        </div>
-
-        <div className="item" id="item-3">
-          <button
-            type="button"
-            className="like-button-add"
-            title="like-button-add"
-          >
-            <img alt="Like" src="src/assets/icons/heart_outline.svg" />
-          </button>
-          <img
-            src="https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
-            alt=""
-          />
-          <div className="info-container">
-            <h5>Bohemian Rhapsody</h5>
-            <h6>Queen</h6>
-            <div className="item-info">
-              <div>
-                <p>Genre:</p>
-                <p>Rock</p>
-              </div>
-              <div>
-                <p>Decade:</p>
-                <p>1970-80</p>
-              </div>
-              <div>
-                <p>Country:</p>
-                <p>UK</p>
-              </div>
-            </div>
-          </div>
-          <button className={clsx("add-button")} type="button">
-            <p>Add</p> <img alt="" src="/src/assets/icons/plus.svg" />
-          </button>
-          <button className={clsx("remove-button button-hidden")}>
-            <p>Remove</p> <i className="fa-solid fa-minus"></i>
-          </button>
-        </div>
-
-        <div className="item" id="item-4">
-          <button
-            type="button"
-            className="like-button-add"
-            title="like-button-add"
-          >
-            <img alt="Like" src="src/assets/icons/heart_outline.svg" />
-          </button>
-          <img
-            src="https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
-            alt=""
-          />
-          <div className="info-container">
-            <h5>Bohemian Rhapsody</h5>
-            <h6>Queen</h6>
-            <div className="item-info">
-              <div>
-                <p>Genre:</p>
-                <p>Rock</p>
-              </div>
-              <div>
-                <p>Decade:</p>
-                <p>1970-80</p>
-              </div>
-              <div>
-                <p>Country:</p>
-                <p>UK</p>
-              </div>
-            </div>
-          </div>
-          <button className={clsx("add-button")} type="button">
-            <p>Add</p> <img alt="" src="/src/assets/icons/plus.svg" />
-          </button>
-          <button className={clsx("remove-button button-hidden")}>
-            <p>Remove</p> <i className="fa-solid fa-minus"></i>
-          </button>
-        </div>
-
-        <div className="item" id="item-5">
-          <button
-            type="button"
-            className="like-button-add"
-            title="like-button-add"
-          >
-            <img alt="Like" src="src/assets/icons/heart_outline.svg" />
-          </button>
-          <img
-            src="https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
-            alt=""
-          />
-          <div className="info-container">
-            <h5>Bohemian Rhapsody</h5>
-            <h6>Queen</h6>
-            <div className="item-info">
-              <div>
-                <p>Genre:</p>
-                <p>Rock</p>
-              </div>
-              <div>
-                <p>Decade:</p>
-                <p>1970-80</p>
-              </div>
-              <div>
-                <p>Country:</p>
-                <p>UK</p>
-              </div>
-            </div>
-          </div>
-          <button className={clsx("add-button")} type="button">
-            <p>Add</p> <img alt="" src="/src/assets/icons/plus.svg" />
-          </button>
-          <button className={clsx("remove-button button-hidden")}>
-            <p>Remove</p> <i className="fa-solid fa-minus"></i>
-          </button>
-        </div>
-
-        <div className="item" id="item-6">
-          <button
-            type="button"
-            className="like-button-add"
-            title="like-button-add"
-          >
-            <img alt="Like" src="src/assets/icons/heart_outline.svg" />
-          </button>
-          <img
-            src="https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
-            alt=""
-          />
-          <div className="info-container">
-            <h5>Bohemian Rhapsody</h5>
-            <h6>Queen</h6>
-            <div className="item-info">
-              <div>
-                <p>Genre:</p>
-                <p>Rock</p>
-              </div>
-              <div>
-                <p>Decade:</p>
-                <p>1970-80</p>
-              </div>
-              <div>
-                <p>Country:</p>
-                <p>UK</p>
-              </div>
-            </div>
-          </div>
-          <button className={clsx("add-button")} type="button">
-            <p>Add</p> <img alt="" src="/src/assets/icons/plus.svg" />
-          </button>
-          <button className={clsx("remove-button button-hidden")}>
-            <p>Remove</p> <i className="fa-solid fa-minus"></i>
-          </button>
-        </div>
-      </div>
+      <div id="items-container"> {renderCards(renderCard, musicList)} </div>
 
       <div id="pages-container">
         <div id="pages">

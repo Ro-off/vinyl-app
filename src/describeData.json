@@ -1,0 +1,42 @@
+{
+  "genres":{
+    "1": "rock",
+    "2": "pop",
+    "4": "country",
+    "5": "hip-hop",
+    "6": "jazz"
+  },
+  "decades":{
+    "1": "1950-60",
+    "2": "1960-70",
+    "3": "1970-80",
+    "4": "1980-90",
+    "5": "1990-2000",
+    "6": "2000-10",
+    "7": "2010-20",
+    "8": "2020-30"
+
+  },
+  "countries":{
+    "1": "USA",
+    "2": "UK",
+    "3": "France",
+    "4": "Germany",
+    "5": "Ukraine",
+    "6": "Netherlands",
+    "7": "Italy",
+    "8": "Spain",
+    "9": "Sweden",
+    "10": "Norway",
+    "11": "Denmark",
+    "12": "Finland",
+    "13": "Iceland",
+    "14": "Australia",
+    "15": "New Zealand",
+    "16": "Canada",
+    "17": "Mexico",
+    "18": "Brazil",
+    "19": "Argentina",
+    "20": "Chile"
+  }
+}

@@ -67,6 +67,7 @@
     margin: 2px 0px;
     font-size: 14px;
     font-weight: 400;
+    text-transform: capitalize;
     text-wrap: nowrap;
   }
 
