@@ -2,12 +2,95 @@
   "musicList": [
     {
       "itemId": 1,
-      "name": "Bohemian Rhapsody1",
+      "name": "Bohemian Rhapsody",
       "author": "Queen",
       "genreId": 1,
       "decadeId": 2,
       "countryId": 1,
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
+    },
+    {
+      "itemId": 2,
+      "name": "Stairway to Heaven",
+      "author": "Led Zeppelin",
+      "genreId": 4,
+      "decadeId": 5,
+      "countryId": 10,
+      "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
+    },
+    {
+      "itemId": 3,
+      "name": "Imagine",
+      "author": "John Lennon",
+      "genreId": 3,
+      "decadeId": 4,
+      "countryId": 2,
+      "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
+    },
+    {
+      "itemId": 4,
+      "name": "Hotel California",
+      "author": "Eagles",
+      "genreId": 4,
+      "decadeId": 5,
+      "countryId": 10,
+      "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
+    },
+    {
+      "itemId": 5,
+      "name": "Smells Like Teen Spirit",
+      "author": "Nirvana",
+      "genreId": 2,
+      "decadeId": 6,
+      "countryId": 10,
+      "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
+    },
+    {
+      "itemId": 6,
+      "name": "One",
+      "author": "Metallica",
+      "genreId": 4,
+      "decadeId": 6,
+      "countryId": 10,
+      "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
+    },
+    {
+      "itemId": 7,
+      "name": "Sweet Child O' Mine",
+      "author": "Guns N' Roses",
+      "genreId": 4,
+      "decadeId": 5,
+      "countryId": 10,
+      "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
+    },
+    {
+      "itemId": 8,
+      "name": "Comfortably Numb",
+      "author": "Pink Floyd",
+      "genreId": 4,
+      "decadeId": 5,
+      "countryId": 10,
+      "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
+    },
+    {
+      "itemId": 9,
+      "name": "Another Brick in the Wall",
+      "author": "Pink Floyd",
+      "genreId": 4,
+      "decadeId": 5,
+      "countryId": 10,
+      "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
+    },
+    {
+      "itemId": 10,
+      "name": "Wish You Were Here",
+      "author": "Pink Floyd",
+      "genreId": 4,
+      "decadeId": 5,
+      "countryId": 10,
+      "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     }
+
+
   ]
 }
