@@ -1,7 +1,15 @@
 import clsx from "clsx";
-import { musicList } from "./musicData";
-import { collection, favorites } from "./userData";
-import { genres, decades, countries } from "./describeData";
+import { musicListData } from "./musicData.json";
+import * as description from "./describeData.json";
+
+const musicList = musicListData;
+
+const collection = [1, 2, 5, 12];
+const favorites = [3, 4, 7];
+
+const genres = description.genres;
+const decades = description.decades;
+const countries = description.countries;
 
 function renderCard({
   itemId,
@@ -15,14 +23,14 @@ function renderCard({
   let inCollection = collection.includes(itemId);
   let inFavorites = favorites.includes(itemId);
   return (
-    <div className="item" key={itemId} id={"item-" + itemId}>
+    <div className="item" key={itemId}>
       <button
         type="button"
         className={clsx("like-button", "like-button-add", {
           "button-hidden": inFavorites,
         })}
         title="like-button"
-        onClick={() => addToFavorites(itemId)}
+        onClick={() => addToFavorites()}
       >
         <img alt="Add to favorites" src="src/assets/icons/heart_outline.svg" />
       </button>
@@ -32,7 +40,7 @@ function renderCard({
           "button-hidden": !inFavorites,
         })}
         title="like-button"
-        onClick={() => removeFromFavorites(itemId)}
+        onClick={() => removeFromFavorites()}
       >
         <img alt="Add to favorites" src="src/assets/icons/heart_filled.svg" />
       </button>
@@ -60,7 +68,7 @@ function renderCard({
           "button-hidden": inCollection,
         })}
         type="button"
-        onClick={() => addToCollection(itemId)}
+        onClick={() => addToCollection()}
       >
         <p>Add</p> <img alt="" src="/src/assets/icons/plus.svg" />
       </button>
@@ -69,7 +77,7 @@ function renderCard({
           "button-hidden": !inCollection,
         })}
         type="button"
-        onClick={() => removeFromCollection(itemId)}
+        onClick={() => removeFromCollection()}
       >
         <p>Remove</p> <img alt="" src="/src/assets/icons/done.svg" />
       </button>
@@ -82,39 +90,38 @@ function renderCards(cardRenderer, itemList) {
   return itemList.map(cardRenderer);
 }
 
-function switchButtons(buttons) {
-  buttons.forEach((button) => {
-    button.classList.toggle("button-hidden");
-  });
+//// function switchButtons(buttons) {
+////   buttons.forEach((button) => {
+////     button.classList.toggle("button-hidden");
+////   });
+//// }
+
+//// function switchCollectionButtons(id) {
+////   let collectionButtons = document.querySelectorAll(`
+////     #item-${id} .collectionButton`);
+////   switchButtons(collectionButtons);
+//// }
+
+function addToCollection() {
+  console.error("Favorites not implemented");
 }
 
-function switchCollectionButtons(id) {
-  let collectionButtons = document.querySelectorAll(`
-    #item-${id} .collectionButton`);
-  switchButtons(collectionButtons);
+function removeFromCollection() {
+  console.error("Favorites not implemented");
 }
 
-//todo: implement different actions to delete and add data in json
-function addToCollection(id) {
-  switchCollectionButtons(id);
+//// function switchFavoriteButtons(id) {
+////   let favoriteButtons = document.querySelectorAll(`
+////     #item-${id} .like-button`);
+////   switchButtons(favoriteButtons);
+//// }
+
+function addToFavorites() {
+  console.error("Favorites not implemented");
 }
 
-function removeFromCollection(id) {
-  switchCollectionButtons(id);
-}
-
-function switchFavoriteButtons(id) {
-  let favoriteButtons = document.querySelectorAll(`
-    #item-${id} .like-button`);
-  switchButtons(favoriteButtons);
-}
-
-function addToFavorites(id) {
-  switchFavoriteButtons(id);
-}
-
-function removeFromFavorites(id) {
-  switchFavoriteButtons(id);
+function removeFromFavorites() {
+  console.error("Favorites not implemented");
 }
 
 export const Application = () => {
