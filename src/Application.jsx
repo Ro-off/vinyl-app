@@ -2,129 +2,114 @@ import clsx from "clsx";
 import { musicListData } from "./musicData.json";
 import * as description from "./describeData.json";
 
-const musicList = musicListData;
+export const Application = () => {
+  const musicList = musicListData;
 
-const collection = [1, 2, 5, 12];
-const favorites = [3, 4, 7];
+  const collection = [1, 2, 5, 12];
+  const favorites = [3, 4, 7];
 
-const genres = description.genres;
-const decades = description.decades;
-const countries = description.countries;
+  const genres = description.genres;
+  const decades = description.decades;
+  const countries = description.countries;
 
-function renderCard({
-  itemId,
-  name,
-  author,
-  genreId,
-  decadeId,
-  countryId,
-  imageSrc,
-}) {
-  let inCollection = collection.includes(itemId);
-  let inFavorites = favorites.includes(itemId);
-  return (
-    <div className="item" key={itemId}>
-      <button
-        type="button"
-        className={clsx("like-button", "like-button-add", {
-          "button-hidden": inFavorites,
-        })}
-        title="like-button"
-        onClick={() => addToFavorites()}
-      >
-        <img alt="Add to favorites" src="src/assets/icons/heart_outline.svg" />
-      </button>
-      <button
-        type="button"
-        className={clsx("like-button", "like-button-rem", {
-          "button-hidden": !inFavorites,
-        })}
-        title="like-button"
-        onClick={() => removeFromFavorites()}
-      >
-        <img alt="Add to favorites" src="src/assets/icons/heart_filled.svg" />
-      </button>
-      <img src={imageSrc} alt="" />
-      <div className="info-container">
-        <h5>{name}</h5>
-        <h6>{author}</h6>
-        <div className="item-info">
-          <div>
-            <p>Genre:</p>
-            <p>{genres[genreId]}</p>
-          </div>
-          <div>
-            <p>Decade:</p>
-            <p>{decades[decadeId]}</p>
-          </div>
-          <div>
-            <p>Country:</p>
-            <p>{countries[countryId]}</p>
+  //todo: add possibility to render only specified cards
+  function renderCards(cardRenderer, itemList) {
+    return itemList.map(cardRenderer);
+  }
+
+  function addToCollection() {
+    console.error("Favorites not implemented");
+  }
+
+  function removeFromCollection() {
+    console.error("Favorites not implemented");
+  }
+
+  function addToFavorites() {
+    console.error("Favorites not implemented");
+  }
+
+  function removeFromFavorites() {
+    console.error("Favorites not implemented");
+  }
+
+  function renderCard({
+    itemId,
+    name,
+    author,
+    genreId,
+    decadeId,
+    countryId,
+    imageSrc,
+  }) {
+    let inCollection = collection.includes(itemId);
+    let inFavorites = favorites.includes(itemId);
+    return (
+      <div className="item" key={itemId}>
+        <button
+          type="button"
+          className={clsx("like-button", "like-button-add", {
+            "button-hidden": inFavorites,
+          })}
+          title="like-button"
+          onClick={() => addToFavorites()}
+        >
+          <img
+            alt="Add to favorites"
+            src="src/assets/icons/heart_outline.svg"
+          />
+        </button>
+        <button
+          type="button"
+          className={clsx("like-button", "like-button-rem", {
+            "button-hidden": !inFavorites,
+          })}
+          title="like-button"
+          onClick={() => removeFromFavorites()}
+        >
+          <img alt="Add to favorites" src="src/assets/icons/heart_filled.svg" />
+        </button>
+        <img src={imageSrc} alt="" />
+        <div className="info-container">
+          <h5>{name}</h5>
+          <h6>{author}</h6>
+          <div className="item-info">
+            <div>
+              <p>Genre:</p>
+              <p>{genres[genreId]}</p>
+            </div>
+            <div>
+              <p>Decade:</p>
+              <p>{decades[decadeId]}</p>
+            </div>
+            <div>
+              <p>Country:</p>
+              <p>{countries[countryId]}</p>
+            </div>
           </div>
         </div>
+        <button
+          className={clsx("add-button", "collectionButton", {
+            "button-hidden": inCollection,
+          })}
+          type="button"
+          onClick={() => addToCollection()}
+        >
+          <p>Add</p> <img alt="" src="/src/assets/icons/plus.svg" />
+        </button>
+        <button
+          className={clsx("remove-button", "collectionButton", {
+            "button-hidden": !inCollection,
+          })}
+          type="button"
+          onClick={() => removeFromCollection()}
+        >
+          <p>Remove</p> <img alt="" src="/src/assets/icons/done.svg" />
+        </button>
       </div>
-      <button
-        className={clsx("add-button", "collectionButton", {
-          "button-hidden": inCollection,
-        })}
-        type="button"
-        onClick={() => addToCollection()}
-      >
-        <p>Add</p> <img alt="" src="/src/assets/icons/plus.svg" />
-      </button>
-      <button
-        className={clsx("remove-button", "collectionButton", {
-          "button-hidden": !inCollection,
-        })}
-        type="button"
-        onClick={() => removeFromCollection()}
-      >
-        <p>Remove</p> <img alt="" src="/src/assets/icons/done.svg" />
-      </button>
-    </div>
-  );
-}
+    );
+  }
 
-//todo: add possibility to render only specified cards
-function renderCards(cardRenderer, itemList) {
-  return itemList.map(cardRenderer);
-}
-
-//// function switchButtons(buttons) {
-////   buttons.forEach((button) => {
-////     button.classList.toggle("button-hidden");
-////   });
-//// }
-
-//// function switchCollectionButtons(id) {
-////   let collectionButtons = document.querySelectorAll(`
-////     #item-${id} .collectionButton`);
-////   switchButtons(collectionButtons);
-//// }
-
-function addToCollection() {
-  console.error("Favorites not implemented");
-}
-
-function removeFromCollection() {
-  console.error("Favorites not implemented");
-}
-
-//// function switchFavoriteButtons(id) {
-////   let favoriteButtons = document.querySelectorAll(`
-////     #item-${id} .like-button`);
-////   switchButtons(favoriteButtons);
-//// }
-
-function addToFavorites() {
-  console.error("Favorites not implemented");
-}
-
-function removeFromFavorites() {
-  console.error("Favorites not implemented");
-}
-
-export const Application = () => {
   return (
     <div>
       <header>
