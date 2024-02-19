@@ -18,11 +18,11 @@ export const Application = () => {
   }
 
   function addToCollection() {
-    console.error("Favorites not implemented");
+    console.error("Collection not implemented");
   }
 
   function removeFromCollection() {
-    console.error("Favorites not implemented");
+    console.error("Collection not implemented");
   }
 
   function addToFavorites() {
