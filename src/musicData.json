@@ -5,7 +5,7 @@
       "name": "Bohemian Rhapsody",
       "author": "Queen",
       "genreId": 1,
-      "decadeId": 2,
+      "year": 1975,
       "countryId": 1,
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
@@ -14,7 +14,7 @@
       "name": "Stairway to Heaven",
       "author": "Led Zeppelin",
       "genreId": 4,
-      "decadeId": 5,
+      "year": 1971,
       "countryId": 10,
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
@@ -23,7 +23,7 @@
       "name": "Imagine",
       "author": "John Lennon",
       "genreId": 3,
-      "decadeId": 4,
+      "year": 1971,
       "countryId": 2,
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
@@ -32,7 +32,7 @@
       "name": "Hotel California",
       "author": "Eagles",
       "genreId": 4,
-      "decadeId": 5,
+      "year": 1976,
       "countryId": 10,
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
@@ -41,7 +41,7 @@
       "name": "Smells Like Teen Spirit",
       "author": "Nirvana",
       "genreId": 2,
-      "decadeId": 6,
+      "year": 1991,
       "countryId": 10,
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
@@ -50,16 +50,16 @@
       "name": "One",
       "author": "Metallica",
       "genreId": 4,
-      "decadeId": 6,
+      "year": 1988,
       "countryId": 10,
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
     {
       "itemId": 7,
-      "name": "Sweet Child O' Mine",
+      "name": "Paradise city",
       "author": "Guns N' Roses",
       "genreId": 4,
-      "decadeId": 5,
+      "year": 1987,
       "countryId": 10,
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
@@ -68,7 +68,7 @@
       "name": "Comfortably Numb",
       "author": "Pink Floyd",
       "genreId": 4,
-      "decadeId": 5,
+      "year": 1979,
       "countryId": 10,
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
@@ -77,7 +77,7 @@
       "name": "Another Brick in the Wall",
       "author": "Pink Floyd",
       "genreId": 4,
-      "decadeId": 5,
+      "year": 1979,
       "countryId": 10,
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
@@ -86,7 +86,7 @@
       "name": "Wish You Were Here",
       "author": "Pink Floyd",
       "genreId": 4,
-      "decadeId": 5,
+      "year": 1975,
       "countryId": 10,
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
@@ -95,7 +95,7 @@
       "name": "Highway to Hell",
       "author": "AC/DC",
       "genreId": 4,
-      "decadeId": 5,
+      "year": 1979,
       "countryId": 10,
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
@@ -104,12 +104,9 @@
       "name": "Back in Black",
       "author": "AC/DC",
       "genreId": 4,
-      "decadeId": 5,
+      "year": 1980,
       "countryId": 10,
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     }
-
-
-
   ]
 }

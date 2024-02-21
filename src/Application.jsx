@@ -5,7 +5,6 @@ import description from "./describeData.json";
 export const Application = () => {
   const musicList = [...Object.values(musicListData)];
   const genres = [...Object.values(description.genres)];
-  const decades = [...Object.values(description.decades)];
   const countries = [...Object.values(description.countries)];
 
   const collection = [1, 2, 5, 12];
@@ -32,7 +31,7 @@ export const Application = () => {
     name,
     author,
     genreId,
-    decadeId,
+    year,
     countryId,
     imageSrc,
   }) {
@@ -73,8 +72,8 @@ export const Application = () => {
               <p>{genres[genreId]}</p>
             </div>
             <div>
-              <p>Decade:</p>
-              <p>{decades[decadeId]}</p>
+              <p>Year:</p>
+              <p>{year}</p>
             </div>
             <div>
               <p>Country:</p>
