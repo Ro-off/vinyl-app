@@ -1,6 +1,8 @@
 import clsx from "clsx";
 import { musicListData } from "./musicData.json";
 import description from "./describeData.json";
+//? Should this module be in use
+import PropTypes from "prop-types";
 
 export const Application = () => {
   const musicList = [...Object.values(musicListData)];
@@ -29,6 +31,11 @@ export const Application = () => {
   function PageLayout({ children }) {
     return <div>{children}</div>;
   }
+
+  //! delete if linter problem would be resolved
+  PageLayout.propTypes = {
+    children: PropTypes.node.isRequired,
+  };
 
   function NavigationHeader() {
     return (
