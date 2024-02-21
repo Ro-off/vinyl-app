@@ -1,21 +1,15 @@
 import clsx from "clsx";
 import { musicListData } from "./musicData.json";
-import * as description from "./describeData.json";
+import description from "./describeData.json";
 
 export const Application = () => {
-  const musicList = musicListData;
+  const musicList = [...Object.values(musicListData)];
+  const genres = [...Object.values(description.genres)];
+  const decades = [...Object.values(description.decades)];
+  const countries = [...Object.values(description.countries)];
 
   const collection = [1, 2, 5, 12];
   const favorites = [3, 4, 7];
-
-  const genres = description.genres;
-  const decades = description.decades;
-  const countries = description.countries;
-
-  //todo: add possibility to render only specified cards
-  function renderCards(cardRenderer, itemList) {
-    return itemList.map(cardRenderer);
-  }
 
   function addToCollection() {
     console.error("Collection not implemented");
@@ -185,8 +179,7 @@ export const Application = () => {
         </form>
       </div>
 
-      <div id="items-container"> {renderCards(renderCard, musicList)} </div>
-
+      <div id="items-container">{musicList.map(renderCard)} </div>
       <div id="pages-container">
         <div id="pages">
           <button className="page-id" id="active-page">
