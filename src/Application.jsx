@@ -108,8 +108,8 @@ export const Application = () => {
 
   function filterItemsOnPage(element, index) {
     if (
-      index <= currentPage * itemsOnPage &&
-      index <= currentPage * (itemsOnPage - 1)
+      index < currentPage * itemsOnPage &&
+      index >= itemsOnPage * (currentPage - 1)
     )
       return true;
   }
@@ -222,7 +222,7 @@ export const Application = () => {
       {navigationHeader}
       {filter}
       {cardContainer}
-      {renderNavigationPages}
+      {renderNavigationPages()}
     </>
   );
 };
