@@ -120,8 +120,8 @@ export const Application = () => {
     </div>
   );
 
-  function navigationPages(list, currentPage, itemsOnPage) {
-    let pagesCount = Math.ceil(list.length / itemsOnPage);
+  function renderNavigationPages() {
+    let pagesCount = Math.ceil(musicList.length / itemsOnPage);
     return (
       <div id="pages-container">
         <div id="pages">
@@ -222,7 +222,7 @@ export const Application = () => {
       {navigationHeader}
       {filter}
       {cardContainer}
-      {navigationPages(musicList, currentPage, itemsOnPage)}
+      {renderNavigationPages}
     </>
   );
 };
