@@ -10,7 +10,7 @@ export const Application = () => {
 
   const collection = [1, 2, 5, 12];
   const favorites = [3, 4, 7];
-  const [currentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
   let itemsOnPage = 12;
 
   function addToCollection() {
@@ -131,6 +131,7 @@ export const Application = () => {
               className={clsx("page-id", {
                 "active-page": i + 1 == currentPage,
               })}
+              onClick={() => setCurrentPage(i + 1)}
             >
               {i + 1}
             </button>
