@@ -466,7 +466,7 @@
       user-select: none;
     }
 
-    #pages #active-page {
+    #pages .active-page {
       background: var(--accent-text);
       color: var(--bg-color);
     }

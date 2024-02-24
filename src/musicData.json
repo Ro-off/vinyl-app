@@ -56,7 +56,7 @@
     },
     {
       "itemId": 7,
-      "name": "Paradise city",
+      "name": "Paradise City",
       "author": "Guns N' Roses",
       "genreId": 4,
       "year": 1987,
@@ -106,6 +106,159 @@
       "genreId": 4,
       "year": 1980,
       "countryId": 10,
+      "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
+    },
+    {
+      "itemId": 13,
+      "name": "Hey Jude",
+      "author": "The Beatles",
+      "genreId": 1,
+      "year": 1968,
+      "countryId": 3,
+      "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
+    },
+    {
+      "itemId": 14,
+      "name": "Like a Rolling Stone",
+      "author": "Bob Dylan",
+      "genreId": 1,
+      "year": 1965,
+      "countryId": 4,
+      "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
+    },
+    {
+      "itemId": 15,
+      "name": "A Day in the Life",
+      "author": "The Beatles",
+      "genreId": 1,
+      "year": 1967,
+      "countryId": 3,
+      "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
+    },
+    {
+      "itemId": 16,
+      "name": "Born to Run",
+      "author": "Bruce Springsteen",
+      "genreId": 1,
+      "year": 1975,
+      "countryId": 5,
+      "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
+    },
+    {
+      "itemId": 17,
+      "name": "Hotel California",
+      "author": "Eagles",
+      "genreId": 4,
+      "year": 1976,
+      "countryId": 10,
+      "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
+    },
+    {
+      "itemId": 18,
+      "name": "Smells Like Teen Spirit",
+      "author": "Nirvana",
+      "genreId": 2,
+      "year": 1991,
+      "countryId": 10,
+      "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
+    },
+    {
+      "itemId": 19,
+      "name": "One",
+      "author": "Metallica",
+      "genreId": 4,
+      "year": 1988,
+      "countryId": 10,
+      "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
+    },
+    {
+      "itemId": 20,
+      "name": "Paradise City",
+      "author": "Guns N' Roses",
+      "genreId": 4,
+      "year": 1987,
+      "countryId": 10,
+      "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
+    },
+    {
+      "itemId": 21,
+      "name": "Comfortably Numb",
+      "author": "Pink Floyd",
+      "genreId": 4,
+      "year": 1979,
+      "countryId": 10,
+      "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
+    },
+    {
+      "itemId": 22,
+      "name": "Another Brick in the Wall",
+      "author": "Pink Floyd",
+      "genreId": 4,
+      "year": 1979,
+      "countryId": 10,
+      "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
+    },
+    {
+      "itemId": 23,
+      "name": "Wish You Were Here",
+      "author": "Pink Floyd",
+      "genreId": 4,
+      "year": 1975,
+      "countryId": 10,
+      "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
+    },
+    {
+      "itemId": 24,
+      "name": "Highway to Hell",
+      "author": "AC/DC",
+      "genreId": 4,
+      "year": 1979,
+      "countryId": 10,
+      "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
+    },
+    {
+      "itemId": 25,
+      "name": "Back in Black",
+      "author": "AC/DC",
+      "genreId": 4,
+      "year": 1980,
+      "countryId": 10,
+      "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
+    },
+    {
+      "itemId": 26,
+      "name": "Imagine",
+      "author": "John Lennon",
+      "genreId": 3,
+      "year": 1971,
+      "countryId": 2,
+      "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
+    },
+    {
+      "itemId": 27,
+      "name": "Bohemian Rhapsody",
+      "author": "Queen",
+      "genreId": 1,
+      "year": 1975,
+      "countryId": 1,
+      "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
+    },
+    {
+      "itemId": 28,
+      "name": "Stairway to Heaven",
+      "author": "Led Zeppelin",
+      "genreId": 4,
+      "year": 1971,
+      "countryId": 10,
+      "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
+    },
+    {
+      "itemId": 29,
+      "name": "Bohemian Rhapsody",
+      "author": "Queen",
+      "genreId": 1,
+      "year": 1975,
+      "countryId": 1,
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     }
   ]

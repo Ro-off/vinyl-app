@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { musicListData } from "./musicData.json";
 import description from "./describeData.json";
+import { useState } from "react";
 
 export const Application = () => {
   const musicList = [...Object.values(musicListData)];
@@ -9,6 +10,8 @@ export const Application = () => {
 
   const collection = [1, 2, 5, 12];
   const favorites = [3, 4, 7];
+  const [currentPage] = useState(1);
+  let itemsOnPage = 12;
 
   function addToCollection() {
     console.error("Collection not implemented");
@@ -103,23 +106,40 @@ export const Application = () => {
     </div>
   );
 
-  const cardContainer = (
-    <div id="items-container"> {musicList.map(renderCard)} </div>
-  );
+  function filterItemsOnPage(element, index) {
+    if (
+      index <= currentPage * itemsOnPage &&
+      index <= currentPage * (itemsOnPage - 1)
+    )
+      return true;
+  }
 
-  const navigationPages = (
-    <div id="pages-container">
-      <div id="pages">
-        <button className="page-id" id="active-page">
-          1
-        </button>
-        <button className="page-id">2</button>
-        <button className="page-id">3</button>
-        <p>...</p>
-        <button className="page-id">10</button>
-      </div>
+  const cardContainer = (
+    <div id="items-container">
+      {musicList.filter(filterItemsOnPage).map(renderCard)}
     </div>
   );
+
+  function navigationPages(list, currentPage) {
+    let pageSize = 12;
+    let pagesCount = Math.ceil(list.length / pageSize);
+    return (
+      <div id="pages-container">
+        <div id="pages">
+          {Array.from({ length: pagesCount }, (_, i) => (
+            <button
+              key={i}
+              className={clsx("page-id", {
+                "active-page": i + 1 == currentPage,
+              })}
+            >
+              {i + 1}
+            </button>
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   function renderCard({
     itemId,
@@ -203,7 +223,7 @@ export const Application = () => {
       {navigationHeader}
       {filter}
       {cardContainer}
-      {navigationPages}
+      {navigationPages(musicList, currentPage)}
     </>
   );
 };
