@@ -3,18 +3,7 @@ import PropTypes from "prop-types";
 import { musicList } from "./contentController";
 
 export function CardContainer(prop) {
-  const {
-    currentPage,
-    itemsOnPage,
-    // collection,
-    // favorites,
-    // addToCollection,
-    // removeFromCollection,
-    // addToFavorites,
-    // removeFromFavorites,
-    // genres,
-    // countries,
-  } = prop;
+  const { currentPage, itemsOnPage } = prop;
 
   function filterItemsOnPage(element, index) {
     if (
