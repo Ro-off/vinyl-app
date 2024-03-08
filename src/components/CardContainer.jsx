@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 import { musicList } from "./contentController";
 
 export function CardContainer(prop) {
-  console.log("0");
-  console.log(prop);
   const {
     currentPage,
     itemsOnPage,
