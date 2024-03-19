@@ -1,16 +1,11 @@
 import clsx from "clsx";
-import {
-  collection,
-  favorites,
-  genres,
-  countries,
-  addToFavorites,
-  removeFromFavorites,
-  addToCollection,
-  removeFromCollection,
-} from "./contentController";
+import PropTypes from "prop-types";
+import { useGenres } from "../../hooks/useGenres";
+import { useCountries } from "../../hooks/useCountries";
+import { useFavorites } from "../../hooks/useFavorites";
+import { useCollection } from "../../hooks/useCollection";
 
-export function renderCard({
+export function RenderCard({
   itemId,
   name,
   author,
@@ -19,28 +14,31 @@ export function renderCard({
   countryId,
   imageSrc,
 }) {
-  let inCollection = collection.includes(itemId);
-  let inFavorites = favorites.includes(itemId);
+  const { collection, addToCollection, removeFromCollection } = useCollection();
+  const { favorites, addToFavorites, removeFromFavorites } = useFavorites();
+
+  const genres = useGenres();
+  const countries = useCountries();
 
   return (
     <div className="item" key={itemId}>
       <button
         type="button"
         className={clsx("like-button", "like-button-add", {
-          "button-hidden": inFavorites,
+          "button-hidden": favorites.includes(itemId),
         })}
         title="like-button"
-        onClick={() => addToFavorites()}
+        onClick={() => addToFavorites(itemId)}
       >
         <img alt="Add to favorites" src="src/assets/icons/heart_outline.svg" />
       </button>
       <button
         type="button"
         className={clsx("like-button", "like-button-rem", {
-          "button-hidden": !inFavorites,
+          "button-hidden": !favorites.includes(itemId),
         })}
         title="like-button"
-        onClick={() => removeFromFavorites()}
+        onClick={() => removeFromFavorites(itemId)}
       >
         <img alt="Add to favorites" src="src/assets/icons/heart_filled.svg" />
       </button>
@@ -65,22 +63,32 @@ export function renderCard({
       </div>
       <button
         className={clsx("add-button", "collectionButton", {
-          "button-hidden": inCollection,
+          "button-hidden": collection.includes(itemId),
         })}
         type="button"
-        onClick={() => addToCollection()}
+        onClick={() => addToCollection(itemId)}
       >
         <p>Add</p> <img alt="" src="/src/assets/icons/plus.svg" />
       </button>
       <button
         className={clsx("remove-button", "collectionButton", {
-          "button-hidden": !inCollection,
+          "button-hidden": !collection.includes(itemId),
         })}
         type="button"
-        onClick={() => removeFromCollection()}
+        onClick={() => removeFromCollection(itemId)}
       >
         <p>Remove</p> <img alt="" src="/src/assets/icons/done.svg" />
       </button>
     </div>
   );
 }
+
+RenderCard.propTypes = {
+  itemId: PropTypes.number,
+  name: PropTypes.string,
+  year: PropTypes.number,
+  author: PropTypes.string,
+  genreId: PropTypes.number,
+  countryId: PropTypes.number,
+  imageSrc: PropTypes.string,
+};

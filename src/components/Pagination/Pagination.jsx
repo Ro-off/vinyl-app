@@ -1,11 +1,10 @@
 import clsx from "clsx";
 import PropTypes from "prop-types";
-import { musicList } from "./contentController";
+import { useMusicList } from "../../hooks/useMusicList";
 
-export function NavigationPages(props) {
+export function Pagination({ currentPage, setCurrentPage }) {
+  const { musicList } = useMusicList();
   const itemsOnPage = 12;
-  let { currentPage, setCurrentPage } = props;
-
   let pagesCount = Math.ceil(musicList.length / itemsOnPage);
   return (
     <div id="pages-container">
@@ -26,7 +25,7 @@ export function NavigationPages(props) {
   );
 }
 
-NavigationPages.propTypes = {
+Pagination.propTypes = {
   listLength: PropTypes.number,
   currentPage: PropTypes.number,
   setCurrentPage: PropTypes.any,
