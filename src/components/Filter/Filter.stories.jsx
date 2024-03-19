@@ -1,4 +1,4 @@
-import { FilterSection } from "../components/Filter";
+import { FilterSection } from "./Filter";
 
 export default {
   title: "Filter",

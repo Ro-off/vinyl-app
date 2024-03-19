@@ -1,4 +1,4 @@
-import { renderCard } from "../components/Card";
+import { renderCard } from "./Card";
 
 export default {
   title: "Card",
