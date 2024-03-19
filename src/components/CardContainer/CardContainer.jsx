@@ -1,6 +1,7 @@
-import { RenderCard } from "./Card";
+import { RenderCard } from "./Card/Card";
 import PropTypes from "prop-types";
 import { useMusicList } from "../../hooks/useMusicList";
+import styles from "./CardContainer.module.css";
 
 export function CardContainer(prop) {
   const { musicList } = useMusicList();
@@ -14,7 +15,7 @@ export function CardContainer(prop) {
       return true;
   }
   return (
-    <div id="items-container">
+    <div id={styles.itemsContainer}>
       {musicList.filter(filterItemsOnPage).map(RenderCard)}
     </div>
   );

@@ -1,0 +1,45 @@
+
+#pagesContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 20px 0px;
+}
+
+#pages {
+  display: flex;
+  width: auto;
+  height: 30px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}
+
+#pages button, #pages p {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 8px;
+  margin: 0;
+  background: transparent;
+  color: var(--gray-text-1);
+  font-size: 16px;
+  font-weight: 500;
+  transition-duration: 0.1s;
+  transition-property: filter;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#pages .activePage {
+  background: var(--accent-text);
+  color: var(--bg-color);
+}
+
+#pages .pageId:hover {
+  cursor: pointer;
+  filter: brightness(1.2);
+}

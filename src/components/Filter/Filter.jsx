@@ -1,15 +1,22 @@
+import styles from "./Filter.module.css";
+
 export function FilterSection() {
   return (
     <div id="filter">
-      <form action="" id="filter-form">
-        <input type="text" name="artist" id="artist" placeholder="Genre" />
+      <form action="" id={styles.filterForm}>
+        <input
+          type="text"
+          name="artist"
+          id={styles.artist}
+          placeholder="Artist"
+        />
         <select
           name="genre"
-          id="genre"
+          id={styles.genre}
           title="genre"
           defaultValue="placeholder"
         >
-          <option className="filter-placeholder" value="placeholder">
+          <option className={styles.filterPlaceholder} value="placeholder">
             Genre
           </option>
           <option value="rock">Rock</option>
@@ -20,11 +27,11 @@ export function FilterSection() {
         </select>
         <select
           name="decade"
-          id="decade"
+          id={styles.decade}
           title="genre"
           defaultValue="placeholder"
         >
-          <option className="filter-placeholder" value="placeholder">
+          <option className={styles.filterPlaceholder} value="placeholder">
             Decade
           </option>
           <option value="1950-60">1950-60 рр.</option>
@@ -38,11 +45,11 @@ export function FilterSection() {
         </select>
         <select
           name="country"
-          id="country"
+          id={styles.country}
           title="country"
           defaultValue="placeholder"
         >
-          <option className="filter-placeholder" value="placeholder">
+          <option className={styles.filterPlaceholder} value="placeholder">
             Country
           </option>
           <option value="usa">USA</option>
@@ -51,7 +58,7 @@ export function FilterSection() {
           <option value="germany">Germany</option>
           <option value="ukraine">Ukraine</option>
         </select>
-        <input type="submit" value="Search" id="filter-search" />
+        <input type="submit" value="Search" id={styles.filterSearch} />
       </form>
     </div>
   );

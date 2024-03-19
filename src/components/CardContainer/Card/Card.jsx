@@ -1,9 +1,10 @@
 import clsx from "clsx";
 import PropTypes from "prop-types";
-import { useGenres } from "../../hooks/useGenres";
-import { useCountries } from "../../hooks/useCountries";
-import { useFavorites } from "../../hooks/useFavorites";
-import { useCollection } from "../../hooks/useCollection";
+import { useGenres } from "../../../hooks/useGenres";
+import { useCountries } from "../../../hooks/useCountries";
+import { useFavorites } from "../../../hooks/useFavorites";
+import { useCollection } from "../../../hooks/useCollection";
+import styles from "./Card.module.css";
 
 export function RenderCard({
   itemId,
@@ -21,12 +22,14 @@ export function RenderCard({
   const countries = useCountries();
 
   return (
-    <div className="item" key={itemId}>
+    <div className={styles.item} key={itemId}>
       <button
         type="button"
-        className={clsx("like-button", "like-button-add", {
-          "button-hidden": favorites.includes(itemId),
-        })}
+        className={clsx(
+          styles.likeButton,
+          "like-button-add",
+          favorites.includes(itemId) && styles.buttonHidden
+        )}
         title="like-button"
         onClick={() => addToFavorites(itemId)}
       >
@@ -34,19 +37,21 @@ export function RenderCard({
       </button>
       <button
         type="button"
-        className={clsx("like-button", "like-button-rem", {
-          "button-hidden": !favorites.includes(itemId),
-        })}
+        className={clsx(
+          styles.likeButton,
+          "like-button-rem",
+          !favorites.includes(itemId) && styles.buttonHidden
+        )}
         title="like-button"
         onClick={() => removeFromFavorites(itemId)}
       >
         <img alt="Add to favorites" src="src/assets/icons/heart_filled.svg" />
       </button>
       <img src={imageSrc} alt="" />
-      <div className="info-container">
+      <div className={styles.infoContainer}>
         <h5>{name}</h5>
         <h6>{author}</h6>
-        <div className="item-info">
+        <div className={styles.itemInfo}>
           <div>
             <p>Genre:</p>
             <p>{genres[genreId]}</p>
@@ -62,18 +67,22 @@ export function RenderCard({
         </div>
       </div>
       <button
-        className={clsx("add-button", "collectionButton", {
-          "button-hidden": collection.includes(itemId),
-        })}
+        className={clsx(
+          styles.addButton,
+          styles.collectionButton,
+          collection.includes(itemId) && styles.buttonHidden
+        )}
         type="button"
         onClick={() => addToCollection(itemId)}
       >
         <p>Add</p> <img alt="" src="/src/assets/icons/plus.svg" />
       </button>
       <button
-        className={clsx("remove-button", "collectionButton", {
-          "button-hidden": !collection.includes(itemId),
-        })}
+        className={clsx(
+          styles.removeButton,
+          styles.collectionButton,
+          !collection.includes(itemId) && styles.buttonHidden
+        )}
         type="button"
         onClick={() => removeFromCollection(itemId)}
       >
