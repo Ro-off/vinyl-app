@@ -28,11 +28,7 @@ export const Application = () => {
       <NavigationHeader />
       <Filter />
       <MusicCardContainer
-        musicListToDisplay={musicList.filter(filterItemsOnPage).map((item) => ({
-          ...item,
-          inCollection: collection.includes(item.itemId),
-          inFavorites: favorites.includes(item.itemId),
-        }))}
+        musicListToDisplay={musicList.filter(filterItemsOnPage)}
       />
       <Pagination
         currentPage={currentPage}
