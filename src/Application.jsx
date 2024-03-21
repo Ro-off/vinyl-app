@@ -4,14 +4,10 @@ import { Filter } from "./components/Filter/Filter";
 import { Pagination } from "./components/Pagination/Pagination";
 import { MusicCardContainer } from "./components/MusicCardContainer/MusicCardContainer";
 import { useMusicList } from "./hooks/useMusicList";
-import { useCollection } from "./hooks/useCollection";
-import { useFavorites } from "./hooks/useFavorites";
 
 export const Application = () => {
   const [currentPage, onCurrentPage] = useState(1);
   const musicList = useMusicList();
-  const { collection } = useCollection();
-  const { favorites } = useFavorites();
   let itemsOnPage = 12;
 
   const pagesCount = Math.ceil(musicList.length / itemsOnPage);
