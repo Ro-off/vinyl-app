@@ -1,6 +1,6 @@
 import styles from "./Filter.module.css";
 
-export function FilterSection() {
+export function Filter() {
   return (
     <div id="filter">
       <form action="" id={styles.filterForm}>

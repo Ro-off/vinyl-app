@@ -16,9 +16,13 @@ export function useFavorites() {
       setValue(newValue);
     }
   }
+
+  function toggleValue(elem) {
+    value.includes(elem) ? removeFromValueArr(elem) : addToValueArr(elem);
+  }
+
   return {
     favorites: value,
-    addToFavorites: addToValueArr,
-    removeFromFavorites: removeFromValueArr,
+    toggleFavorites: toggleValue,
   };
 }

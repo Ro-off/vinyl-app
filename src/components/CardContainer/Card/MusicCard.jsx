@@ -1,37 +1,24 @@
 import clsx from "clsx";
 import PropTypes from "prop-types";
-import { useGenres } from "../../../hooks/useGenres";
-import { useCountries } from "../../../hooks/useCountries";
-import { useFavorites } from "../../../hooks/useFavorites";
-import { useCollection } from "../../../hooks/useCollection";
-import styles from "./Card.module.css";
+import styles from "./MusicCard.module.css";
 
-export function RenderCard({
-  itemId,
-  name,
-  author,
-  genreId,
-  year,
-  countryId,
-  imageSrc,
-}) {
-  const { collection, addToCollection, removeFromCollection } = useCollection();
-  const { favorites, addToFavorites, removeFromFavorites } = useFavorites();
+export function MusicCard({ music, ...props }) {
+  const { inCollection, inFavorites, toggleFavorites, toggleCollection } =
+    props;
 
-  const genres = useGenres();
-  const countries = useCountries();
+  const { itemId, name, year, author, imageSrc, genre, country } = music;
 
   return (
-    <div className={styles.item} key={itemId}>
+    <div className={styles.item}>
       <button
         type="button"
         className={clsx(
           styles.likeButton,
           "like-button-add",
-          favorites.includes(itemId) && styles.buttonHidden
+          inFavorites && styles.buttonHidden
         )}
         title="like-button"
-        onClick={() => addToFavorites(itemId)}
+        onClick={() => toggleFavorites(itemId)}
       >
         <img alt="Add to favorites" src="src/assets/icons/heart_outline.svg" />
       </button>
@@ -40,10 +27,10 @@ export function RenderCard({
         className={clsx(
           styles.likeButton,
           "like-button-rem",
-          !favorites.includes(itemId) && styles.buttonHidden
+          !inFavorites && styles.buttonHidden
         )}
         title="like-button"
-        onClick={() => removeFromFavorites(itemId)}
+        onClick={() => toggleFavorites(itemId)}
       >
         <img alt="Add to favorites" src="src/assets/icons/heart_filled.svg" />
       </button>
@@ -54,7 +41,7 @@ export function RenderCard({
         <div className={styles.itemInfo}>
           <div>
             <p>Genre:</p>
-            <p>{genres[genreId]}</p>
+            <p>{genre}</p>
           </div>
           <div>
             <p>Year:</p>
@@ -62,7 +49,7 @@ export function RenderCard({
           </div>
           <div>
             <p>Country:</p>
-            <p>{countries[countryId]}</p>
+            <p>{country}</p>
           </div>
         </div>
       </div>
@@ -70,10 +57,10 @@ export function RenderCard({
         className={clsx(
           styles.addButton,
           styles.collectionButton,
-          collection.includes(itemId) && styles.buttonHidden
+          inCollection && styles.buttonHidden
         )}
         type="button"
-        onClick={() => addToCollection(itemId)}
+        onClick={() => toggleCollection(itemId)}
       >
         <p>Add</p> <img alt="" src="/src/assets/icons/plus.svg" />
       </button>
@@ -81,10 +68,10 @@ export function RenderCard({
         className={clsx(
           styles.removeButton,
           styles.collectionButton,
-          !collection.includes(itemId) && styles.buttonHidden
+          !inCollection && styles.buttonHidden
         )}
         type="button"
-        onClick={() => removeFromCollection(itemId)}
+        onClick={() => toggleCollection(itemId)}
       >
         <p>Remove</p> <img alt="" src="/src/assets/icons/done.svg" />
       </button>
@@ -92,12 +79,18 @@ export function RenderCard({
   );
 }
 
-RenderCard.propTypes = {
-  itemId: PropTypes.number,
-  name: PropTypes.string,
-  year: PropTypes.number,
-  author: PropTypes.string,
-  genreId: PropTypes.number,
-  countryId: PropTypes.number,
-  imageSrc: PropTypes.string,
+MusicCard.propTypes = {
+  music: PropTypes.shape({
+    itemId: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    year: PropTypes.number.isRequired,
+    author: PropTypes.string.isRequired,
+    imageSrc: PropTypes.string.isRequired,
+    genre: PropTypes.string.isRequired,
+    country: PropTypes.string.isRequired,
+  }),
+  inFavorites: PropTypes.bool.isRequired,
+  inCollection: PropTypes.bool.isRequired,
+  toggleFavorites: PropTypes.func.isRequired,
+  toggleCollection: PropTypes.func.isRequired,
 };

@@ -1,12 +1,8 @@
 import clsx from "clsx";
 import PropTypes from "prop-types";
-import { useMusicList } from "../../hooks/useMusicList";
 import styles from "./Pagination.module.css";
 
-export function Pagination({ currentPage, setCurrentPage }) {
-  const { musicList } = useMusicList();
-  const itemsOnPage = 12;
-  let pagesCount = Math.ceil(musicList.length / itemsOnPage);
+export function Pagination({ currentPage, onCurrentPage, pagesCount }) {
   return (
     <div id={styles.pagesContainer}>
       <div id={styles.pages}>
@@ -17,7 +13,7 @@ export function Pagination({ currentPage, setCurrentPage }) {
               styles.pageId,
               i + 1 == currentPage && styles.activePage
             )}
-            onClick={() => setCurrentPage(i + 1)}
+            onClick={() => onCurrentPage(i + 1)}
           >
             {i + 1}
           </button>
@@ -28,7 +24,7 @@ export function Pagination({ currentPage, setCurrentPage }) {
 }
 
 Pagination.propTypes = {
-  listLength: PropTypes.number,
-  currentPage: PropTypes.number,
-  setCurrentPage: PropTypes.any,
+  pagesCount: PropTypes.number.isRequired,
+  currentPage: PropTypes.number.isRequired,
+  onCurrentPage: PropTypes.func.isRequired,
 };

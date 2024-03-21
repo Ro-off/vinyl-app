@@ -1,9 +1,7 @@
 import { useState } from "react";
 
-const collection = [1, 2, 5, 12];
-
 export function useCollection() {
-  const [value, setValue] = useState(collection);
+  const [value, setValue] = useState([1, 2, 5, 12]);
 
   function addToValueArr(elem) {
     const newValue = [...value, elem];
@@ -16,9 +14,12 @@ export function useCollection() {
       setValue(newValue);
     }
   }
+
+  function toggleValue(elem) {
+    value.includes(elem) ? removeFromValueArr(elem) : addToValueArr(elem);
+  }
   return {
     collection: value,
-    addToCollection: addToValueArr,
-    removeFromCollection: removeFromValueArr,
+    toggleCollection: toggleValue,
   };
 }

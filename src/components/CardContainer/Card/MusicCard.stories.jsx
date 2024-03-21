@@ -1,4 +1,4 @@
-import { renderCard } from "./Card";
+import { renderCard } from "./MusicCard";
 
 export default {
   title: "Card",
