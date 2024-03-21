@@ -1,4 +1,4 @@
-import { MusicCard } from "./Card/MusicCard";
+import { MusicCard } from "./MusicCard/MusicCard";
 import PropTypes from "prop-types";
 import styles from "./MusicCardContainer.module.css";
 import { useCollection } from "../../hooks/useCollection";

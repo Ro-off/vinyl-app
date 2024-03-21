@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NavigationHeader } from "./components/NavigationHeader/NavigationHeader";
 import { Filter } from "./components/Filter/Filter";
 import { Pagination } from "./components/Pagination/Pagination";
-import { MusicCardContainer } from "./components/CardContainer/MusicCardContainer";
+import { MusicCardContainer } from "./components/MusicCardContainer/MusicCardContainer";
 import { useMusicList } from "./hooks/useMusicList";
 import { useCollection } from "./hooks/useCollection";
 import { useFavorites } from "./hooks/useFavorites";
