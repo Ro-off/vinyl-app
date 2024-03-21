@@ -1,12 +1,12 @@
 
-#pagesContainer {
+.pagesContainer {
   display: flex;
   width: 100%;
   justify-content: center;
   margin: 20px 0px;
 }
 
-#pages {
+.pages {
   display: flex;
   width: auto;
   height: 30px;
@@ -15,7 +15,7 @@
   justify-content: space-evenly;
 }
 
-#pages button, #pages p {
+.pages button, .pages p {
   display: inline-flex;
   width: 40px;
   height: 40px;
@@ -34,12 +34,12 @@
   user-select: none;
 }
 
-#pages .activePage {
+.pages .activePage {
   background: var(--accent-text);
   color: var(--bg-color);
 }
 
-#pages .pageId:hover {
+.pages .pageId:hover {
   cursor: pointer;
   filter: brightness(1.2);
 }

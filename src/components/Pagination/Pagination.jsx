@@ -4,8 +4,8 @@ import styles from "./Pagination.module.css";
 
 export function Pagination({ currentPage, onCurrentPage, pagesCount }) {
   return (
-    <div id={styles.pagesContainer}>
-      <div id={styles.pages}>
+    <div className={styles.pagesContainer}>
+      <div className={styles.pages}>
         {Array.from({ length: pagesCount }, (_, i) => (
           <button
             key={i}

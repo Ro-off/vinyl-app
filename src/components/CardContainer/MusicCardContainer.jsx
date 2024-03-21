@@ -8,7 +8,7 @@ export function MusicCardContainer({ musicListToDisplay }) {
   const { collection, toggleCollection } = useCollection();
   const { favorites, toggleFavorites } = useFavorites();
   return (
-    <div id={styles.itemsContainer}>
+    <div className={styles.itemsContainer}>
       {musicListToDisplay.map((music) => (
         <MusicCard
           key={music.itemId}

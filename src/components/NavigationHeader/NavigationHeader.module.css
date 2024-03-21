@@ -17,33 +17,33 @@ header * {
 }
 
 
-#backButton img {
+.backButton img {
   height: 15px;
   align-self: center;
   margin: 0px;
 }
 
-#backButton p {
+.backButton p {
   align-self: center;
   margin: 10px;
   font-size: 18px;
   font-weight: 400;
 }
 
-#likeButton img {
+.likeButton img {
   height: 20px;
   align-self: center;
   margin: 0px;
 }
 
-#libraryButton img {
+.libraryButton img {
   height: 20px;
   align-self: center;
   margin: 0px;
   justify-self: center;
 }
 
-#backButton {
+.backButton {
   display: inline-flex;
   height: 50px;
   flex-direction: row;
@@ -59,20 +59,20 @@ header * {
   user-select: none;
 }
 
-#backButton:hover {
+.backButton:hover {
   padding-right: 5px;
   cursor: pointer;
   filter: brightness(1.1);
   transform: translate(-5px, 0px);
 }
 
-#backButton:active {
+.backButton:active {
   padding-right: 20px;
   filter: brightness(1.1);
   transform: translate(-20px, 0px);
 }
 
-#favoritesButton {
+.favoritesButton {
   display: inline-flex;
   width: 50px;
   height: 50px;
@@ -83,16 +83,16 @@ header * {
   transition-timing-function: ease-in-out;
 }
 
-#favoritesButton:hover {
+.favoritesButton:hover {
   cursor: pointer;
   filter: drop-shadow(0px 0px 2px var(--gray-text-1));
 }
 
-#favoritesButton:active {
+.favoritesButton:active {
   filter: drop-shadow(0px 0px 2px var(--bg-color));
 }
 
-#libraryButton {
+.libraryButton {
   display: inline-flex;
   width: 50px;
   height: 50px;
@@ -100,11 +100,11 @@ header * {
   color: var(--bg-color);
 }
 
-#libraryButton:hover {
+.libraryButton:hover {
   cursor: pointer;
   filter: drop-shadow(0px 0px 2px var(--gray-text-1));
 }
 
-#libraryButton:active {
+.libraryButton:active {
   filter: drop-shadow(0px 0px 2px var(--bg-color));
 }
