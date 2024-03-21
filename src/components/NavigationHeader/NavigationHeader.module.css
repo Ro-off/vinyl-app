@@ -17,10 +17,8 @@ header * {
 }
 
 
-.backButton img {
-  height: 15px;
-  align-self: center;
-  margin: 0px;
+.backButton .icon :only-child{
+  stroke: var(--text-1)
 }
 
 .backButton p {

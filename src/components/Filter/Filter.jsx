@@ -2,17 +2,17 @@ import styles from "./Filter.module.css";
 
 export function Filter() {
   return (
-    <div id="filter">
-      <form action="" id={styles.filterForm}>
+    <div className="filter">
+      <form action="" className={styles.filterForm}>
         <input
           type="text"
           name="artist"
-          id={styles.artist}
+          className={styles.artist}
           placeholder="Artist"
         />
         <select
           name="genre"
-          id={styles.genre}
+          className={styles.genre}
           title="genre"
           defaultValue="placeholder"
         >
@@ -27,7 +27,7 @@ export function Filter() {
         </select>
         <select
           name="decade"
-          id={styles.decade}
+          className={styles.decade}
           title="genre"
           defaultValue="placeholder"
         >
@@ -45,7 +45,7 @@ export function Filter() {
         </select>
         <select
           name="country"
-          id={styles.country}
+          className={styles.country}
           title="country"
           defaultValue="placeholder"
         >
@@ -58,7 +58,7 @@ export function Filter() {
           <option value="germany">Germany</option>
           <option value="ukraine">Ukraine</option>
         </select>
-        <input type="submit" value="Search" id={styles.filterSearch} />
+        <input type="submit" value="Search" className={styles.filterSearch} />
       </form>
     </div>
   );

@@ -1,10 +1,10 @@
-#filter {
+.filter {
   display: flex;
   width: calc(100% - 20px);
   margin: 0px 10px;
 }
 
-#filterForm {
+.filterForm {
   display: flex;
   width: 100%;
   flex-direction: row;
@@ -16,7 +16,7 @@
   display: none;
 }
 
-#filterForm > * {
+.filterForm > * {
   height: 42px;
   padding-right: 20px;
   padding-left: 10px;
@@ -36,11 +36,11 @@
   outline: var(--gray-border) solid 1px;
 }
 
-#filterForm input::placeholder {
+.filterForm input::placeholder {
   color: var(--gray-text-1);
 }
 
-#filterForm select {
+.filterForm select {
   appearance: none;
   background-image: url("/src/assets/icons/chevron_down.svg");
   background-position: right;
@@ -49,23 +49,23 @@
   background-size: 16px;
 }
 
-#artist {
+.artist {
   width: calc(100% - 20px);
 }
 
-#genre {
+.genre {
   width: calc(50% - 20px);
 }
 
-#decade {
+.decade {
   width: calc(50% - 20px);
 }
 
-#country {
+.country {
   width: calc(100% - 20px);
 }
 
-#filterSearch {
+.filterSearch {
   width: calc(100% - 20px);
   height: 44px;
   align-self: center;
@@ -79,38 +79,38 @@
   transition-property: filter;
 }
 
-#filterSearch:hover {
+.filterSearch:hover {
   cursor: pointer;
   filter: brightness(1.1);
 }
 
-#filterSearch:active {
+.filterSearch:active {
   filter: brightness(1.2);
 }
 
 
 @media screen and (min-width: 130vh) {
 
-    #artist {
+    .artist {
       width: calc(50% - 30px);
       order: 1;
       padding-right: 0px;
     }
 
-    #genre {
+    .genre {
       order: 3;
     }
 
-    #decade {
+    .decade {
       order: 4;
     }
 
-    #country {
+    .country {
       width: calc(50% - 20px);
       order: 2;
     }
 
-    #filterSearch {
+    .filterSearch {
       order: 5;
     }
   }

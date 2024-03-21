@@ -32,7 +32,7 @@
   flex-wrap: nowrap;
 }
 
-.addButton p,
+.button p,
 .removeButton p {
   margin: 0px 3px;
   font-size: 16px;
@@ -49,10 +49,7 @@
   text-wrap: nowrap;
 }
 
-.addButton img,
-.removeButton img {
-  width: 17px;
-  height: 17px;
+.button .icon {
   margin-left: 3px;
 }
 
@@ -69,9 +66,7 @@
   text-overflow: ellipsis;
 }
 
-.addButton,
-.removeButton {
-  z-index: 2;
+.button {
   display: inline-flex;
   width: 100%;
   height: 44px;
@@ -95,10 +90,9 @@
 .removeButton {
   background-color: var(--gray-border);
   color: var(--accent-text);
-  transform: translate(0px, -44px);
 }
 
-.addButton:hover {
+.button:hover {
   cursor: pointer;
   filter: brightness(1.2);
 }
@@ -108,13 +102,8 @@
   filter: brightness(0.97);
 }
 
-.buttonHidden {
-  z-index: 1 !important;
-  opacity: 80%;
-  pointer-events: none;
-}
 
-.likeButton img {
+.likeButton .icon {
   width: 20px;
   height: 16px;
   align-self: center;
@@ -176,15 +165,10 @@
       margin-left: 10px;
     }
 
-    .addButton,
-    .removeButton {
+    .button {
       width: calc(100% - 169px - 10px - 30px);
       margin-top: 20px;
       margin-bottom: 10px;
       margin-left: 10px;
-    }
-
-    .removeButton {
-      transform: translate(calc(-100% - 10px), calc(169px - 44px - 10px - 10px)) !important;
     }
 }

@@ -1,6 +1,10 @@
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import styles from "./MusicCard.module.css";
+import { HeartFilled } from "../../Icon/HeartFilled";
+import { HeartOutline } from "../../Icon/HeartOutline";
+import { Plus } from "../../Icon/Plus";
+import { Done } from "../../Icon/Done";
 
 export function MusicCard({ music, ...props }) {
   const { inCollection, inFavorites, toggleFavorites, toggleCollection } =
@@ -12,28 +16,17 @@ export function MusicCard({ music, ...props }) {
     <div className={styles.item}>
       <button
         type="button"
-        className={clsx(
-          styles.likeButton,
-          "like-button-add",
-          inFavorites && styles.buttonHidden
-        )}
+        className={clsx(styles.likeButton)}
         title="like-button"
         onClick={() => toggleFavorites(itemId)}
       >
-        <img alt="Add to favorites" src="src/assets/icons/heart_outline.svg" />
-      </button>
-      <button
-        type="button"
-        className={clsx(
-          styles.likeButton,
-          "like-button-rem",
-          !inFavorites && styles.buttonHidden
+        {inFavorites ? (
+          <HeartFilled className={styles.icon} />
+        ) : (
+          <HeartOutline className={styles.icon} />
         )}
-        title="like-button"
-        onClick={() => toggleFavorites(itemId)}
-      >
-        <img alt="Add to favorites" src="src/assets/icons/heart_filled.svg" />
       </button>
+
       <img src={imageSrc} alt="" />
       <div className={styles.infoContainer}>
         <h5>{name}</h5>
@@ -54,26 +47,16 @@ export function MusicCard({ music, ...props }) {
         </div>
       </div>
       <button
-        className={clsx(
-          styles.addButton,
-          styles.collectionButton,
-          inCollection && styles.buttonHidden
-        )}
+        className={clsx(styles.button, { [styles.removeButton]: inCollection })}
         type="button"
         onClick={() => toggleCollection(itemId)}
       >
-        <p>Add</p> <img alt="" src="/src/assets/icons/plus.svg" />
-      </button>
-      <button
-        className={clsx(
-          styles.removeButton,
-          styles.collectionButton,
-          !inCollection && styles.buttonHidden
+        <p>{inCollection ? "Remove" : "Add"}</p>
+        {inCollection ? (
+          <Done className={styles.icon} />
+        ) : (
+          <Plus className={styles.icon} />
         )}
-        type="button"
-        onClick={() => toggleCollection(itemId)}
-      >
-        <p>Remove</p> <img alt="" src="/src/assets/icons/done.svg" />
       </button>
     </div>
   );
