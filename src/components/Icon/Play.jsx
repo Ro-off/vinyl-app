@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export function Play({ color = "#0A2530", className, size = "19px" }) {
+export function PlayIcon({ color = "#0A2530", className, size = "19px" }) {
   return (
     <svg
       className={className}
@@ -17,7 +17,7 @@ export function Play({ color = "#0A2530", className, size = "19px" }) {
   );
 }
 
-Play.propTypes = {
+PlayIcon.propTypes = {
   size: PropTypes.string,
   color: PropTypes.string,
   className: PropTypes.string,

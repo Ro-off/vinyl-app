@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export function Plus({ color = "white", className, size = "16px" }) {
+export function PlusIcon({ color = "white", className, size = "16px" }) {
   return (
     <svg
       className={className}
@@ -20,7 +20,7 @@ export function Plus({ color = "white", className, size = "16px" }) {
   );
 }
 
-Plus.propTypes = {
+PlusIcon.propTypes = {
   size: PropTypes.string,
   color: PropTypes.string,
   className: PropTypes.string,

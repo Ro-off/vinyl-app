@@ -1,7 +1,7 @@
 import styles from "./NavigationHeader.module.css";
-import { ChevronLeft } from "../Icon/ChevronLeft";
-import { Liked } from "../Icon/Liked";
-import { Folder } from "../Icon/Folder";
+import { ChevronLeftIcon } from "../Icon/ChevronLeft";
+import { LikedIcon } from "../Icon/Liked";
+import { FolderIcon } from "../Icon/Folder";
 
 export function NavigationHeader() {
   return (
@@ -12,14 +12,14 @@ export function NavigationHeader() {
         tabIndex={0}
         onClick={window.history.back()}
       >
-        <ChevronLeft className={styles.icon} />
+        <ChevronLeftIcon className={styles.icon} />
         <p>Back</p>
       </div>
       <div className={styles.favoritesButton}>
-        <Liked />
+        <LikedIcon />
       </div>
       <div className={styles.libraryButton}>
-        <Folder />
+        <FolderIcon />
       </div>
     </header>
   );

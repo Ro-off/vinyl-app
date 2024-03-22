@@ -1,7 +1,11 @@
 import PropTypes from "prop-types";
 
 //todo: fix icon
-export function HeartFilled({ color = "#FF4500", className, size = "18px" }) {
+export function HeartFilledIcon({
+  color = "#FF4500",
+  className,
+  size = "18px",
+}) {
   return (
     <svg
       className={className}
@@ -18,7 +22,7 @@ export function HeartFilled({ color = "#FF4500", className, size = "18px" }) {
   );
 }
 
-HeartFilled.propTypes = {
+HeartFilledIcon.propTypes = {
   size: PropTypes.string,
   color: PropTypes.string,
   className: PropTypes.string,

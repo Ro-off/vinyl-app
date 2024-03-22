@@ -1,8 +1,8 @@
-import { FilterSection } from "./Filter";
+import { Filter } from "./Filter";
 
 export default {
   title: "Filter",
-  component: FilterSection,
+  component: Filter,
 };
 
-export const Default = (args) => <FilterSection {...args} />;
+export const Default = (args) => <Filter {...args} />;

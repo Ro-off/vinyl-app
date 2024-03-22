@@ -1,15 +1,18 @@
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import styles from "./MusicCard.module.css";
-import { HeartFilled } from "../../Icon/HeartFilled";
-import { HeartOutline } from "../../Icon/HeartOutline";
-import { Plus } from "../../Icon/Plus";
-import { Done } from "../../Icon/Done";
+import { HeartFilledIcon } from "../../Icon/HeartFilled";
+import { HeartOutlineIcon } from "../../Icon/HeartOutline";
+import { PlusIcon } from "../../Icon/Plus";
+import { DoneIcon } from "../../Icon/Done";
 
-export function MusicCard({ music, ...props }) {
-  const { inCollection, inFavorites, toggleFavorites, toggleCollection } =
-    props;
-
+export function MusicCard({
+  music,
+  inCollection,
+  inFavorites,
+  onToggleFavorites,
+  onToggleCollection,
+}) {
   const { itemId, name, year, author, imageSrc, genre, country } = music;
 
   return (
@@ -18,12 +21,12 @@ export function MusicCard({ music, ...props }) {
         type="button"
         className={clsx(styles.likeButton)}
         title="like-button"
-        onClick={() => toggleFavorites(itemId)}
+        onClick={() => onToggleFavorites(itemId)}
       >
         {inFavorites ? (
-          <HeartFilled className={styles.icon} />
+          <HeartFilledIcon className={styles.icon} />
         ) : (
-          <HeartOutline className={styles.icon} />
+          <HeartOutlineIcon className={styles.icon} />
         )}
       </button>
 
@@ -49,13 +52,13 @@ export function MusicCard({ music, ...props }) {
       <button
         className={clsx(styles.button, { [styles.removeButton]: inCollection })}
         type="button"
-        onClick={() => toggleCollection(itemId)}
+        onClick={() => onToggleCollection(itemId)}
       >
         <p>{inCollection ? "Remove" : "Add"}</p>
         {inCollection ? (
-          <Done className={styles.icon} />
+          <DoneIcon className={styles.icon} />
         ) : (
-          <Plus className={styles.icon} />
+          <PlusIcon className={styles.icon} />
         )}
       </button>
     </div>
@@ -74,6 +77,6 @@ MusicCard.propTypes = {
   }),
   inFavorites: PropTypes.bool.isRequired,
   inCollection: PropTypes.bool.isRequired,
-  toggleFavorites: PropTypes.func.isRequired,
-  toggleCollection: PropTypes.func.isRequired,
+  onToggleFavorites: PropTypes.func.isRequired,
+  onToggleCollection: PropTypes.func.isRequired,
 };

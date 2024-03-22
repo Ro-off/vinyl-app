@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export function Folder({ color = "white", className, size = "20px" }) {
+export function FolderIcon({ color = "white", className, size = "20px" }) {
   return (
     <svg
       className={className}
@@ -20,7 +20,7 @@ export function Folder({ color = "white", className, size = "20px" }) {
   );
 }
 
-Folder.propTypes = {
+FolderIcon.propTypes = {
   size: PropTypes.string,
   color: PropTypes.string,
   className: PropTypes.string,

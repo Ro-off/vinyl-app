@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export function Close({ color = "#black", className, size = "14px" }) {
+export function CloseIcon({ color = "#black", className, size = "14px" }) {
   return (
     <svg
       className={className}
@@ -20,7 +20,7 @@ export function Close({ color = "#black", className, size = "14px" }) {
   );
 }
 
-Close.propTypes = {
+CloseIcon.propTypes = {
   size: PropTypes.string,
   color: PropTypes.string,
   className: PropTypes.string,

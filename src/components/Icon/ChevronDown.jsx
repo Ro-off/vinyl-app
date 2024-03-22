@@ -1,4 +1,6 @@
-export function chevronDown({ size = 14, stroke = "#0A2530" }) {
+import PropTypes from "prop-types";
+
+export function ChevronDownIcon({ size = 14, color = "#0A2530" }) {
   return (
     <svg
       width={size}
@@ -9,7 +11,7 @@ export function chevronDown({ size = 14, stroke = "#0A2530" }) {
     >
       <path
         d="M1 1L7 7L13 1"
-        stroke={stroke}
+        stroke={color}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -17,3 +19,9 @@ export function chevronDown({ size = 14, stroke = "#0A2530" }) {
     </svg>
   );
 }
+
+ChevronDownIcon.propTypes = {
+  size: PropTypes.string,
+  color: PropTypes.string,
+  className: PropTypes.string,
+};

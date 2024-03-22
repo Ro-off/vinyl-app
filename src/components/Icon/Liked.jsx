@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export function Liked({ color = "white", className, size = "20px" }) {
+export function LikedIcon({ color = "white", className, size = "20px" }) {
   return (
     <svg
       className={className}
@@ -19,7 +19,7 @@ export function Liked({ color = "white", className, size = "20px" }) {
   );
 }
 
-Liked.propTypes = {
+LikedIcon.propTypes = {
   size: PropTypes.string,
   color: PropTypes.string,
   className: PropTypes.string,

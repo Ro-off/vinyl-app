@@ -1,6 +1,10 @@
 import PropTypes from "prop-types";
 
-export function ChevronLeft({ color = "#0A2530", className, size = "14px" }) {
+export function ChevronLeftIcon({
+  color = "#0A2530",
+  className,
+  size = "14px",
+}) {
   return (
     <svg
       className={className}
@@ -20,7 +24,7 @@ export function ChevronLeft({ color = "#0A2530", className, size = "14px" }) {
   );
 }
 
-ChevronLeft.propTypes = {
+ChevronLeftIcon.propTypes = {
   size: PropTypes.string,
   color: PropTypes.string,
   className: PropTypes.string,

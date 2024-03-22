@@ -2,7 +2,7 @@ import clsx from "clsx";
 import PropTypes from "prop-types";
 import styles from "./Pagination.module.css";
 
-export function Pagination({ currentPage, onCurrentPage, pagesCount }) {
+export function Pagination({ currentPage, onPageChange, pagesCount }) {
   return (
     <div className={styles.pagesContainer}>
       <div className={styles.pages}>
@@ -13,7 +13,7 @@ export function Pagination({ currentPage, onCurrentPage, pagesCount }) {
               styles.pageId,
               i + 1 == currentPage && styles.activePage
             )}
-            onClick={() => onCurrentPage(i + 1)}
+            onClick={() => onPageChange(i + 1)}
           >
             {i + 1}
           </button>
@@ -26,5 +26,5 @@ export function Pagination({ currentPage, onCurrentPage, pagesCount }) {
 Pagination.propTypes = {
   pagesCount: PropTypes.number.isRequired,
   currentPage: PropTypes.number.isRequired,
-  onCurrentPage: PropTypes.func.isRequired,
+  onPageChange: PropTypes.func.isRequired,
 };
