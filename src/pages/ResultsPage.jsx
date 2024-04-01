@@ -4,15 +4,13 @@ import { MusicCardContainer } from "../components/MusicCardContainer/MusicCardCo
 import { useMusicList } from "../hooks/useMusicList";
 import { useCollection } from "../hooks/useCollection";
 import { useFavorites } from "../hooks/useFavorites";
-import { useParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 export const ResultsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const musicList = useMusicList();
-  const searchFilters = useParams();
+  const [params] = useSearchParams();
   let itemsOnPage = 12;
-  const url = window.location;
-  console.log(url);
 
   const { collection, toggleCollection } = useCollection();
   const { favorites, toggleFavorites } = useFavorites();
@@ -29,7 +27,12 @@ export const ResultsPage = () => {
   }
 
   function filterItemsBySearchQuery(element) {
-    if (element.genre === searchFilters.genre) return true;
+    if (
+      (!params.get("genre") || params.get("genre") === element.genre) &&
+      (!params.get("artist") || params.get("artist") === element.artist) &&
+      (!params.get("country") || params.get("country") === element.country)
+    )
+      return true;
   }
 
   return (
