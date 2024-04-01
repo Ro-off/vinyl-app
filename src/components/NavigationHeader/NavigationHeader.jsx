@@ -10,7 +10,7 @@ export function NavigationHeader() {
         role="button"
         className={styles.backButton}
         tabIndex={0}
-        onClick={window.history.back()}
+        onClick={() => window.history.back()}
       >
         <ChevronLeftIcon className={styles.icon} />
         <p>Back</p>
