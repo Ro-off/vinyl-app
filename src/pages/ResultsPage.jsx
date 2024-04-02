@@ -6,12 +6,14 @@ import { useState } from "react";
 import { useMusicList } from "../hooks/useMusicList";
 import { useCollection } from "../hooks/useCollection";
 import { useFavorites } from "../hooks/useFavorites";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 
 export const ResultsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const musicList = useMusicList();
+
   const [params, setParams] = useSearchParams();
+  const navigate = useNavigate();
 
   const { collection, toggleCollection } = useCollection();
   const { favorites, toggleFavorites } = useFavorites();
@@ -22,6 +24,9 @@ export const ResultsPage = () => {
     country: params.get("country"),
   };
 
+  if (!searchParams.genre && !searchParams.artist && !searchParams.country) {
+    navigate("/search");
+  }
   const resultsList = musicList.filter(filterItemsBySearchQuery);
 
   let itemsOnPage = 12;
