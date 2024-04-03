@@ -1,6 +1,34 @@
 import styles from "./Filter.module.css";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function Filter() {
+  const [filterFields, setFilterFields] = useState({
+    artist: "",
+    genre: "genre",
+    country: "country",
+  });
+
+  const navigate = useNavigate();
+
+  function handleChange(e, field) {
+    setFilterFields({ ...filterFields, [field]: e.target.value });
+  }
+
+  function navigateToResultsPage() {
+    let searchParams = [];
+    if (filterFields.artist !== "")
+      searchParams.push("artist=" + filterFields.artist);
+    if (filterFields.genre !== "genre")
+      searchParams.push("genre=" + filterFields.genre);
+    if (filterFields.country !== "country")
+      searchParams.push("country=" + filterFields.country);
+
+    const searchParamsString = searchParams.join("&");
+    if (searchParamsString !== "")
+      navigate("/search/results/?" + searchParamsString);
+  }
+
   return (
     <div className="filter">
       <form action="" className={styles.filterForm}>
@@ -9,12 +37,16 @@ export function Filter() {
           name="artist"
           className={styles.artist}
           placeholder="Artist"
+          value={filterFields.artist}
+          onChange={(e) => handleChange(e, "artist")}
         />
         <select
           name="genre"
           className={styles.genre}
           title="genre"
           defaultValue="placeholder"
+          value={filterFields.genre}
+          onChange={(e) => handleChange(e, "genre")}
         >
           <option className={styles.filterPlaceholder} value="placeholder">
             Genre
@@ -48,6 +80,8 @@ export function Filter() {
           className={styles.country}
           title="country"
           defaultValue="placeholder"
+          value={filterFields.country}
+          onChange={(e) => handleChange(e, "country")}
         >
           <option className={styles.filterPlaceholder} value="placeholder">
             Country
@@ -58,7 +92,12 @@ export function Filter() {
           <option value="germany">Germany</option>
           <option value="ukraine">Ukraine</option>
         </select>
-        <input type="submit" value="Search" className={styles.filterSearch} />
+        <input
+          type="submit"
+          value="Search"
+          className={styles.filterSearch}
+          onClick={() => navigateToResultsPage()}
+        />
       </form>
     </div>
   );
