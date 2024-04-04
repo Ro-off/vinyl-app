@@ -4,6 +4,7 @@ import { MusicCardContainer } from "../components/MusicCardContainer/MusicCardCo
 import { useMusicList } from "../hooks/useMusicList";
 import { useCollection } from "../hooks/useCollection";
 import { useFavorites } from "../hooks/useFavorites";
+import { Helmet } from "react-helmet-async";
 
 export const HomePage = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -24,6 +25,10 @@ export const HomePage = () => {
   }
   return (
     <>
+      <Helmet>
+        <title>Home</title>
+      </Helmet>
+
       <MusicCardContainer
         musicList={musicList.filter(filterItemsOnPage)}
         collection={collection}

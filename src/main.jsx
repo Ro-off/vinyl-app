@@ -5,6 +5,7 @@ import { Application } from "./Application";
 import { HomePage } from "./pages/HomePage";
 import { SearchPage } from "./pages/SearchPage";
 import { ResultsPage } from "./pages/ResultsPage";
+import { HelmetProvider } from "react-helmet-async";
 
 const appElement = document.getElementById("app");
 const root = createRoot(appElement);
@@ -36,6 +37,8 @@ const router = createBrowserRouter([
 ]);
 root.render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <HelmetProvider>
+      <RouterProvider router={router} />
+    </HelmetProvider>
   </StrictMode>
 );

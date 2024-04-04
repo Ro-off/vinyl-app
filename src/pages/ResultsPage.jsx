@@ -7,6 +7,7 @@ import { useMusicList } from "../hooks/useMusicList";
 import { useCollection } from "../hooks/useCollection";
 import { useFavorites } from "../hooks/useFavorites";
 import { useSearchParams, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 export const ResultsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -57,6 +58,15 @@ export const ResultsPage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>
+          {"Results: " +
+            Object.values(searchParams)
+              .filter((e) => e !== null)
+              .join(", ")}
+        </title>
+      </Helmet>
+
       <AppliedFilters
         filtersList={searchParams}
         removeSearchFilter={removeSearchFilter}
