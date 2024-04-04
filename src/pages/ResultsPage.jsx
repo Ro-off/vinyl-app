@@ -49,9 +49,14 @@ export const ResultsPage = () => {
 
   function filterItemsBySearchQuery(element) {
     if (
-      (!params.get("genre") || searchParams.genre === element.genre) &&
-      (!params.get("artist") || searchParams.artist === element.artist) &&
-      (!params.get("country") || searchParams.country === element.country)
+      (!params.get("genre") ||
+        searchParams.genre.toLocaleLowerCase() === element.genre) &&
+      (!params.get("artist") ||
+        searchParams.artist.toLocaleLowerCase() ===
+          element.artist.toLocaleLowerCase()) &&
+      (!params.get("country") ||
+        searchParams.country.toLocaleLowerCase() ===
+          element.country.toLocaleLowerCase())
     )
       return true;
   }
