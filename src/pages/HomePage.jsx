@@ -2,17 +2,15 @@ import { useState } from "react";
 import { Pagination } from "../components/Pagination/Pagination";
 import { MusicCardContainer } from "../components/MusicCardContainer/MusicCardContainer";
 import { useMusicList } from "../hooks/useMusicList";
-import { useCollection } from "../hooks/useCollection";
-import { useFavorites } from "../hooks/useFavorites";
+import { useOutletContext } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 export const HomePage = () => {
+  const { collection, toggleCollection, favorites, toggleFavorites } =
+    useOutletContext();
   const [currentPage, setCurrentPage] = useState(1);
   const musicList = useMusicList();
   let itemsOnPage = 12;
-
-  const { collection, toggleCollection } = useCollection();
-  const { favorites, toggleFavorites } = useFavorites();
 
   const pagesCount = Math.ceil(musicList.length / itemsOnPage);
 

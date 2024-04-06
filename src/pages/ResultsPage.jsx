@@ -4,19 +4,16 @@ import { AppliedFilters } from "../components/AppliedFilters/AppliedFilters";
 
 import { useState } from "react";
 import { useMusicList } from "../hooks/useMusicList";
-import { useCollection } from "../hooks/useCollection";
-import { useFavorites } from "../hooks/useFavorites";
-import { useSearchParams, Navigate } from "react-router-dom";
+import { useSearchParams, Navigate, useOutletContext } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 export const ResultsPage = () => {
+  const { collection, toggleCollection, favorites, toggleFavorites } =
+    useOutletContext();
   const [currentPage, setCurrentPage] = useState(1);
   const musicList = useMusicList();
 
   const [params, setParams] = useSearchParams();
-
-  const { collection, toggleCollection } = useCollection();
-  const { favorites, toggleFavorites } = useFavorites();
 
   const searchParams = {
     genre: params.get("genre"),
