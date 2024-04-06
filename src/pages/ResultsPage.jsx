@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useMusicList } from "../hooks/useMusicList";
 import { useCollection } from "../hooks/useCollection";
 import { useFavorites } from "../hooks/useFavorites";
-import { useSearchParams, useNavigate, Navigate } from "react-router-dom";
+import { useSearchParams, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 export const ResultsPage = () => {
