@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useMusicList } from "../hooks/useMusicList";
 import { useCollection } from "../hooks/useCollection";
 import { useFavorites } from "../hooks/useFavorites";
-import { useSearchParams, useNavigate } from "react-router-dom";
+import { useSearchParams, useNavigate, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 export const ResultsPage = () => {
@@ -14,7 +14,6 @@ export const ResultsPage = () => {
   const musicList = useMusicList();
 
   const [params, setParams] = useSearchParams();
-  const navigate = useNavigate();
 
   const { collection, toggleCollection } = useCollection();
   const { favorites, toggleFavorites } = useFavorites();
@@ -26,7 +25,7 @@ export const ResultsPage = () => {
   };
 
   if (!searchParams.genre && !searchParams.artist && !searchParams.country) {
-    navigate("/search");
+    return <Navigate to="/search" />;
   }
   const resultsList = musicList.filter(filterItemsBySearchQuery);
 
@@ -34,7 +33,7 @@ export const ResultsPage = () => {
   const pagesCount = Math.ceil(resultsList.length / itemsOnPage);
 
   function removeSearchFilter(id, value) {
-    const newParams = params;
+    const newParams = { ...params };
     newParams.delete(id, value);
     setParams(newParams);
   }
@@ -50,13 +49,14 @@ export const ResultsPage = () => {
   function filterItemsBySearchQuery(element) {
     if (
       (!params.get("genre") ||
-        searchParams.genre.toLocaleLowerCase() === element.genre) &&
+        String(searchParams.genre).toLowerCase() ===
+          String(element.genre).toLowerCase()) &&
       (!params.get("artist") ||
-        searchParams.artist.toLocaleLowerCase() ===
-          element.artist.toLocaleLowerCase()) &&
+        String(searchParams.artist).toLowerCase() ===
+          String(element.author).toLowerCase()) &&
       (!params.get("country") ||
-        searchParams.country.toLocaleLowerCase() ===
-          element.country.toLocaleLowerCase())
+        String(searchParams.country).toLowerCase() ===
+          String(element.country).toLowerCase())
     )
       return true;
   }
