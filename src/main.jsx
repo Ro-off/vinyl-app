@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     element: <Application />,
     children: [
       {
-        path: "/",
+        path: "/:page?",
         element: <HomePage />,
       },
       {
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
       },
       {
         //example: /search?genre=rock&artist=queen&country=uk
-        path: "/search/results",
+        path: "/search/results/:page?",
         element: <ResultsPage />,
       },
       {

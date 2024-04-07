@@ -24,7 +24,7 @@ export function Filter() {
     if (filterFields.country !== "country")
       searchParams.append("country", filterFields.country);
 
-    if (searchParams.size !== 0) navigate("/search/results/?" + searchParams);
+    if (searchParams.size !== 0) navigate("/search/results/1/?" + searchParams);
   }
 
   function handleSubmit(e) {

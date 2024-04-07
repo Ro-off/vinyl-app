@@ -2,17 +2,25 @@ import { useState } from "react";
 import { Pagination } from "../components/Pagination/Pagination";
 import { MusicCardContainer } from "../components/MusicCardContainer/MusicCardContainer";
 import { useMusicList } from "../hooks/useMusicList";
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext, useParams, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 export const HomePage = () => {
   const { collection, toggleCollection, favorites, toggleFavorites } =
     useOutletContext();
-  const [currentPage, setCurrentPage] = useState(1);
+  const { page: pageUrl } = useParams();
+  const navigate = useNavigate();
+
+  const [currentPage, setCurrentPage] = useState(Number(pageUrl));
+
   const musicList = useMusicList();
   let itemsOnPage = 12;
 
   const pagesCount = Math.ceil(musicList.length / itemsOnPage);
+
+  //?not working properly with navigate form some reason
+  // if (currentPage > pagesCount) changePage(pagesCount);
+  // else if (!currentPage) changePage(1);
 
   function filterItemsOnPage(element, index) {
     if (
@@ -21,6 +29,12 @@ export const HomePage = () => {
     )
       return true;
   }
+
+  function changePage(e) {
+    setCurrentPage(e);
+    navigate("/" + e);
+  }
+
   return (
     <>
       <Helmet>
@@ -36,7 +50,7 @@ export const HomePage = () => {
       />
       <Pagination
         currentPage={currentPage}
-        onPageChange={setCurrentPage}
+        onPageChange={changePage}
         pagesCount={pagesCount}
       />
     </>

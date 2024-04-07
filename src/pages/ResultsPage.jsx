@@ -4,13 +4,22 @@ import { AppliedFilters } from "../components/AppliedFilters/AppliedFilters";
 
 import { useState } from "react";
 import { useMusicList } from "../hooks/useMusicList";
-import { useSearchParams, Navigate, useOutletContext } from "react-router-dom";
+import {
+  useSearchParams,
+  Navigate,
+  useOutletContext,
+  useParams,
+  useNavigate,
+} from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 export const ResultsPage = () => {
   const { collection, toggleCollection, favorites, toggleFavorites } =
     useOutletContext();
-  const [currentPage, setCurrentPage] = useState(1);
+  const { page: pageUrl } = useParams();
+  const navigate = useNavigate();
+
+  const [currentPage, setCurrentPage] = useState(Number(pageUrl));
   const musicList = useMusicList();
 
   const [params, setParams] = useSearchParams();
@@ -41,6 +50,11 @@ export const ResultsPage = () => {
       index >= itemsOnPage * (currentPage - 1)
     )
       return true;
+  }
+
+  function changePage(e) {
+    setCurrentPage(e);
+    navigate("/" + e);
   }
 
   function filterItemsBySearchQuery(element) {
@@ -82,7 +96,7 @@ export const ResultsPage = () => {
       />
       <Pagination
         currentPage={currentPage}
-        onPageChange={setCurrentPage}
+        onPageChange={changePage}
         pagesCount={pagesCount}
       />
     </>
