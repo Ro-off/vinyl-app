@@ -16,17 +16,15 @@ export function Filter() {
   }
 
   function navigateToResultsPage() {
-    let searchParams = [];
+    let searchParams = new URLSearchParams();
     if (filterFields.artist !== "")
-      searchParams.push("artist=" + filterFields.artist);
+      searchParams.append("artist", filterFields.artist);
     if (filterFields.genre !== "genre")
-      searchParams.push("genre=" + filterFields.genre);
+      searchParams.append("genre", filterFields.genre);
     if (filterFields.country !== "country")
-      searchParams.push("country=" + filterFields.country);
+      searchParams.append("country", filterFields.country);
 
-    const searchParamsString = searchParams.join("&");
-    if (searchParamsString !== "")
-      navigate("/search/results/?" + searchParamsString);
+    if (searchParams.size !== 0) navigate("/search/results/?" + searchParams);
   }
 
   return (
