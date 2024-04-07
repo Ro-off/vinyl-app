@@ -39,7 +39,7 @@ export const ResultsPage = () => {
   const pagesCount = Math.ceil(resultsList.length / itemsOnPage);
 
   function removeSearchFilter(id, value) {
-    const newParams = { ...params };
+    const newParams = new URLSearchParams(params);
     newParams.delete(id, value);
     setParams(newParams);
   }
