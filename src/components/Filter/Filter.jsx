@@ -27,9 +27,14 @@ export function Filter() {
     if (searchParams.size !== 0) navigate("/search/results/?" + searchParams);
   }
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    navigateToResultsPage();
+  }
+
   return (
     <div className="filter">
-      <form action="" className={styles.filterForm}>
+      <form onSubmit={handleSubmit} className={styles.filterForm}>
         <input
           type="text"
           name="artist"
@@ -90,12 +95,7 @@ export function Filter() {
           <option value="germany">Germany</option>
           <option value="ukraine">Ukraine</option>
         </select>
-        <input
-          type="submit"
-          value="Search"
-          className={styles.filterSearch}
-          onClick={() => navigateToResultsPage()}
-        />
+        <input type="submit" value="Search" className={styles.filterSearch} />
       </form>
     </div>
   );
