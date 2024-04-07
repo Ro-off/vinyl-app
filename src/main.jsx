@@ -19,12 +19,10 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        //example: /search
         path: "/search",
         element: <SearchPage />,
       },
       {
-        //example: /search?genre=rock&artist=queen&country=uk
         path: "/search/results/:page?",
         element: <ResultsPage />,
       },
