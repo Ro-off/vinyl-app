@@ -18,7 +18,7 @@ export const HomePage = () => {
 
   const pagesCount = Math.ceil(musicList.length / itemsOnPage);
 
-  //?not working properly with navigate form some reason
+  //?not working properly with navigate for some reason
   // if (currentPage > pagesCount) changePage(pagesCount);
   // else if (!currentPage) changePage(1);
 
