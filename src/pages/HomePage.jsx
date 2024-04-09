@@ -2,16 +2,14 @@ import { useState } from "react";
 import { Pagination } from "../components/Pagination/Pagination";
 import { MusicCardContainer } from "../components/MusicCardContainer/MusicCardContainer";
 import { useMusicList } from "../hooks/useMusicList";
-import { useOutletContext, useParams, useNavigate } from "react-router-dom";
+import { useOutletContext, useSearchParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 export const HomePage = () => {
   const { collection, toggleCollection, favorites, toggleFavorites } =
     useOutletContext();
-  const { page: pageUrl } = useParams();
-  const navigate = useNavigate();
-
-  const [currentPage, setCurrentPage] = useState(Number(pageUrl));
+  const [params, setParams] = useSearchParams();
+  const [currentPage, setCurrentPage] = useState(Number(params.get("page")));
 
   const musicList = useMusicList();
   let itemsOnPage = 12;
@@ -32,7 +30,14 @@ export const HomePage = () => {
 
   function changePage(e) {
     setCurrentPage(e);
-    navigate("/" + e);
+    changeSearchFilter("page", e);
+  }
+
+  function changeSearchFilter(id, value) {
+    const newParams = new URLSearchParams(params);
+    newParams.delete(id, currentPage);
+    newParams.append(id, value);
+    setParams(newParams);
   }
 
   return (

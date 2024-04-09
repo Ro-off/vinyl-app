@@ -4,25 +4,17 @@ import { AppliedFilters } from "../components/AppliedFilters/AppliedFilters";
 
 import { useState } from "react";
 import { useMusicList } from "../hooks/useMusicList";
-import {
-  useSearchParams,
-  Navigate,
-  useOutletContext,
-  useParams,
-  useNavigate,
-} from "react-router-dom";
+import { useSearchParams, Navigate, useOutletContext } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 export const ResultsPage = () => {
   const { collection, toggleCollection, favorites, toggleFavorites } =
     useOutletContext();
-  const { page: pageUrl } = useParams();
-  const navigate = useNavigate();
-
-  const [currentPage, setCurrentPage] = useState(Number(pageUrl));
-  const musicList = useMusicList();
 
   const [params, setParams] = useSearchParams();
+
+  const [currentPage, setCurrentPage] = useState(Number(params.get("page")));
+  const musicList = useMusicList();
 
   const searchParams = {
     genre: params.get("genre"),
@@ -44,6 +36,13 @@ export const ResultsPage = () => {
     setParams(newParams);
   }
 
+  function changeSearchFilter(id, value) {
+    const newParams = new URLSearchParams(params);
+    newParams.delete(id, currentPage);
+    newParams.append(id, value);
+    setParams(newParams);
+  }
+
   function filterItemsByPagination(element, index) {
     if (
       index < currentPage * itemsOnPage &&
@@ -54,7 +53,7 @@ export const ResultsPage = () => {
 
   function changePage(e) {
     setCurrentPage(e);
-    navigate("/" + e);
+    changeSearchFilter("page", e);
   }
 
   function filterItemsBySearchQuery(element) {

@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     element: <Application />,
     children: [
       {
-        path: "/:page?",
+        path: "/",
         element: <HomePage />,
       },
       {
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
         element: <SearchPage />,
       },
       {
-        path: "/search/results/:page?",
+        path: "/search/results",
         element: <ResultsPage />,
       },
       {
