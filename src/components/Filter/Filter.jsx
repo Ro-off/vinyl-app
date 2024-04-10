@@ -17,7 +17,6 @@ export function Filter() {
 
   function navigateToResultsPage() {
     let searchParams = new URLSearchParams();
-    searchParams.append("page", 1);
     if (filterFields.artist !== "")
       searchParams.append("artist", filterFields.artist);
     if (filterFields.genre !== "genre")
@@ -25,7 +24,7 @@ export function Filter() {
     if (filterFields.country !== "country")
       searchParams.append("country", filterFields.country);
 
-    if (searchParams.size !== 1) navigate("/search/results?" + searchParams);
+    if (searchParams.size !== 0) navigate("/search/results?" + searchParams);
   }
 
   function handleSubmit(e) {

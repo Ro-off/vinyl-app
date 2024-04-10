@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Pagination } from "../components/Pagination/Pagination";
 import { MusicCardContainer } from "../components/MusicCardContainer/MusicCardContainer";
 import { useMusicList } from "../hooks/useMusicList";
@@ -8,17 +7,20 @@ import { Helmet } from "react-helmet-async";
 export const HomePage = () => {
   const { collection, toggleCollection, favorites, toggleFavorites } =
     useOutletContext();
-  const [params, setParams] = useSearchParams();
-  const [currentPage, setCurrentPage] = useState(Number(params.get("page")));
-
   const musicList = useMusicList();
   let itemsOnPage = 12;
 
   const pagesCount = Math.ceil(musicList.length / itemsOnPage);
 
-  //?not working properly with navigate for some reason
-  // if (currentPage > pagesCount) changePage(pagesCount);
-  // else if (!currentPage) changePage(1);
+  const [params, setParams] = useSearchParams();
+
+  const currentPage = Number(
+    params.get("page") === null
+      ? 1
+      : Number(params.get("page")) > pagesCount
+      ? pagesCount
+      : Number(params.get("page"))
+  );
 
   function filterItemsOnPage(element, index) {
     if (
@@ -28,8 +30,7 @@ export const HomePage = () => {
       return true;
   }
 
-  function changePage(e) {
-    setCurrentPage(e);
+  function handlePageChange(e) {
     changeSearchFilter("page", e);
   }
 
@@ -55,7 +56,7 @@ export const HomePage = () => {
       />
       <Pagination
         currentPage={currentPage}
-        onPageChange={changePage}
+        onPageChange={handlePageChange}
         pagesCount={pagesCount}
       />
     </>

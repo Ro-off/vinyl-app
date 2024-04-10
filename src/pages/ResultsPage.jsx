@@ -1,8 +1,6 @@
 import { Pagination } from "../components/Pagination/Pagination";
 import { MusicCardContainer } from "../components/MusicCardContainer/MusicCardContainer";
 import { AppliedFilters } from "../components/AppliedFilters/AppliedFilters";
-
-import { useState } from "react";
 import { useMusicList } from "../hooks/useMusicList";
 import { useSearchParams, Navigate, useOutletContext } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -13,22 +11,30 @@ export const ResultsPage = () => {
 
   const [params, setParams] = useSearchParams();
 
-  const [currentPage, setCurrentPage] = useState(Number(params.get("page")));
-  const musicList = useMusicList();
-
   const searchParams = {
     genre: params.get("genre"),
     artist: params.get("artist"),
     country: params.get("country"),
   };
 
-  if (!searchParams.genre && !searchParams.artist && !searchParams.country) {
-    return <Navigate to="/search" />;
-  }
+  const musicList = useMusicList();
+
   const resultsList = musicList.filter(filterItemsBySearchQuery);
 
   let itemsOnPage = 12;
   const pagesCount = Math.ceil(resultsList.length / itemsOnPage);
+
+  const currentPage = Number(
+    params.get("page") === null
+      ? 1
+      : Number(params.get("page")) > pagesCount
+      ? pagesCount
+      : Number(params.get("page"))
+  );
+
+  if (!searchParams.genre && !searchParams.artist && !searchParams.country) {
+    return <Navigate to="/search" />;
+  }
 
   function removeSearchFilter(id, value) {
     const newParams = new URLSearchParams(params);
@@ -51,8 +57,7 @@ export const ResultsPage = () => {
       return true;
   }
 
-  function changePage(e) {
-    setCurrentPage(e);
+  function handlePageChange(e) {
     changeSearchFilter("page", e);
   }
 
@@ -95,7 +100,7 @@ export const ResultsPage = () => {
       />
       <Pagination
         currentPage={currentPage}
-        onPageChange={changePage}
+        onPageChange={handlePageChange}
         pagesCount={pagesCount}
       />
     </>
