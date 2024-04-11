@@ -11,14 +11,27 @@
     "fix:scripts": "eslint --fix --report-unused-disable-directives --max-warnings 0 \"**/*.{js,jsx}\"",
     "lint:styles": "stylelint \"**/*.css\"",
     "fix:styles": "stylelint --fix \"**/*.css\"",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "clsx": "^2.1.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-helmet-async": "^2.0.4",
+    "react-router-dom": "^6.22.3"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^1.2.18",
+    "@storybook/addon-essentials": "^8.0.0",
+    "@storybook/addon-interactions": "^8.0.0",
+    "@storybook/addon-links": "^8.0.0",
+    "@storybook/addon-onboarding": "^8.0.0",
+    "@storybook/blocks": "^8.0.0",
+    "@storybook/react": "^8.0.0",
+    "@storybook/react-vite": "^8.0.0",
+    "@storybook/test": "^8.0.0",
     "@vitejs/plugin-react": "^4.0.0",
     "eslint": "^8.38.0",
     "eslint-config-prettier": "^8.8.0",
@@ -33,6 +46,8 @@
     "eslint-plugin-testing-library": "^5.11.0",
     "eslint-plugin-vitest": "^0.2.2",
     "prettier": "^2.8.8",
+    "prop-types": "^15.8.1",
+    "storybook": "^8.0.0",
     "stylelint": "^15.6.2",
     "stylelint-config-idiomatic-order": "^9.0.0",
     "stylelint-config-recommended": "^12.0.0",

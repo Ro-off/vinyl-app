@@ -1,17 +1,42 @@
 import { createRoot } from "react-dom/client";
-import { Application } from "./Application";
 import { StrictMode } from "react";
-
-//// import { renderToString } from "react-dom/server";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Application } from "./Application";
+import { HomePage } from "./pages/HomePage";
+import { SearchPage } from "./pages/SearchPage";
+import { ResultsPage } from "./pages/ResultsPage";
+import { HelmetProvider } from "react-helmet-async";
 
 const appElement = document.getElementById("app");
 const root = createRoot(appElement);
-////const view = renderToString(<Application />);
 
+const router = createBrowserRouter([
+  {
+    element: <Application />,
+    children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
+      {
+        path: "/search",
+        element: <SearchPage />,
+      },
+      {
+        path: "/search/results",
+        element: <ResultsPage />,
+      },
+      {
+        path: "*",
+        element: <p>Page no found</p>,
+      },
+    ],
+  },
+]);
 root.render(
   <StrictMode>
-    <Application />
+    <HelmetProvider>
+      <RouterProvider router={router} />
+    </HelmetProvider>
   </StrictMode>
 );
-
-////console.log(view);

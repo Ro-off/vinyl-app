@@ -1,0 +1,7 @@
+.itemsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 4px 5px;
+}
