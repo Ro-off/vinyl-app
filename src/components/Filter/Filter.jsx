@@ -1,20 +1,55 @@
 import styles from "./Filter.module.css";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function Filter() {
+  const [filterFields, setFilterFields] = useState({
+    artist: "",
+    genre: "genre",
+    country: "country",
+  });
+
+  const navigate = useNavigate();
+
+  function handleChange(e, field) {
+    setFilterFields({ ...filterFields, [field]: e.target.value });
+  }
+
+  function navigateToResultsPage() {
+    let searchParams = new URLSearchParams();
+    if (filterFields.artist !== "")
+      searchParams.append("artist", filterFields.artist);
+    if (filterFields.genre !== "genre")
+      searchParams.append("genre", filterFields.genre);
+    if (filterFields.country !== "country")
+      searchParams.append("country", filterFields.country);
+
+    if (searchParams.size !== 0) navigate("/search/results?" + searchParams);
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    navigateToResultsPage();
+  }
+
   return (
     <div className="filter">
-      <form action="" className={styles.filterForm}>
+      <form onSubmit={handleSubmit} className={styles.filterForm}>
         <input
           type="text"
           name="artist"
           className={styles.artist}
           placeholder="Artist"
+          value={filterFields.artist}
+          onChange={(e) => handleChange(e, "artist")}
         />
         <select
           name="genre"
           className={styles.genre}
           title="genre"
           defaultValue="placeholder"
+          value={filterFields.genre}
+          onChange={(e) => handleChange(e, "genre")}
         >
           <option className={styles.filterPlaceholder} value="placeholder">
             Genre
@@ -48,6 +83,8 @@ export function Filter() {
           className={styles.country}
           title="country"
           defaultValue="placeholder"
+          value={filterFields.country}
+          onChange={(e) => handleChange(e, "country")}
         >
           <option className={styles.filterPlaceholder} value="placeholder">
             Country

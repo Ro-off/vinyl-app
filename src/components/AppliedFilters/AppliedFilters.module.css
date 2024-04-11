@@ -1,0 +1,26 @@
+.header, .itemList {
+  display: flex;
+  flex-direction: row;
+  margin: 0 10px;
+}
+
+.header{
+  justify-content: space-between;
+  padding: 14px 0;
+}
+
+.header p{
+  margin: auto 0;
+  color: var(--gray-text-1);
+  font-size: large;
+}
+.header a{
+  margin: auto 0;
+  color: var(--gray-text-1);
+  font-size: medium;
+}
+
+.itemList{
+  gap: 10px;
+}
+

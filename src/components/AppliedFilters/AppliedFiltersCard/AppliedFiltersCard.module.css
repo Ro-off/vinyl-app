@@ -1,0 +1,23 @@
+
+
+.item{
+  display: flex;
+  height: max-content;
+  padding:  7px;
+  border-radius: 7px;
+  background: var(--gray-border);
+  gap: 10px;
+  justify-items: center;
+}
+
+.item :nth-child(1){
+  margin: 0;
+}
+
+.item button{
+  display: flex;
+  justify-content: center;
+  border: none;
+  background: transparent;
+}
+
