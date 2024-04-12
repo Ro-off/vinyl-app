@@ -1,4 +1,4 @@
-import { Filter } from "../components/Filter/Filter";
+import { FilterForm } from "../components/FilterForm/FilterForm";
 import { Helmet } from "react-helmet-async";
 
 export const SearchPage = () => {
@@ -7,7 +7,7 @@ export const SearchPage = () => {
       <Helmet>
         <title>Search</title>
       </Helmet>
-      <Filter />
+      <FilterForm />
     </>
   );
 };

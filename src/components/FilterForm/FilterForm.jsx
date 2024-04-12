@@ -1,8 +1,8 @@
-import styles from "./Filter.module.css";
+import styles from "./FilterForm.module.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export function Filter() {
+export function FilterForm() {
   const [filterFields, setFilterFields] = useState({
     artist: "",
     genre: "genre",
