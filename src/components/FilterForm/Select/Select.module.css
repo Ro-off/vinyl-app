@@ -1,0 +1,97 @@
+
+
+.selectContainer{
+  display: flex;
+  width:160px;
+  flex-wrap: wrap;
+  padding: 0;
+  border-radius: 7px;
+  background-color: var(--bg-color);
+  cursor: pointer;
+  /* background: red; */
+  outline: var(--gray-border) solid 1px;
+  -webkit-user-select: none;
+  user-select: none;
+
+}
+
+.selectContainerClosed:hover{
+ filter: brightness(1.1);
+}
+
+.field{
+  display: flex;
+  width:calc(100% - 35px - 7px);
+  height: 100%;
+  padding-left: 7px
+  /* background-color: aqua; */
+}
+
+.field p{
+  overflow: hidden;
+  margin: auto 5px;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+
+}
+
+.expandButton{
+  display: flex;
+  width: 35px;
+  align-items: center;
+  justify-content: center;
+}
+
+.expandButton *{
+  stroke:var(--accent-color)
+}
+
+.rotated180{
+  transform: rotate(180deg);
+}
+
+.dropdownMenu{
+  position: relative;
+  z-index: 3;
+  display: flex;
+  width: calc(100%);
+  flex-direction: column;
+  padding: 0 0;
+  border-radius: 7px;
+  margin-top: 10px;
+  background: var(--bg-color);
+  /* gap: 17px 0; */
+  outline: var(--gray-border) solid 1px;
+}
+
+.hidden{
+  display: none !important;
+}
+
+.dropdownMenu *{
+  overflow: hidden;
+  height: max-content;
+  padding: 7px 8px;
+  border-bottom: 1px solid var(--gray-border);
+  margin: 0 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dropdownMenu :last-child{
+  padding-bottom: 10px;
+  border-bottom: 1px solid transparent;
+}
+
+.dropdownMenu :first-child{
+  padding-top: 10px;
+}
+
+.dropdownMenu *:hover{
+
+  background-color: var(--accent-bg);
+}
+
+.dropdownMenuEmpty :hover{
+  background-color: inherit !important;
+}

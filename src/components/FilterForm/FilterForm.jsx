@@ -1,65 +1,61 @@
 import styles from "./FilterForm.module.css";
-import { useState } from "react";
+// import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useForm, Controller } from "react-hook-form";
+import { Select } from "./Select/Select";
 
 export function FilterForm() {
-  const [filterFields, setFilterFields] = useState({
-    artist: "",
-    genre: "genre",
-    country: "country",
-  });
+  // const [filterFields, setFilterFields] = useState({
+  //   artist: "",
+  //   genre: "genre",
+  //   country: "country",
+  // });
 
   const navigate = useNavigate();
 
-  function handleChange(e, field) {
-    setFilterFields({ ...filterFields, [field]: e.target.value });
-  }
+  const { register, handleSubmit, control } = useForm({
+    defaultValues: {
+      artist: "",
+      genre: null,
+      country: null,
+    },
+  });
 
-  function navigateToResultsPage() {
+  // function handleChange(e, field) {
+  //   setfilterFields({ ...filterFields, [field]: e.target.value });
+  // }
+
+  function navigateToResultsPage(data) {
     let searchParams = new URLSearchParams();
-    if (filterFields.artist !== "")
-      searchParams.append("artist", filterFields.artist);
-    if (filterFields.genre !== "genre")
-      searchParams.append("genre", filterFields.genre);
-    if (filterFields.country !== "country")
-      searchParams.append("country", filterFields.country);
-
+    if (data.artist !== "") searchParams.append("artist", data.artist);
+    if (data.genre !== "Genre") searchParams.append("genre", data.genre);
+    if (data.country !== "Country")
+      searchParams.append("country", data.country);
     if (searchParams.size !== 0) navigate("/search/results?" + searchParams);
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    navigateToResultsPage();
+  function onSubmit(e) {
+    // e.preventDefault();
+    navigateToResultsPage(e.data);
   }
 
   return (
     <div className="filter">
-      <form onSubmit={handleSubmit} className={styles.filterForm}>
+      <form onSubmit={handleSubmit(onSubmit)} className={styles.filterForm}>
         <input
           type="text"
           name="artist"
           className={styles.artist}
           placeholder="Artist"
-          value={filterFields.artist}
-          onChange={(e) => handleChange(e, "artist")}
+          {...register("data.artist")}
         />
-        <select
+        <Controller
+          control={control}
           name="genre"
-          className={styles.genre}
-          title="genre"
-          defaultValue="placeholder"
-          value={filterFields.genre}
-          onChange={(e) => handleChange(e, "genre")}
-        >
-          <option className={styles.filterPlaceholder} value="placeholder">
-            Genre
-          </option>
-          <option value="rock">Rock</option>
-          <option value="pop">Pop</option>
-          <option value="country">Country</option>
-          <option value="hip-hop">Hip-Hop</option>
-          <option value="jazz">Jazz</option>
-        </select>
+          render={({ field: { values, name } }) => (
+            <Select className={styles.genre} values={["sda", "asd"]} />
+          )}
+        ></Controller>
         <select
           name="decade"
           className={styles.decade}
@@ -82,13 +78,11 @@ export function FilterForm() {
           name="country"
           className={styles.country}
           title="country"
-          defaultValue="placeholder"
-          value={filterFields.country}
-          onChange={(e) => handleChange(e, "country")}
+          {...register("data.country")}
+          // value={filterFields.country}
+          // onChange={(e) => handleChange(e, "country")}
         >
-          <option className={styles.filterPlaceholder} value="placeholder">
-            Country
-          </option>
+          <option className={styles.filterPlaceholder}>Country</option>
           <option value="usa">USA</option>
           <option value="uk">UK</option>
           <option value="france">France</option>
