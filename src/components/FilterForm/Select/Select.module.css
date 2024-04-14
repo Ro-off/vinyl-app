@@ -19,6 +19,10 @@
  filter: brightness(1.1);
 }
 
+.selectContainerOpen {
+  filter: brightness(1.1);
+}
+
 .field{
   display: flex;
   width:calc(100% - 35px - 7px);
@@ -52,7 +56,7 @@
 
 .dropdownMenu{
   position: relative;
-  z-index: 3;
+  z-index: 15;
   display: flex;
   width: calc(100%);
   flex-direction: column;
@@ -72,11 +76,16 @@
   overflow: hidden;
   height: max-content;
   padding: 7px 8px;
+  border: none;
   border-bottom: 1px solid var(--gray-border);
   margin: 0 0;
+  background: transparent;
+  color: var(--text-1);
+  text-align: left;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
 
 .dropdownMenu :last-child{
   padding-bottom: 10px;
@@ -88,8 +97,8 @@
 }
 
 .dropdownMenu *:hover{
-
   background-color: var(--accent-bg);
+  cursor: pointer;
 }
 
 .dropdownMenuEmpty :hover{

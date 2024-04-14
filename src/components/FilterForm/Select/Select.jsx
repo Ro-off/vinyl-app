@@ -5,17 +5,27 @@ import { ChevronDownIcon } from "../../Icon/ChevronDown";
 import clsx from "clsx";
 
 export function Select(props) {
-  const { values, name = "Select", className = "" } = props;
-  console.log(className);
+  const {
+    name = "Select",
+    className = "",
+    options,
+    value,
+    title = "Select value",
+    onChange,
+  } = props;
 
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleChange = (selectedOption) => {
+    onChange(selectedOption);
+  };
 
   return (
     <div
       className={clsx(
         className,
         styles.selectContainer,
-        styles.selectContainerClosed,
+        { [styles.selectContainerClosed]: !isOpen },
         { [styles.selectContainerOpen]: isOpen }
       )}
       type="button"
@@ -23,28 +33,37 @@ export function Select(props) {
       role="button"
       tabIndex="0"
     >
-      <input type="hidden"></input>
+      <input type="hidden" value={value} name={name}></input>
 
       <div className={styles.field}>
-        <p>{name}</p>
+        <p>{value ? value : title}</p>
       </div>
       <div
         className={clsx(styles.expandButton, { [styles.rotated180]: isOpen })}
       >
-        <ChevronDownIcon size={17} />
+        <ChevronDownIcon size={"17"} />
       </div>
 
       <div
         className={clsx(
           styles.dropdownMenu,
           { [styles.hidden]: !isOpen },
-          { [styles.dropdownMenuEmpty]: values.length === 0 }
+          { [styles.dropdownMenuEmpty]: !options }
         )}
       >
-        {values.length === 0 ? (
+        {!options ? (
           <p>No results</p>
         ) : (
-          values.map((value) => <p key={name + "-" + value}>{value}</p>)
+          options.map((option) => (
+            <button
+              type="button"
+              onClick={(e) => handleChange(e.target.value)}
+              key={name + "-" + option.value}
+              value={option.value}
+            >
+              {option.title}
+            </button>
+          ))
         )}
       </div>
     </div>
@@ -52,7 +71,10 @@ export function Select(props) {
 }
 
 Select.propTypes = {
-  values: propTypes.array.isRequired,
+  options: propTypes.array.isRequired,
   name: propTypes.string.isRequired,
   className: propTypes.string,
+  value: propTypes.string,
+  onChange: propTypes.func.isRequired,
+  title: propTypes.styles,
 };

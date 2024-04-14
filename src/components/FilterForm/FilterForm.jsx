@@ -5,12 +5,6 @@ import { useForm, Controller } from "react-hook-form";
 import { Select } from "./Select/Select";
 
 export function FilterForm() {
-  // const [filterFields, setFilterFields] = useState({
-  //   artist: "",
-  //   genre: "genre",
-  //   country: "country",
-  // });
-
   const navigate = useNavigate();
 
   const { register, handleSubmit, control } = useForm({
@@ -21,14 +15,10 @@ export function FilterForm() {
     },
   });
 
-  // function handleChange(e, field) {
-  //   setfilterFields({ ...filterFields, [field]: e.target.value });
-  // }
-
   function navigateToResultsPage(data) {
     let searchParams = new URLSearchParams();
     if (data.artist !== "") searchParams.append("artist", data.artist);
-    if (data.genre !== "Genre") searchParams.append("genre", data.genre);
+    if (data.genre) searchParams.append("genre", data.genre);
     if (data.country !== "Country")
       searchParams.append("country", data.country);
     if (searchParams.size !== 0) navigate("/search/results?" + searchParams);
@@ -51,9 +41,21 @@ export function FilterForm() {
         />
         <Controller
           control={control}
-          name="genre"
-          render={({ field: { values, name } }) => (
-            <Select className={styles.genre} values={["sda", "asd"]} />
+          name="data.genre"
+          render={({ field }) => (
+            <Select
+              className={styles.genre}
+              {...field}
+              title="Genre"
+              options={[
+                { value: "rock", title: "Rock" },
+                { value: "pop", title: "Pop" },
+                { value: "country", title: "Country" },
+                { value: "hip-hop", title: "Hip-hop" },
+                { value: "jazz", title: "Jazz" },
+              ]}
+              onChange={(e) => field.onChange(e)}
+            />
           )}
         ></Controller>
         <select
@@ -79,8 +81,6 @@ export function FilterForm() {
           className={styles.country}
           title="country"
           {...register("data.country")}
-          // value={filterFields.country}
-          // onChange={(e) => handleChange(e, "country")}
         >
           <option className={styles.filterPlaceholder}>Country</option>
           <option value="usa">USA</option>
