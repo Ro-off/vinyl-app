@@ -22,7 +22,6 @@ export function FilterForm() {
     if (data.genre) searchParams.append("genre", data.genre);
     if (data.country) searchParams.append("country", data.country);
     if (data.decade) searchParams.append("decade", data.decade);
-    console.log(searchParams);
     if (searchParams.size !== 0) navigate("/search/results?" + searchParams);
   }
 
