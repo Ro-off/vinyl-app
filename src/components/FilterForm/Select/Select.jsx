@@ -36,7 +36,11 @@ export function Select(props) {
       <input type="hidden" value={value} name={name}></input>
 
       <div className={styles.field}>
-        <p>{value ? value : title}</p>
+        <p>
+          {value && options
+            ? options.find((element) => element.value === value).title
+            : title}
+        </p>
       </div>
       <div
         className={clsx(styles.expandButton, { [styles.rotated180]: isOpen })}

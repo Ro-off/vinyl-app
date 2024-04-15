@@ -58,11 +58,11 @@
 }
 
 .decade {
-  width: calc(50% - 20px);
+  width: calc(50% - 20px) !important;;
 }
 
 .country {
-  width: calc(100% - 20px);
+  width: calc(100% - 20px) !important;
 }
 
 .filterSearch {
@@ -91,26 +91,26 @@
 
 @media screen and (min-width: 130vh) {
 
-    .artist {
-      width: calc(50% - 30px);
-      order: 1;
-      padding-right: 0px;
+    .artist  {
+      width: calc(50% - 30px) !important;
+      order: 1 !important;
+      padding-right: 0px !important;
     }
 
     .genre {
-      order: 3;
+      order: 3 !important;
     }
 
     .decade {
-      order: 4;
+      order: 4 !important;
     }
 
     .country {
-      width: calc(50% - 20px);
-      order: 2;
+      width: calc(50% - 20px) !important;
+      order: 2 !important;
     }
 
     .filterSearch {
-      order: 5;
+      order: 5 !important;
     }
   }
