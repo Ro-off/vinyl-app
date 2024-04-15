@@ -141,7 +141,7 @@ export function FilterForm() {
           type="submit"
           value="Search"
           className={clsx(styles.filterSearch, {
-            [styles.disabled]: !false,
+            [styles.disabled]: false,
           })}
           disabled={false}
         />
