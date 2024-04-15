@@ -10,10 +10,17 @@ import clsx from "clsx";
 export function FilterForm() {
   const navigate = useNavigate();
 
-  const artistSchema = Yup.string().min(5);
-  const genreSchema = Yup.string().min(5);
-  const decadeSchema = Yup.string();
-  const countrySchema = Yup.string();
+  const artistSchema = Yup.string()
+    .min(2)
+    .max(80)
+    .matches(/^[a-zA-Z\s-/]+$/);
+  const genreSchema = Yup.string().matches(/^(rock|pop|country|hip-hop|jazz)$/);
+  const decadeSchema = Yup.string().matches(
+    /^(1950-60|1960-70|1970-80|1980-90|1990-00|2000-10|2010-20|2020-10)$/
+  );
+  const countrySchema = Yup.string().matches(
+    /^(usa|uk|france|germany|ukraine)$/
+  );
 
   const searchParamsSchema = Yup.object({
     artist: artistSchema,
