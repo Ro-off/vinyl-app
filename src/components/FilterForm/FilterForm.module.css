@@ -22,7 +22,7 @@
   padding-left: 10px;
   border: none;
   border-radius: 4px;
-  margin: 10px;
+  margin: 14px 10px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -40,14 +40,14 @@
   color: var(--gray-text-1);
 }
 
-.filterForm select {
+/* .filterForm select {
   appearance: none;
   background-image: url("/src/assets/icons/chevron_down.svg");
   background-position: right;
   background-position: right 10px top 50%;
   background-repeat: no-repeat;
   background-size: 16px;
-}
+} */
 
 .artist {
   width: calc(100% - 20px);
