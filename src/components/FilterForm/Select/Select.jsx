@@ -80,5 +80,5 @@ Select.propTypes = {
   className: propTypes.string,
   value: propTypes.string,
   onChange: propTypes.func.isRequired,
-  title: propTypes.styles,
+  title: propTypes.string,
 };
