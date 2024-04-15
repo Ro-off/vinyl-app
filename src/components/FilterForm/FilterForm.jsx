@@ -1,5 +1,4 @@
 import styles from "./FilterForm.module.css";
-// import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm, Controller } from "react-hook-form";
 import { Select } from "./Select/Select";
@@ -23,24 +22,24 @@ export function FilterForm() {
   );
 
   const searchParamsSchema = Yup.object({
-    artist: artistSchema,
-    genre: genreSchema,
-    decade: decadeSchema,
-    country: countrySchema,
+    artist: artistSchema.nullable(true),
+    genre: genreSchema.nullable(true),
+    decade: decadeSchema.nullable(true),
+    country: countrySchema.nullable(true),
   });
 
   const {
     register,
     handleSubmit,
     control,
-    formState: { errors },
+    formState: { errors, isDirty },
   } = useForm({
-    // defaultValues: {
-    //   artist: null,
-    //   genre: null,
-    //   country: null,
-    //   decade: null,
-    // },
+    defaultValues: {
+      artist: null,
+      genre: null,
+      country: null,
+      decade: null,
+    },
     resolver: yupResolver(searchParamsSchema),
   });
 
@@ -141,9 +140,9 @@ export function FilterForm() {
           type="submit"
           value="Search"
           className={clsx(styles.filterSearch, {
-            [styles.disabled]: false,
+            [styles.disabled]: !isDirty,
           })}
-          disabled={false}
+          disabled={!isDirty}
         />
       </form>
     </div>
