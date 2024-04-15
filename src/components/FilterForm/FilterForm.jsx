@@ -140,7 +140,10 @@ export function FilterForm() {
         <input
           type="submit"
           value="Search"
-          className={`${styles.filterSearch} `}
+          className={clsx(styles.filterSearch, {
+            [styles.disabled]: !false,
+          })}
+          disabled={false}
         />
       </form>
     </div>
