@@ -12,6 +12,7 @@ export function Select(props) {
     value,
     title = "Select value",
     onChange,
+    error,
   } = props;
 
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +27,8 @@ export function Select(props) {
         className,
         styles.selectContainer,
         { [styles.selectContainerClosed]: !isOpen },
-        { [styles.selectContainerOpen]: isOpen }
+        { [styles.selectContainerOpen]: isOpen },
+        { [styles.isError]: error }
       )}
       type="button"
       onClick={() => setIsOpen(!isOpen)}
@@ -47,6 +49,9 @@ export function Select(props) {
       >
         <ChevronDownIcon size={"17"} />
       </div>
+      <p className={clsx(styles.errorMassage, { [styles.hidden]: !error })}>
+        {error}
+      </p>
 
       <div
         className={clsx(
@@ -81,4 +86,5 @@ Select.propTypes = {
   value: propTypes.string,
   onChange: propTypes.func.isRequired,
   title: propTypes.string,
+  error: propTypes.field,
 };

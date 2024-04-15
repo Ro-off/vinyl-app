@@ -23,6 +23,19 @@
   filter: brightness(1.1);
 }
 
+.isError{
+  outline-color: var(--error-1) !important;
+}
+
+.errorMassage{
+  overflow: hidden;
+  margin: 3px 1px;
+  color: var(--error-1);
+  font-size: smaller;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+}
+
 .field{
   display: flex;
   width:calc(100% - 35px - 7px);
