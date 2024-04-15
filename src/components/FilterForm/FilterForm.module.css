@@ -108,11 +108,14 @@
 
 
 @media screen and (min-width: 130vh) {
-
-    .artist  {
+    .artist {
       width: calc(50% - 30px) !important;
       order: 1 !important;
       padding-right: 0px !important;
+    }
+
+    .artist input{
+      width: 100% !important;
     }
 
     .genre {
