@@ -12,15 +12,17 @@ export function FilterForm() {
       artist: "",
       genre: null,
       country: null,
+      decade: null,
     },
   });
 
   function navigateToResultsPage(data) {
     let searchParams = new URLSearchParams();
-    if (data.artist !== "") searchParams.append("artist", data.artist);
+    if (data.artist) searchParams.append("artist", data.artist);
     if (data.genre) searchParams.append("genre", data.genre);
-    if (data.country !== "Country")
-      searchParams.append("country", data.country);
+    if (data.country) searchParams.append("country", data.country);
+    if (data.decade) searchParams.append("decade", data.decade);
+    console.log(searchParams);
     if (searchParams.size !== 0) navigate("/search/results?" + searchParams);
   }
 
