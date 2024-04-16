@@ -1,32 +1,30 @@
 import styles from "./FilterForm.module.css";
-import { useNavigate } from "react-router-dom";
 import { useForm, Controller } from "react-hook-form";
 import { Select } from "./Select/Select";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import clsx from "clsx";
+import propTypes from "prop-types";
 
-export function FilterForm() {
-  const navigate = useNavigate();
+const artistSchema = Yup.string()
+  .min(2)
+  .max(80)
+  .matches(/^[a-zA-Z\s-/]+$/);
+const genreSchema = Yup.string().matches(/^(rock|pop|country|hip-hop|jazz)$/);
+const decadeSchema = Yup.string().matches(
+  /^(1950-60|1960-70|1970-80|1980-90|1990-00|2000-10|2010-20|2020-10)$/
+);
+const countrySchema = Yup.string().matches(/^(usa|uk|france|germany|ukraine)$/);
 
-  const artistSchema = Yup.string()
-    .min(2)
-    .max(80)
-    .matches(/^[a-zA-Z\s-/]+$/);
-  const genreSchema = Yup.string().matches(/^(rock|pop|country|hip-hop|jazz)$/);
-  const decadeSchema = Yup.string().matches(
-    /^(1950-60|1960-70|1970-80|1980-90|1990-00|2000-10|2010-20|2020-10)$/
-  );
-  const countrySchema = Yup.string().matches(
-    /^(usa|uk|france|germany|ukraine)$/
-  );
+const searchParamsSchema = Yup.object({
+  artist: artistSchema.nullable(true),
+  genre: genreSchema.nullable(true),
+  decade: decadeSchema.nullable(true),
+  country: countrySchema.nullable(true),
+});
 
-  const searchParamsSchema = Yup.object({
-    artist: artistSchema.nullable(true),
-    genre: genreSchema.nullable(true),
-    decade: decadeSchema.nullable(true),
-    country: countrySchema.nullable(true),
-  });
+export function FilterForm(props) {
+  const { onSubmit } = props;
 
   const {
     register,
@@ -42,20 +40,6 @@ export function FilterForm() {
     },
     resolver: yupResolver(searchParamsSchema),
   });
-
-  function navigateToResultsPage(data) {
-    let searchParams = new URLSearchParams();
-    if (data.artist) searchParams.append("artist", data.artist);
-    if (data.genre) searchParams.append("genre", data.genre);
-    if (data.country) searchParams.append("country", data.country);
-    if (data.decade) searchParams.append("decade", data.decade);
-    if (searchParams.size !== 0) navigate("/search/results?" + searchParams);
-  }
-
-  function onSubmit(e) {
-    // e.preventDefault();
-    navigateToResultsPage(e);
-  }
 
   return (
     <div className="filter">
@@ -89,10 +73,9 @@ export function FilterForm() {
                 { value: "jazz", title: "Jazz" },
               ]}
               error={errors.genre?.message}
-              onChange={(e) => field.onChange(e)}
             />
           )}
-        ></Controller>
+        />
         <Controller
           control={control}
           name="decade"
@@ -111,11 +94,10 @@ export function FilterForm() {
                 { value: "2010-20", title: "2010-20 рр." },
                 { value: "2020-10", title: "2000-30 рр." },
               ]}
-              onChange={(e) => field.onChange(e)}
               error={errors.decade?.message}
             />
           )}
-        ></Controller>
+        />
         <Controller
           control={control}
           name="country"
@@ -131,11 +113,10 @@ export function FilterForm() {
                 { value: "germany", title: "Germany" },
                 { value: "ukraine", title: "Ukraine" },
               ]}
-              onChange={(e) => field.onChange(e)}
               error={errors.country?.message}
             />
           )}
-        ></Controller>
+        />
         <input
           type="submit"
           value="Search"
@@ -148,3 +129,7 @@ export function FilterForm() {
     </div>
   );
 }
+
+FilterForm.propTypes = {
+  onSubmit: propTypes.func.isRequired,
+};

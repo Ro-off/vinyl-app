@@ -6,7 +6,7 @@ import clsx from "clsx";
 
 export function Select(props) {
   const {
-    name = "Select",
+    name,
     className = "",
     options,
     value,
@@ -54,11 +54,10 @@ export function Select(props) {
       </p>
 
       <div
-        className={clsx(
-          styles.dropdownMenu,
-          { [styles.hidden]: !isOpen },
-          { [styles.dropdownMenuEmpty]: !options }
-        )}
+        className={clsx(styles.dropdownMenu, {
+          [styles.hidden]: !isOpen,
+          [styles.dropdownMenuEmpty]: !options,
+        })}
       >
         {!options ? (
           <p>No results</p>
@@ -66,9 +65,8 @@ export function Select(props) {
           options.map((option) => (
             <button
               type="button"
-              onClick={(e) => handleChange(e.target.value)}
-              key={name + "-" + option.value}
-              value={option.value}
+              onClick={() => handleChange(option.value)}
+              key={option.value}
             >
               {option.title}
             </button>
