@@ -16,13 +16,13 @@
   display: none;
 }
 
-.filterForm > * {
+.filterForm .field {
   height: 42px;
-  padding-right: 20px;
-  padding-left: 10px;
+  /* padding-right: 20px;
+  padding-left: 10px; */
   border: none;
   border-radius: 4px;
-  margin: 10px;
+  margin: 14px 10px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -39,30 +39,43 @@
 .filterForm input::placeholder {
   color: var(--gray-text-1);
 }
+.nativeInput {
+ padding: 0 !important;
+}
 
-.filterForm select {
+.errorMessage{
+  position: absolute;
+  margin: -10px 10px;
+  color: var(--error-1);
+}
+
+.error{
+  outline-color: var(--error-1) !important
+}
+
+/* .filterForm select {
   appearance: none;
   background-image: url("/src/assets/icons/chevron_down.svg");
   background-position: right;
   background-position: right 10px top 50%;
   background-repeat: no-repeat;
   background-size: 16px;
-}
+} */
 
 .artist {
   width: calc(100% - 20px);
+  padding-left: 10px;
 }
-
 .genre {
-  width: calc(50% - 20px);
+  width: calc(50% - 20px) !important;
 }
 
 .decade {
-  width: calc(50% - 20px);
+  width: calc(50% - 20px) !important;;
 }
 
 .country {
-  width: calc(100% - 20px);
+  width: calc(100% - 20px) !important;
 }
 
 .filterSearch {
@@ -70,6 +83,11 @@
   height: 44px;
   align-self: center;
   border: none;
+  border-radius: 4px;
+  margin: 14px 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   background-color: var(--accent-color);
   color: var(--text-1);
   font-size: 16px;
@@ -88,29 +106,36 @@
   filter: brightness(1.2);
 }
 
+.disabled{
+  background: var(--gray-border);
+  cursor:not-allowed !important;
+}
 
 @media screen and (min-width: 130vh) {
-
     .artist {
-      width: calc(50% - 30px);
-      order: 1;
-      padding-right: 0px;
+      width: calc(50% - 30px) !important;
+      order: 1 !important;
+      padding-right: 0px !important;
+    }
+
+    .artist input{
+      width: 100% !important;
     }
 
     .genre {
-      order: 3;
+      order: 3 !important;
     }
 
     .decade {
-      order: 4;
+      order: 4 !important;
     }
 
     .country {
-      width: calc(50% - 20px);
-      order: 2;
+      width: calc(50% - 20px) !important;
+      order: 2 !important;
     }
 
     .filterSearch {
-      order: 5;
+      order: 5 !important;
     }
   }

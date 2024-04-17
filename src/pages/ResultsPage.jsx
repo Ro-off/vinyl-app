@@ -15,6 +15,7 @@ export const ResultsPage = () => {
     genre: params.get("genre"),
     artist: params.get("artist"),
     country: params.get("country"),
+    decade: params.get("decade"),
   };
 
   const musicList = useMusicList();
@@ -32,7 +33,12 @@ export const ResultsPage = () => {
       : Number(params.get("page"))
   );
 
-  if (!searchParams.genre && !searchParams.artist && !searchParams.country) {
+  if (
+    !searchParams.genre &&
+    !searchParams.artist &&
+    !searchParams.country &&
+    !searchParams.decade
+  ) {
     return <Navigate to="/search" />;
   }
 
@@ -62,6 +68,13 @@ export const ResultsPage = () => {
   }
 
   function filterItemsBySearchQuery(element) {
+    let decade = {};
+    if (searchParams.decade) {
+      decade.min = Number(searchParams.decade.split("-")[0]);
+      decade.max = Number(
+        searchParams.decade.slice(0, 2) + searchParams.decade.split("-")[1]
+      );
+    }
     if (
       (!params.get("genre") ||
         String(searchParams.genre).toLowerCase() ===
@@ -71,7 +84,10 @@ export const ResultsPage = () => {
           String(element.author).toLowerCase()) &&
       (!params.get("country") ||
         String(searchParams.country).toLowerCase() ===
-          String(element.country).toLowerCase())
+          String(element.country).toLowerCase()) &&
+      (!params.get("decade") ||
+        (String(element.year) >= decade.min &&
+          String(element.year) <= decade.max))
     )
       return true;
   }
