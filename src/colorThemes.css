@@ -10,6 +10,7 @@
     --accent-text:  #0A2530;
     --text-1:       #ffffff;
     --gray-border:  #EDEEF0;
+    --error-1: rgb(189, 61, 61);
     }
   }
 
@@ -24,6 +25,7 @@
     --accent-text:   #076185;
     --text-1:        #e8e8e8;
     --gray-border:   #373636;
+    --error-1: rgb(189, 61, 61);
   }
 }
 
