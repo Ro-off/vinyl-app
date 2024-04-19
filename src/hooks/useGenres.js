@@ -4,9 +4,9 @@ export function useGenres() {
   const [value] = useState({
     1: "rock",
     2: "pop",
-    4: "country",
-    5: "hip-hop",
-    6: "jazz",
+    3: "country",
+    4: "hip-hop",
+    5: "jazz",
   });
   return value;
 }
