@@ -1,12 +1,11 @@
-import { useState } from "react";
+import useSWR from "swr";
+
+const fetcher = (url) =>
+  fetch(url)
+    .then((res) => res.json())
+    .then((res) => res.genres);
 
 export function useGenres() {
-  const [value] = useState({
-    1: "rock",
-    2: "pop",
-    3: "country",
-    4: "hip-hop",
-    5: "jazz",
-  });
-  return value;
+  const { data, isLoading, error } = useSWR("/api/genres", fetcher);
+  return { data: data, isLoading, error };
 }

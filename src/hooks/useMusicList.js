@@ -11,7 +11,11 @@ export function useMusicList() {
 
   return value.map((item) => ({
     ...item,
-    genre: genres[item.genreId],
-    country: countries[item.countryId],
+    genre: genres.isLoading
+      ? "Loading"
+      : genres.data.find((element) => element.id == [item.genreId]).title,
+    country: countries.isLoading
+      ? "Loading"
+      : countries.data.find((element) => element.id == [item.countryId]).title,
   }));
 }
