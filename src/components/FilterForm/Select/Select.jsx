@@ -13,6 +13,7 @@ export function Select(props) {
     title = "Select value",
     onChange,
     error,
+    isLoading = false,
   } = props;
 
   const [isOpen, setIsOpen] = useState(false);
@@ -59,7 +60,9 @@ export function Select(props) {
           [styles.dropdownMenuEmpty]: !options,
         })}
       >
-        {!options ? (
+        {isLoading ? (
+          <p>Loading...</p>
+        ) : !options ? (
           <p>No results</p>
         ) : (
           options.map((option) => (
@@ -85,4 +88,5 @@ Select.propTypes = {
   onChange: propTypes.func.isRequired,
   title: propTypes.string,
   error: propTypes.func,
+  isLoading: propTypes.bool,
 };

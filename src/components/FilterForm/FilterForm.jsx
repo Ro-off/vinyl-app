@@ -5,16 +5,18 @@ import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import clsx from "clsx";
 import propTypes from "prop-types";
+import { useGenres } from "../../hooks/useGenres";
+import { useCountries } from "../../hooks/useCountries";
 
 const artistSchema = Yup.string()
   .min(2)
   .max(80)
   .matches(/^[a-zA-Z\s-/]+$/);
-const genreSchema = Yup.string().matches(/^(rock|pop|country|hip-hop|jazz)$/);
+const genreSchema = Yup.string();
 const decadeSchema = Yup.string().matches(
   /^(1950-60|1960-70|1970-80|1980-90|1990-00|2000-10|2010-20|2020-10)$/
 );
-const countrySchema = Yup.string().matches(/^(usa|uk|france|germany|ukraine)$/);
+const countrySchema = Yup.string();
 
 const searchParamsSchema = Yup.object({
   artist: artistSchema.nullable(true),
@@ -25,6 +27,9 @@ const searchParamsSchema = Yup.object({
 
 export function FilterForm(props) {
   const { onSubmit } = props;
+  const genres = useGenres();
+  const countries = useCountries();
+  console.log(countries.data);
 
   const {
     register,
@@ -65,14 +70,16 @@ export function FilterForm(props) {
               className={`${styles.genre} ${styles.field}`}
               {...field}
               title="Genre"
-              options={[
-                { value: "rock", title: "Rock" },
-                { value: "pop", title: "Pop" },
-                { value: "country", title: "Country" },
-                { value: "hip-hop", title: "Hip-hop" },
-                { value: "jazz", title: "Jazz" },
-              ]}
+              options={
+                genres.isLoading
+                  ? []
+                  : genres.data.map((genre) => ({
+                      value: genre.id,
+                      title: genre.title,
+                    }))
+              }
               error={errors.genre?.message}
+              isLoading={genres.isLoading}
             />
           )}
         />
@@ -106,13 +113,15 @@ export function FilterForm(props) {
               className={`${styles.country} ${styles.field}`}
               {...field}
               title="Country"
-              options={[
-                { value: "usa", title: "USA" },
-                { value: "uk", title: "UK" },
-                { value: "france", title: "France" },
-                { value: "germany", title: "Germany" },
-                { value: "ukraine", title: "Ukraine" },
-              ]}
+              options={
+                countries.isLoading
+                  ? []
+                  : countries.data.map((country) => ({
+                      value: country.id,
+                      title: country.title,
+                    }))
+              }
+              isLoading={countries.isLoading}
               error={errors.country?.message}
             />
           )}

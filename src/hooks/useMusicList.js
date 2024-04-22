@@ -46,25 +46,31 @@ export function useMusicList(
   const { data, isLoading, error } = useSWR(["/api/search", searchParams], () =>
     fetcher("/api/search", searchParams)
   );
+  // console.log(data);
 
-  return isLoading || error
-    ? []
-    : data.results.map((item) => ({
-        // ...item,
-        imageSrc: item.thumb_image,
-        itemId: item.id,
-        name: item.title,
-        year: item.year,
-        genre: genres.isLoading
-          ? "Loading"
-          : String(
-              genres.data.find((element) => element.id == [item.genre]).title
-            ),
-        country: countries.isLoading
-          ? "Loading"
-          : String(
-              countries.data.find((element) => element.id == [item.country])
-                .title
-            ),
-      }));
+  return {
+    data:
+      isLoading || error
+        ? []
+        : data.results.map((item) => ({
+            // ...item,
+            imageSrc: item.thumb_image,
+            itemId: item.id,
+            name: item.title,
+            year: item.year,
+            genre: genres.isLoading
+              ? "Loading"
+              : String(
+                  genres.data.find((element) => element.id == [item.genre])
+                    .title
+                ),
+            country: countries.isLoading
+              ? "Loading"
+              : String(
+                  countries.data.find((element) => element.id == [item.country])
+                    .title
+                ),
+          })),
+    size: isLoading || error ? 0 : data.total,
+  };
 }
