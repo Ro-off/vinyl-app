@@ -29,7 +29,6 @@ export function FilterForm(props) {
   const { onSubmit } = props;
   const genres = useGenres();
   const countries = useCountries();
-  console.log(countries.data);
 
   const {
     register,
