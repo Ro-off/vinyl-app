@@ -58,6 +58,7 @@ export function useMusicList(
             itemId: item.id,
             name: item.title,
             year: item.year,
+            author: item.artist,
             genre: genres.isLoading
               ? "Loading"
               : String(
