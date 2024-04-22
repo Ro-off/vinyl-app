@@ -1,21 +1,38 @@
-import { useState } from "react";
-import { musicListData } from "../musicData.json";
 import { useGenres } from "./useGenres";
 import { useCountries } from "./useCountries";
+import useSWR from "swr";
+
+const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export function useMusicList() {
   const genres = useGenres();
   const countries = useCountries();
 
-  const [value] = useState([...Object.values(musicListData)]);
+  const { data, isLoading, error } = useSWR("/api/search", fetcher);
 
-  return value.map((item) => ({
-    ...item,
-    genre: genres.isLoading
-      ? "Loading"
-      : genres.data.find((element) => element.id == [item.genreId]).title,
-    country: countries.isLoading
-      ? "Loading"
-      : countries.data.find((element) => element.id == [item.countryId]).title,
-  }));
+  // console.log("MusicList:");
+  // console.log(isLoading ? "Wait... be patient..." : data.results);
+
+  // const [musicList] = useState([...Object.values(musicListData)]);
+
+  return isLoading || error
+    ? []
+    : data.results.map((item) => ({
+        // ...item,
+        imageSrc: item.thumb_image,
+        itemId: item.id,
+        name: item.title,
+        year: item.year,
+        genre: genres.isLoading
+          ? "Loading"
+          : String(
+              genres.data.find((element) => element.id == [item.genre]).title
+            ),
+        country: countries.isLoading
+          ? "Loading"
+          : String(
+              countries.data.find((element) => element.id == [item.country])
+                .title
+            ),
+      }));
 }
