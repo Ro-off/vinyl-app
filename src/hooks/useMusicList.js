@@ -2,18 +2,50 @@ import { useGenres } from "./useGenres";
 import { useCountries } from "./useCountries";
 import useSWR from "swr";
 
-const fetcher = (url) => fetch(url).then((res) => res.json());
+function fetcher(url, searchParams) {
+  let urlParams = new URLSearchParams(url);
+  if (searchParams.artist) {
+    urlParams.append("artist", searchParams.artist);
+  }
+  if (searchParams.genre) {
+    urlParams.append("genre", searchParams.genre);
+  }
+  if (searchParams.year_from) {
+    urlParams.append("year_from", searchParams.year_from);
+  }
+  if (searchParams.year_to) {
+    urlParams.append("year_to", searchParams.year_to);
+  }
+  if (searchParams.country) {
+    urlParams.append("country", searchParams.country);
+  }
+  if (searchParams.offset) {
+    urlParams.append("offset", searchParams.offset);
+  }
+  if (searchParams.limit) {
+    urlParams.append("limit", searchParams.limit);
+  }
 
-export function useMusicList() {
+  return fetch(url + "?" + urlParams).then((res) => res.json());
+}
+
+export function useMusicList(
+  searchParams = {
+    artist: null,
+    genre: null,
+    year_from: null,
+    year_to: null,
+    country: null,
+    offset: 0,
+    limit: 12,
+  }
+) {
   const genres = useGenres();
   const countries = useCountries();
 
-  const { data, isLoading, error } = useSWR("/api/search", fetcher);
-
-  // console.log("MusicList:");
-  // console.log(isLoading ? "Wait... be patient..." : data.results);
-
-  // const [musicList] = useState([...Object.values(musicListData)]);
+  const { data, isLoading, error } = useSWR(["/api/search", searchParams], () =>
+    fetcher("/api/search", searchParams)
+  );
 
   return isLoading || error
     ? []
