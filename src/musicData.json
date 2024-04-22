@@ -6,7 +6,7 @@
       "author": "Queen",
       "genreId": 1,
       "year": 1975,
-      "countryId": 1,
+      "countryId": "uk",
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
     {
@@ -15,7 +15,7 @@
       "author": "Led Zeppelin",
       "genreId": 4,
       "year": 1971,
-      "countryId": 10,
+      "countryId": "uk",
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
     {
@@ -24,7 +24,7 @@
       "author": "John Lennon",
       "genreId": 3,
       "year": 1971,
-      "countryId": 2,
+      "countryId": "uk",
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
     {
@@ -33,7 +33,7 @@
       "author": "Eagles",
       "genreId": 4,
       "year": 1976,
-      "countryId": 10,
+      "countryId": "uk",
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
     {
@@ -42,7 +42,7 @@
       "author": "Nirvana",
       "genreId": 2,
       "year": 1991,
-      "countryId": 10,
+      "countryId": "uk",
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
     {
@@ -51,7 +51,7 @@
       "author": "Metallica",
       "genreId": 4,
       "year": 1988,
-      "countryId": 10,
+      "countryId": "uk",
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
     {
@@ -60,7 +60,7 @@
       "author": "Guns N' Roses",
       "genreId": 4,
       "year": 1987,
-      "countryId": 10,
+      "countryId": "uk",
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
     {
@@ -69,7 +69,7 @@
       "author": "Pink Floyd",
       "genreId": 4,
       "year": 1979,
-      "countryId": 10,
+      "countryId": "uk",
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
     {
@@ -78,7 +78,7 @@
       "author": "Pink Floyd",
       "genreId": 4,
       "year": 1979,
-      "countryId": 10,
+      "countryId": "uk",
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
     {
@@ -87,7 +87,7 @@
       "author": "Pink Floyd",
       "genreId": 4,
       "year": 1975,
-      "countryId": 10,
+      "countryId": "uk",
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
     {
@@ -96,7 +96,7 @@
       "author": "AC/DC",
       "genreId": 4,
       "year": 1979,
-      "countryId": 10,
+      "countryId": "uk",
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
     {
@@ -105,7 +105,7 @@
       "author": "AC/DC",
       "genreId": 4,
       "year": 1980,
-      "countryId": 10,
+      "countryId": "uk",
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
     {
@@ -114,7 +114,7 @@
       "author": "The Beatles",
       "genreId": 1,
       "year": 1968,
-      "countryId": 3,
+      "countryId": "uk",
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
     {
@@ -123,7 +123,7 @@
       "author": "Bob Dylan",
       "genreId": 1,
       "year": 1965,
-      "countryId": 4,
+      "countryId": "uk",
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
     {
@@ -132,7 +132,7 @@
       "author": "The Beatles",
       "genreId": 1,
       "year": 1967,
-      "countryId": 3,
+      "countryId": "uk",
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
     {
@@ -141,7 +141,7 @@
       "author": "Bruce Springsteen",
       "genreId": 1,
       "year": 1975,
-      "countryId": 5,
+      "countryId": "uk",
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
     {
@@ -150,7 +150,7 @@
       "author": "Eagles",
       "genreId": 4,
       "year": 1976,
-      "countryId": 10,
+      "countryId": "uk",
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
     {
@@ -159,7 +159,7 @@
       "author": "Nirvana",
       "genreId": 2,
       "year": 1991,
-      "countryId": 10,
+      "countryId": "uk",
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
     {
@@ -168,7 +168,7 @@
       "author": "Metallica",
       "genreId": 4,
       "year": 1988,
-      "countryId": 10,
+      "countryId": "uk",
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
     {
@@ -177,7 +177,7 @@
       "author": "Guns N' Roses",
       "genreId": 4,
       "year": 1987,
-      "countryId": 10,
+      "countryId": "uk",
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
     {
@@ -186,7 +186,7 @@
       "author": "Pink Floyd",
       "genreId": 4,
       "year": 1979,
-      "countryId": 10,
+      "countryId": "uk",
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
     {
@@ -195,7 +195,7 @@
       "author": "Pink Floyd",
       "genreId": 4,
       "year": 1979,
-      "countryId": 10,
+      "countryId": "uk",
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
     {
@@ -204,7 +204,7 @@
       "author": "Pink Floyd",
       "genreId": 4,
       "year": 1975,
-      "countryId": 10,
+      "countryId": "uk",
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
     {
@@ -213,7 +213,7 @@
       "author": "AC/DC",
       "genreId": 4,
       "year": 1979,
-      "countryId": 10,
+      "countryId": "uk",
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
     {
@@ -222,7 +222,7 @@
       "author": "AC/DC",
       "genreId": 4,
       "year": 1980,
-      "countryId": 10,
+      "countryId": "uk",
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
     {
@@ -231,7 +231,7 @@
       "author": "John Lennon",
       "genreId": 3,
       "year": 1971,
-      "countryId": 2,
+      "countryId": "uk",
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
     {
@@ -240,7 +240,7 @@
       "author": "Queen",
       "genreId": 1,
       "year": 1975,
-      "countryId": 1,
+      "countryId": "uk",
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
     {
@@ -249,7 +249,7 @@
       "author": "Led Zeppelin",
       "genreId": 4,
       "year": 1971,
-      "countryId": 10,
+      "countryId": "uk",
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
     {
@@ -258,7 +258,7 @@
       "author": "Queen",
       "genreId": 1,
       "year": 1975,
-      "countryId": 1,
+      "countryId": "uk",
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     },
     {
@@ -267,7 +267,7 @@
       "author": "Queen",
       "genreId": 1,
       "year": 1975,
-      "countryId": 1,
+      "countryId": "uk",
       "imageSrc": "https://i.discogs.com/GCNPRSAsHiTRxtsZj1uTFk48NDTNSh3DRt7YrpHUmMc/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDAw/MjkwLTE1NTE1ODQ1/MzEtODczNi5qcGVn.jpeg"
     }
   ]
