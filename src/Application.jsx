@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import { useCollection } from "./hooks/useCollection";
 import { useFavorites } from "./hooks/useFavorites";
 import { Suspense } from "react";
+import { Loader } from "./components/Loader/Loader";
 
 export const Application = () => {
   const { collection, toggleCollection } = useCollection();
@@ -10,7 +11,7 @@ export const Application = () => {
   return (
     <>
       <NavigationHeader />
-      <Suspense fallback={<Loading />}>
+      <Suspense fallback={<Loader />}>
         <Outlet
           context={{
             collection,
@@ -22,8 +23,4 @@ export const Application = () => {
       </Suspense>
     </>
   );
-
-  function Loading() {
-    return <h2>🌀 Loading...</h2>;
-  }
 };
