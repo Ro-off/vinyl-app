@@ -6,6 +6,8 @@ const fetcher = (url) =>
     .then((res) => res.genres);
 
 export function useGenres() {
-  const { data, isLoading, error } = useSWR("/api/genres", fetcher);
+  const { data, isLoading, error } = useSWR("/api/genres", fetcher, {
+    suspense: true,
+  });
   return { data: data, isLoading, error };
 }

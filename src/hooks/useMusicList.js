@@ -44,7 +44,7 @@ export function useMusicList(
   const countries = useCountries();
 
   const { data, isLoading, error } = useSWR(["/api/search", searchParams], () =>
-    fetcher("/api/search", searchParams)
+    fetcher("/api/search", searchParams, { suspense: true })
   );
   // console.log(data);
 

@@ -6,6 +6,8 @@ const fetcher = (url) =>
     .then((res) => res.countries);
 
 export function useCountries() {
-  const { data, isLoading, error } = useSWR("/api/countries", fetcher);
+  const { data, isLoading, error } = useSWR("/api/countries", fetcher, {
+    suspense: true,
+  });
   return { data: data, isLoading, error };
 }
