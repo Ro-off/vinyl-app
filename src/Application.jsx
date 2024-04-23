@@ -4,22 +4,27 @@ import { useCollection } from "./hooks/useCollection";
 import { useFavorites } from "./hooks/useFavorites";
 import { Suspense } from "react";
 import { Loader } from "./components/Loader/Loader";
+import { ErrorBoundary } from "react-error-boundary";
+import { Notification } from "./components/Notification/Notification";
 
 export const Application = () => {
   const { collection, toggleCollection } = useCollection();
   const { favorites, toggleFavorites } = useFavorites();
+
   return (
     <>
       <NavigationHeader />
       <Suspense fallback={<Loader />}>
-        <Outlet
-          context={{
-            collection,
-            toggleCollection,
-            favorites,
-            toggleFavorites,
-          }}
-        />
+        <ErrorBoundary fallback={<Notification text={"Error"} type="error" />}>
+          <Outlet
+            context={{
+              collection,
+              toggleCollection,
+              favorites,
+              toggleFavorites,
+            }}
+          />
+        </ErrorBoundary>
       </Suspense>
     </>
   );
