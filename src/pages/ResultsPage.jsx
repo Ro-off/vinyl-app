@@ -4,13 +4,8 @@ import { AppliedFilters } from "../components/AppliedFilters/AppliedFilters";
 import { useMusicList } from "../hooks/useMusicList";
 import { useSearchParams, Navigate, useOutletContext } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { useGenres } from "../hooks/useGenres";
-import { useCountries } from "../hooks/useCountries";
 
 export const ResultsPage = () => {
-  const genres = useGenres();
-  const countries = useCountries();
-
   const { collection, toggleCollection, favorites, toggleFavorites } =
     useOutletContext();
 
@@ -54,6 +49,7 @@ export const ResultsPage = () => {
 
   function removeSearchFilter(id, value) {
     const newParams = new URLSearchParams(params);
+    console.log(id + " " + value);
     newParams.delete(id, value);
     setParams(newParams);
   }
@@ -116,20 +112,6 @@ export const ResultsPage = () => {
       <AppliedFilters
         filtersList={{
           ...searchParams,
-          genre: !searchParams.genre
-            ? null
-            : String(
-                genres.data.find(
-                  (genre) => genre.id === Number(searchParams.genre)
-                ).title
-              ),
-          country: !searchParams.country
-            ? null
-            : String(
-                countries.data.find(
-                  (country) => country.id === searchParams.country
-                ).title
-              ),
         }}
         removeSearchFilter={removeSearchFilter}
       />
