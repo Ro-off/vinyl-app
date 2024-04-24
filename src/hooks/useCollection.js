@@ -1,14 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export function useCollection() {
-  const [value, setValue] = useState([]);
-
-  useEffect(() => {
-    const localStorageValue = localStorage.getItem("Collection")
+  const [value, setValue] = useState(
+    localStorage.getItem("Collection")
       ? JSON.parse(localStorage.getItem("Collection"))
-      : [];
-    setValue(localStorageValue);
-  }, [setValue]);
+      : []
+  );
 
   function addToValueArr(elem) {
     const newValue = [...value, elem];

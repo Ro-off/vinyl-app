@@ -1,14 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export function useFavorites() {
-  const [value, setValue] = useState([]);
-
-  useEffect(() => {
-    const localStorageValue = localStorage.getItem("Favorites")
+  const [value, setValue] = useState(
+    localStorage.getItem("Favorites")
       ? JSON.parse(localStorage.getItem("Favorites"))
-      : [];
-    setValue(localStorageValue);
-  }, [setValue]);
+      : []
+  );
+
+  function syncLocalStorageWithValue(value) {
+    localStorage.setItem("Favorites", JSON.stringify(value));
+  }
 
   function addToValueArr(elem) {
     const newValue = [...value, elem];
@@ -22,10 +23,6 @@ export function useFavorites() {
       setValue(newValue);
       syncLocalStorageWithValue(newValue);
     }
-  }
-
-  function syncLocalStorageWithValue(value) {
-    localStorage.setItem("Favorites", JSON.stringify(value));
   }
 
   function toggleValue(elem) {
