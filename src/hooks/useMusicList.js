@@ -32,7 +32,6 @@ function translateLocalSearchParamsToServerUrl(url, searchParams) {
   if (searchParams.limit) {
     urlParams.append("limit", searchParams.limit);
   }
-  console.log(url + "?" + urlParams);
   return url + "?" + urlParams;
 }
 
