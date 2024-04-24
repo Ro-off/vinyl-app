@@ -49,7 +49,6 @@ export const ResultsPage = () => {
 
   function removeSearchFilter(id, value) {
     const newParams = new URLSearchParams(params);
-    console.log(id + " " + value);
     newParams.delete(id, value);
     setParams(newParams);
   }
