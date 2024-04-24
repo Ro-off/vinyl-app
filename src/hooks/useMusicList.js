@@ -2,7 +2,11 @@ import { useGenres } from "./useGenres";
 import { useCountries } from "./useCountries";
 import useSWR from "swr";
 
-function fetcher(url, searchParams) {
+function fetcher(url) {
+  return fetch(url).then((res) => res.json());
+}
+
+function translateLocalSearchParamsToServerUrl(url, searchParams) {
   let urlParams = new URLSearchParams(url);
   if (searchParams.artist) {
     urlParams.append("artist", searchParams.artist);
@@ -28,8 +32,7 @@ function fetcher(url, searchParams) {
   if (searchParams.limit) {
     urlParams.append("limit", searchParams.limit);
   }
-
-  return fetch(url + "?" + urlParams).then((res) => res.json());
+  return url + "?" + urlParams;
 }
 
 export function useMusicList(
@@ -47,7 +50,12 @@ export function useMusicList(
   const countries = useCountries();
 
   const { data, isLoading, error } = useSWR(["/api/search", searchParams], () =>
-    fetcher("/api/search", searchParams, { suspense: true })
+    fetcher(
+      translateLocalSearchParamsToServerUrl("/api/search", searchParams),
+      {
+        suspense: true,
+      }
+    )
   );
   // console.log(data);
 
