@@ -16,8 +16,6 @@ function translateLocalSearchParamsToServerUrl(url, searchParams) {
   }
   if (searchParams.decade) {
     urlParams.append("year_from", searchParams.decade.split("-")[0]);
-  }
-  if (searchParams.decade) {
     urlParams.append(
       "year_to",
       searchParams.decade.slice(0, 2) + searchParams.decade.split("-")[1]
@@ -41,8 +39,7 @@ export function useMusicList(
     genre: null,
     year_from: null,
     year_to: null,
-    country: null,
-    offset: 0,
+    decade: null,
     limit: 12,
   }
 ) {
