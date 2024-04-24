@@ -10,11 +10,14 @@ function fetcher(url, searchParams) {
   if (searchParams.genre) {
     urlParams.append("genre", searchParams.genre);
   }
-  if (searchParams.year_from) {
-    urlParams.append("year_from", searchParams.year_from);
+  if (searchParams.decade) {
+    urlParams.append("year_from", searchParams.decade.split("-")[0]);
   }
-  if (searchParams.year_to) {
-    urlParams.append("year_to", searchParams.year_to);
+  if (searchParams.decade) {
+    urlParams.append(
+      "year_to",
+      searchParams.decade.slice(0, 2) + searchParams.decade.split("-")[1]
+    );
   }
   if (searchParams.country) {
     urlParams.append("country", searchParams.country);
