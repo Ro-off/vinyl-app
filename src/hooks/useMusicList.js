@@ -7,7 +7,7 @@ function fetcher(url) {
 }
 
 function translateLocalSearchParamsToServerUrl(url, searchParams) {
-  let urlParams = new URLSearchParams(url);
+  let urlParams = new URLSearchParams();
   if (searchParams.artist) {
     urlParams.append("artist", searchParams.artist);
   }
@@ -32,6 +32,7 @@ function translateLocalSearchParamsToServerUrl(url, searchParams) {
   if (searchParams.limit) {
     urlParams.append("limit", searchParams.limit);
   }
+  console.log(url + "?" + urlParams);
   return url + "?" + urlParams;
 }
 
