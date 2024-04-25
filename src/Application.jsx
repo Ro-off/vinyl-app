@@ -1,45 +1,31 @@
-import { useState } from "react";
 import { NavigationHeader } from "./components/NavigationHeader/NavigationHeader";
-import { Filter } from "./components/Filter/Filter";
-import { Pagination } from "./components/Pagination/Pagination";
-import { MusicCardContainer } from "./components/MusicCardContainer/MusicCardContainer";
-import { useMusicList } from "./hooks/useMusicList";
+import { Outlet } from "react-router-dom";
 import { useCollection } from "./hooks/useCollection";
 import { useFavorites } from "./hooks/useFavorites";
+import { Suspense } from "react";
+import { Loader } from "./components/Loader/Loader";
+import { ErrorBoundary } from "react-error-boundary";
+import { Notification } from "./components/Notification/Notification";
 
 export const Application = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const musicList = useMusicList();
-  let itemsOnPage = 12;
-
   const { collection, toggleCollection } = useCollection();
   const { favorites, toggleFavorites } = useFavorites();
 
-  const pagesCount = Math.ceil(musicList.length / itemsOnPage);
-
-  function filterItemsOnPage(element, index) {
-    if (
-      index < currentPage * itemsOnPage &&
-      index >= itemsOnPage * (currentPage - 1)
-    )
-      return true;
-  }
   return (
     <>
       <NavigationHeader />
-      <Filter />
-      <MusicCardContainer
-        musicList={musicList.filter(filterItemsOnPage)}
-        collection={collection}
-        favorites={favorites}
-        toggleCollection={toggleCollection}
-        toggleFavorites={toggleFavorites}
-      />
-      <Pagination
-        currentPage={currentPage}
-        onPageChange={setCurrentPage}
-        pagesCount={pagesCount}
-      />
+      <Suspense fallback={<Loader />}>
+        <ErrorBoundary fallback={<Notification text={"Error"} type="error" />}>
+          <Outlet
+            context={{
+              collection,
+              toggleCollection,
+              favorites,
+              toggleFavorites,
+            }}
+          />
+        </ErrorBoundary>
+      </Suspense>
     </>
   );
 };

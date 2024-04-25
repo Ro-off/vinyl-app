@@ -1,17 +1,52 @@
 import { createRoot } from "react-dom/client";
-import { Application } from "./Application";
 import { StrictMode } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Application } from "./Application";
+import { HomePage } from "./pages/HomePage";
+import { SearchPage } from "./pages/SearchPage";
+import { ResultsPage } from "./pages/ResultsPage";
+import { HelmetProvider } from "react-helmet-async";
 
-//// import { renderToString } from "react-dom/server";
+async function bootstrap() {
+  // if (import.meta.env.DEV) {
+  const { worker } = await import("./mocks/browser.js");
+  worker.start();
+  // }
+}
 
 const appElement = document.getElementById("app");
 const root = createRoot(appElement);
-////const view = renderToString(<Application />);
 
-root.render(
-  <StrictMode>
-    <Application />
-  </StrictMode>
-);
+const router = createBrowserRouter([
+  {
+    element: <Application />,
+    children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
+      {
+        path: "/search",
+        element: <SearchPage />,
+      },
+      {
+        path: "/search/results",
+        element: <ResultsPage />,
+      },
+      {
+        path: "*",
+        element: <p>Page no found</p>,
+      },
+    ],
+  },
+]);
 
-////console.log(view);
+bootstrap().then(() => {
+  root.render(
+    <StrictMode>
+      <HelmetProvider>
+        <RouterProvider router={router} />
+      </HelmetProvider>
+    </StrictMode>
+  );
+});
