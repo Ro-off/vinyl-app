@@ -10,12 +10,7 @@ export function YMLCardsContainer() {
       <div className={styles.cardScrollContainer}>
         <div className={styles.cards}>
           {genres.data.map((genre) => (
-            <YMLCard
-              key={genre.id}
-              title={genre.title}
-              genreId={genre.id}
-              background="rgb(155, 182, 64)"
-            />
+            <YMLCard key={genre.id} title={genre.title} genreId={genre.id} />
           ))}
         </div>
       </div>
