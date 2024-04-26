@@ -3,20 +3,14 @@ import PropTypes from "prop-types";
 import * as seedrandom from "seedrandom";
 import { useMusicList } from "../../../../hooks/useMusicList";
 
-function generatePosition(seed) {
+function generateStyle(seed) {
   const generator = new seedrandom(seed);
 
-  let position = {
+  const position = {
     bottom: -10 + generator() * 20,
     rotation: -20 + generator() * 40,
     right: generator() * 30,
   };
-
-  return position;
-}
-
-function generateStyle(seed) {
-  const position = generatePosition(seed);
 
   return {
     bottom: position.bottom + "px",
