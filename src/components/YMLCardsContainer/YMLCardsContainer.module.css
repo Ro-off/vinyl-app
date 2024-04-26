@@ -10,14 +10,19 @@
 
 .cards {
   display: flex;
-  overflow: scroll;
-  width: 100%;
+  overflow: auto;
+  width: max-content;
   flex-wrap: nowrap;
   gap: 10px;
-  scrollbar-width: none;
 }
 
-.cards::-webkit-scrollbar {
+.cardScrollContainer{
+  overflow: auto;
+  width: 100%;
+  scrollbar-width: none;
+
+}
+.cardScrollContainer::-webkit-scrollbar {
   display: none;
 }
 
