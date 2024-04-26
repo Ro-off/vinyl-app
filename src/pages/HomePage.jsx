@@ -3,7 +3,6 @@ import { MusicCardContainer } from "../components/MusicCardContainer/MusicCardCo
 import { useMusicList } from "../hooks/useMusicList";
 import { useOutletContext, useSearchParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { YMLCardsContainer } from "../components/YMLCardsContainer/YMLCardsContainer";
 
 export const HomePage = () => {
   const { collection, toggleCollection, favorites, toggleFavorites } =
@@ -50,8 +49,6 @@ export const HomePage = () => {
       <Helmet>
         <title>Home</title>
       </Helmet>
-
-      <YMLCardsContainer />
       <MusicCardContainer
         musicList={musicList.data}
         collection={collection}

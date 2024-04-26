@@ -1,6 +1,7 @@
 import { FilterForm } from "../components/FilterForm/FilterForm";
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
+import { YMLCardsContainer } from "../components/YMLCardsContainer/YMLCardsContainer";
 
 export const SearchPage = () => {
   const navigate = useNavigate();
@@ -25,6 +26,7 @@ export const SearchPage = () => {
         <title>Search</title>
       </Helmet>
       <FilterForm onSubmit={onSubmit} />
+      <YMLCardsContainer />
     </>
   );
 };
