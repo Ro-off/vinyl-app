@@ -9,5 +9,5 @@ export function useGenres() {
   const { data, isLoading, error } = useSWR("/api/genres", fetcher, {
     suspense: true,
   });
-  return { data: data, isLoading, error };
+  return { data, isLoading, error };
 }
