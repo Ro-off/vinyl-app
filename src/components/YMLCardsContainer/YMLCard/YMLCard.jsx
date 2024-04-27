@@ -27,8 +27,8 @@ export function YMLCard(props) {
     <motion.div
       className={styles.cardContainer}
       style={{ background: background }}
-      initial={{ opacity: 0, scale: 0.5 }}
-      whileInView={{ opacity: 1, scale: 1 }}
+      initial={{ opacity: 0, x: 10 }}
+      whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
     >
       <h3>{title}</h3>
