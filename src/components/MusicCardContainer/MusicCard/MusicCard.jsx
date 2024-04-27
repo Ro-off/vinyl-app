@@ -5,6 +5,7 @@ import { HeartFilledIcon } from "../../Icon/HeartFilled";
 import { HeartOutlineIcon } from "../../Icon/HeartOutline";
 import { PlusIcon } from "../../Icon/Plus";
 import { DoneIcon } from "../../Icon/Done";
+import { motion } from "framer-motion";
 
 export function MusicCard({
   music,
@@ -49,10 +50,13 @@ export function MusicCard({
           </div>
         </div>
       </div>
-      <button
+      <motion.button
         className={clsx(styles.button, { [styles.removeButton]: inCollection })}
         type="button"
         onClick={() => onToggleCollection(itemId)}
+        initial={{ scale: 1 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
       >
         <p>{inCollection ? "Remove" : "Add"}</p>
         {inCollection ? (
@@ -60,7 +64,7 @@ export function MusicCard({
         ) : (
           <PlusIcon className={styles.icon} />
         )}
-      </button>
+      </motion.button>
     </div>
   );
 }
