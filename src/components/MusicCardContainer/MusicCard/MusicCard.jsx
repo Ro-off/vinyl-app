@@ -18,18 +18,21 @@ export function MusicCard({
 
   return (
     <div className={styles.item}>
-      <button
+      <motion.button
         type="button"
         className={clsx(styles.likeButton)}
         title="like-button"
         onClick={() => onToggleFavorites(itemId)}
+        initial={{ scale: 1 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
       >
         {inFavorites ? (
           <HeartFilledIcon className={styles.icon} />
         ) : (
           <HeartOutlineIcon className={styles.icon} />
         )}
-      </button>
+      </motion.button>
 
       <img src={imageSrc} alt="" />
       <div className={styles.infoContainer}>
