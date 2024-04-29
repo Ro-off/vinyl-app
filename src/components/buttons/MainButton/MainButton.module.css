@@ -23,23 +23,15 @@
 .button > * {
   overflow: hidden;
   margin: 0px 3px;
+  color: var(--text-1);
   font-size: 15px;
   font-weight: 500;
   text-overflow: ellipsis;
   text-wrap: nowrap;
 }
 
-/* .activeButton {
-  background-color: var(--gray-border);
-  color: var(--accent-text);
-} */
-
-/* .button:hover {
-  cursor: pointer;
-  filter: brightness(1.2);
-} */
-
-/* .activeButton:hover {
-  cursor: pointer;
-  filter: brightness(0.97);
-} */
+.buttonChildrenContainer{
+  position: absolute;
+  display: flex;
+  gap: 5px;
+}
