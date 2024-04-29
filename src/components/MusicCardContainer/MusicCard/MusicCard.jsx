@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import PropTypes from "prop-types";
 import styles from "./MusicCard.module.css";
 import { HeartFilledIcon } from "../../Icon/HeartFilled";
@@ -6,7 +5,7 @@ import { HeartOutlineIcon } from "../../Icon/HeartOutline";
 import { PlusIcon } from "../../Icon/Plus";
 import { DoneIcon } from "../../Icon/Done";
 import { MainButton } from "../../buttons/MainButton/MainButton";
-import { motion } from "framer-motion";
+import { IconButton } from "../../buttons/IconButton/IconButton";
 
 export function MusicCard({
   music,
@@ -19,21 +18,13 @@ export function MusicCard({
 
   return (
     <div className={styles.item}>
-      <motion.button
-        type="button"
-        className={clsx(styles.likeButton)}
-        title="like-button"
+      <IconButton
+        className={styles.likeButton}
         onClick={() => onToggleFavorites(itemId)}
-        initial={{ scale: 1 }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-      >
-        {inFavorites ? (
-          <HeartFilledIcon className={styles.icon} />
-        ) : (
-          <HeartOutlineIcon className={styles.icon} />
-        )}
-      </motion.button>
+        defaultChildren={<HeartOutlineIcon />}
+        onActiveChildren={<HeartFilledIcon />}
+        isActive={inFavorites}
+      />
       <img src={imageSrc} alt="" />
       <div className={styles.infoContainer}>
         <h5>{name}</h5>
