@@ -1,6 +1,7 @@
 import styles from "./MainButton.module.css";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
+import clsx from "clsx";
 
 export function MainButton(props) {
   const {
@@ -8,6 +9,7 @@ export function MainButton(props) {
     onActiveChildren = false,
     isActive,
     onClick,
+    className,
   } = props;
 
   const variants = {
@@ -17,7 +19,7 @@ export function MainButton(props) {
 
   return (
     <motion.button
-      className={styles.button}
+      className={clsx(styles.button, className)}
       type="button"
       onClick={onClick}
       initial={{ scale: 1 }}
@@ -40,4 +42,5 @@ MainButton.propTypes = {
   onActiveChildren: PropTypes.string,
   onClick: PropTypes.func.isRequired,
   isActive: PropTypes.bool.isRequired,
+  className: PropTypes.string,
 };
