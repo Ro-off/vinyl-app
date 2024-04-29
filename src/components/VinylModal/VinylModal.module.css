@@ -79,3 +79,7 @@
 .infoContainer .infoRow :last-child{
   color: var(--text-1);
 }
+
+.collectionButton{
+  margin: 20px 20px;
+}
