@@ -3,11 +3,12 @@
   z-index: 100;
   top: calc( 62px + 20px);
   display: flex;
-  width: 80%;
+  /* width: max-content; */
+  max-width: calc(100% - 40px);
   height: max-content;
   flex-direction: column;
   border-radius: 15px;
-  margin: 0 calc(10%);
+  margin: 0 20px;
   background: var(--bg-color);
   outline: 2px solid var(--accent-color);
 }
