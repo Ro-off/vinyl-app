@@ -5,6 +5,7 @@ import { HeartFilledIcon } from "../../Icon/HeartFilled";
 import { HeartOutlineIcon } from "../../Icon/HeartOutline";
 import { PlusIcon } from "../../Icon/Plus";
 import { DoneIcon } from "../../Icon/Done";
+import { MainButton } from "../../buttons/MainButton/MainButton";
 import { motion } from "framer-motion";
 
 export function MusicCard({
@@ -33,7 +34,6 @@ export function MusicCard({
           <HeartOutlineIcon className={styles.icon} />
         )}
       </motion.button>
-
       <img src={imageSrc} alt="" />
       <div className={styles.infoContainer}>
         <h5>{name}</h5>
@@ -53,21 +53,20 @@ export function MusicCard({
           </div>
         </div>
       </div>
-      <motion.button
-        className={clsx(styles.button, { [styles.removeButton]: inCollection })}
-        type="button"
+      <MainButton
+        defaultChildren={
+          <>
+            <p>Add to Collection</p> <PlusIcon />
+          </>
+        }
+        onActiveChildren={
+          <>
+            <p>In collection</p> <DoneIcon />
+          </>
+        }
+        isActive={inCollection}
         onClick={() => onToggleCollection(itemId)}
-        initial={{ scale: 1 }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-      >
-        <p>{inCollection ? "Remove" : "Add"}</p>
-        {inCollection ? (
-          <DoneIcon className={styles.icon} />
-        ) : (
-          <PlusIcon className={styles.icon} />
-        )}
-      </motion.button>
+      />
     </div>
   );
 }
