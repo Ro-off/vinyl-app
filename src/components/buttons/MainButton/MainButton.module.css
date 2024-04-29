@@ -29,17 +29,17 @@
   text-wrap: nowrap;
 }
 
-.activeButton {
+/* .activeButton {
   background-color: var(--gray-border);
   color: var(--accent-text);
-}
+} */
 
-.button:hover {
+/* .button:hover {
   cursor: pointer;
   filter: brightness(1.2);
-}
+} */
 
-.activeButton:hover {
+/* .activeButton:hover {
   cursor: pointer;
   filter: brightness(0.97);
-}
+} */

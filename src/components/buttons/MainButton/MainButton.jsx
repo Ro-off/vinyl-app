@@ -1,6 +1,5 @@
 import styles from "./MainButton.module.css";
 import PropTypes from "prop-types";
-import clsx from "clsx";
 import { motion } from "framer-motion";
 
 export function MainButton(props) {
@@ -11,13 +10,21 @@ export function MainButton(props) {
     onClick,
   } = props;
 
+  const variants = {
+    active: { background: "var(--accent-text)" },
+    inactive: { background: "var(--accent-color)" },
+  };
+
   return (
     <motion.button
-      className={clsx(styles.button, { [styles.activeButton]: isActive })}
+      className={styles.button}
       type="button"
       onClick={onClick}
       initial={{ scale: 1 }}
       whileTap={{ scale: 0.9 }}
+      whileHover={{ cursor: "pointer", filter: "brightness(1.1)" }}
+      variants={variants}
+      animate={isActive ? "active" : "inactive"}
     >
       {!isActive
         ? defaultChildren
