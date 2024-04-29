@@ -2,6 +2,7 @@ import { FilterForm } from "../components/FilterForm/FilterForm";
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 import { YMLCardsContainer } from "../components/YMLCardsContainer/YMLCardsContainer";
+import { VinylModal } from "../components/VinylModal/VinylModal";
 
 export const SearchPage = () => {
   const navigate = useNavigate();
@@ -25,6 +26,8 @@ export const SearchPage = () => {
       <Helmet>
         <title>Search</title>
       </Helmet>
+      <VinylModal />
+
       <FilterForm onSubmit={onSubmit} />
       <YMLCardsContainer />
     </>
