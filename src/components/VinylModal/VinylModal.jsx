@@ -1,6 +1,8 @@
 import styles from "./VinylModal.module.css";
 import { createPortal } from "react-dom";
 import { MainButton } from "../buttons/MainButton/MainButton";
+import { PlusIcon } from "../Icon/Plus";
+import { DoneIcon } from "../Icon/Done";
 
 export function VinylModal() {
   return createPortal(
@@ -29,8 +31,18 @@ export function VinylModal() {
       </div>
       <MainButton
         className={styles.collectionButton}
-        defaultChildren="Add to collection"
-        onActiveChildren={"In collection"}
+        defaultChildren={
+          <>
+            <p>Add to collection</p>
+            <PlusIcon />
+          </>
+        }
+        onActiveChildren={
+          <>
+            <p>In collection</p>
+            <DoneIcon />
+          </>
+        }
         onClick={() => console.log("Add to collection")}
         isActive={true}
       />
