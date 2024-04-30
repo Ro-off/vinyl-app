@@ -2,7 +2,8 @@
   z-index: 100;
   right: 10px;
   bottom: 10px;
-  width: 400px;
+  width: 80%;
+  max-width: 400px;
   padding: 0px 15px;
   border-radius: 20px;
   /* outline: 3px solid var(--accent-color); */
