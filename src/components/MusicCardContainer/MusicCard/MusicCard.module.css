@@ -20,6 +20,7 @@
 
 .infoContainer {
   margin-top: 10px;
+  cursor: pointer;
 }
 
 .itemInfo {
