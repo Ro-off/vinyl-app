@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useNotification } from "./useNotification";
 
 export function useFavorites() {
+  const { createNotification } = useNotification();
   const [value, setValue] = useState(
     localStorage.getItem("Favorites")
       ? JSON.parse(localStorage.getItem("Favorites"))
@@ -15,6 +17,7 @@ export function useFavorites() {
     const newValue = [...value, elem];
     setValue(newValue);
     syncLocalStorageWithValue(newValue);
+    createNotification({ text: "Added to favorites" });
   }
 
   function removeFromValueArr(elem) {
@@ -22,6 +25,7 @@ export function useFavorites() {
       const newValue = value.filter((e) => e !== elem);
       setValue(newValue);
       syncLocalStorageWithValue(newValue);
+      createNotification({ text: "Removed from favorites" });
     }
   }
 
