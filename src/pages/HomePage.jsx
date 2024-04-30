@@ -25,14 +25,6 @@ export const HomePage = () => {
 
   const pagesCount = Math.ceil(musicList.size / itemsOnPage);
 
-  // function filterItemsOnPage(element, index) {
-  //   if (
-  //     index < currentPage * itemsOnPage &&
-  //     index >= itemsOnPage * (currentPage - 1)
-  //   )
-  //     return true;
-  // }
-
   function handlePageChange(e) {
     changeSearchFilter("page", e);
   }
