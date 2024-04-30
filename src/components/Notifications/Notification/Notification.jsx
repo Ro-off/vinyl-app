@@ -5,12 +5,6 @@ import { createPortal } from "react-dom";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export function createNotification(text, type = "default") {
-  const notificationRoot = document.getElementById("notification-root");
-
-  createPortal(<Notification text={text} type={type} />, notificationRoot);
-}
-
 export function Notification(props) {
   const { text, type = "default" } = props;
 
