@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import styles from "./Notification.module.css";
 import { clsx } from "clsx";
-import { createPortal } from "react-dom";
+// import { createPortal } from "react-dom";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -24,7 +24,22 @@ export function Notification(props) {
     return () => clearTimeout(timer);
   }, [isMounted]);
 
-  return createPortal(
+  // return createPortal(
+  //   <AnimatePresence>
+  //     {isMounted && (
+  //       <motion.div
+  //         className={clsx(styles.notificationContainer, variants[type])}
+  //         initial={{ opacity: 0, y: 50 }}
+  //         animate={{ opacity: 1, y: 0 }}
+  //         exit={{ opacity: 0, y: -50 }}
+  //       >
+  //         <p>{text}</p>
+  //       </motion.div>
+  //     )}
+  //   </AnimatePresence>,
+  //   document.getElementById("notification-root")
+  // );
+  return (
     <AnimatePresence>
       {isMounted && (
         <motion.div
@@ -36,8 +51,7 @@ export function Notification(props) {
           <p>{text}</p>
         </motion.div>
       )}
-    </AnimatePresence>,
-    document.getElementById("notification-root")
+    </AnimatePresence>
   );
 }
 
