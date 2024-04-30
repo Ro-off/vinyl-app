@@ -60,8 +60,8 @@ export function MainButton(props) {
 }
 
 MainButton.propTypes = {
-  defaultChildren: PropTypes.string.isRequired,
-  onActiveChildren: PropTypes.string,
+  defaultChildren: PropTypes.node.isRequired,
+  onActiveChildren: PropTypes.node,
   onClick: PropTypes.func.isRequired,
   isActive: PropTypes.bool.isRequired,
   className: PropTypes.string,
