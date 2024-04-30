@@ -4,8 +4,23 @@ import clsx from "clsx";
 import { motion } from "framer-motion";
 
 export function IconButton(props) {
-  const { defaultChildren, onActiveChildren, isActive, onClick, className } =
-    props;
+  const {
+    defaultChildren,
+    onActiveChildren,
+    isActive,
+    onClick,
+    className,
+    variant = "default",
+  } = props;
+
+  const variants = {
+    circle: {
+      borderRadius: "50%",
+    },
+    default: {
+      borderRadius: "5px",
+    },
+  };
 
   return (
     <motion.button
@@ -16,6 +31,8 @@ export function IconButton(props) {
       initial={{ scale: 1 }}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
+      variants={variants}
+      animate={variant}
     >
       {!isActive
         ? defaultChildren
@@ -32,4 +49,5 @@ IconButton.propTypes = {
   isActive: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,
   className: PropTypes.string,
+  variant: PropTypes.oneOf(["circle", "default"]),
 };
