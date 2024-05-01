@@ -15,7 +15,6 @@ import { Loader } from "../Loader/Loader";
 
 export function VinylModal(props) {
   const {
-    isOpen,
     onClose,
     inCollection,
     onToggleCollection,
@@ -29,81 +28,81 @@ export function VinylModal(props) {
   const [isPlaying, setIsPlaying] = useState(false);
 
   return createPortal(
-    <AnimatePresence>
-      {isOpen && (
-        <Suspense fallback={<Loader />}>
-          <>
-            <motion.div
-              className={styles.background}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              <div className={styles.modal}>
-                <IconButton
-                  className={styles.closeButton}
-                  onClick={onClose}
-                  defaultChildren={<CloseIcon />}
-                />
-                <div className={styles.topBar}>
-                  <h1 className={styles.songName}>{music.name}</h1>
-                  <h2 className={styles.artistName}>{music.author}</h2>
-                </div>
-                <div className={styles.playerContainer}>
-                  <IconButton
-                    className={styles.likeButton}
-                    onClick={() => onToggleFavorites(itemId)}
-                    defaultChildren={<HeartOutlineIcon />}
-                    onActiveChildren={<HeartFilledIcon />}
-                    isActive={inFavorites}
-                  />
-                  <IconButton
-                    className={styles.playButton}
-                    onClick={() => setIsPlaying(!isPlaying)}
-                    defaultChildren={<PlayIcon />}
-                    isActive={false}
-                    variant="circle"
-                  />
-                  <img
-                    className={styles.image}
-                    src={music.imageSrc}
-                    alt="Vinyl cover"
-                  />
-                </div>
-                <div className={styles.infoContainer}>
-                  <div className={styles.infoRow}>
-                    <p>Year released:</p> <p>{music.year}</p>
-                  </div>
-                  <div className={styles.infoRow}>
-                    <p>Genre:</p> <p>{music.genre}</p>
-                  </div>
-                  <div className={styles.infoRow}>
-                    <p>Country:</p> <p>{music.country}</p>
-                  </div>
-                </div>
-                <MainButton
-                  className={styles.collectionButton}
-                  defaultChildren={
-                    <>
-                      <p>Add to collection</p>
-                      <PlusIcon />
-                    </>
-                  }
-                  onActiveChildren={
-                    <>
-                      <p>In collection</p>
-                      <DoneIcon />
-                    </>
-                  }
-                  onClick={() => onToggleCollection(itemId)}
-                  isActive={inCollection}
-                />
+    <Suspense fallback={<Loader />}>
+      <AnimatePresence>
+        {/* {isOpen && ( */}
+
+        <motion.div
+          className={styles.background}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          <div className={styles.modal}>
+            <IconButton
+              className={styles.closeButton}
+              onClick={onClose}
+              defaultChildren={<CloseIcon />}
+            />
+            <div className={styles.topBar}>
+              <h1 className={styles.songName}>{music.name}</h1>
+              <h2 className={styles.artistName}>{music.author}</h2>
+            </div>
+            <div className={styles.playerContainer}>
+              <IconButton
+                className={styles.likeButton}
+                onClick={() => onToggleFavorites(itemId)}
+                defaultChildren={<HeartOutlineIcon />}
+                onActiveChildren={<HeartFilledIcon />}
+                isActive={inFavorites}
+              />
+              <IconButton
+                className={styles.playButton}
+                onClick={() => setIsPlaying(!isPlaying)}
+                defaultChildren={<PlayIcon />}
+                isActive={false}
+                variant="circle"
+              />
+              <img
+                className={styles.image}
+                src={music.imageSrc}
+                alt="Vinyl cover"
+              />
+            </div>
+            <div className={styles.infoContainer}>
+              <div className={styles.infoRow}>
+                <p>Year released:</p> <p>{music.year}</p>
               </div>
-            </motion.div>
-          </>
-        </Suspense>
-      )}
-    </AnimatePresence>,
+              <div className={styles.infoRow}>
+                <p>Genre:</p> <p>{music.genre}</p>
+              </div>
+              <div className={styles.infoRow}>
+                <p>Country:</p> <p>{music.country}</p>
+              </div>
+            </div>
+            <MainButton
+              className={styles.collectionButton}
+              defaultChildren={
+                <>
+                  <p>Add to collection</p>
+                  <PlusIcon />
+                </>
+              }
+              onActiveChildren={
+                <>
+                  <p>In collection</p>
+                  <DoneIcon />
+                </>
+              }
+              onClick={() => onToggleCollection(itemId)}
+              isActive={inCollection}
+            />
+          </div>
+        </motion.div>
+
+        {/* )} */}
+      </AnimatePresence>
+    </Suspense>,
     document.getElementById("app")
   );
 }

@@ -70,15 +70,17 @@ export function MusicCard({
           onClick={() => onToggleCollection(itemId)}
         />
       </div>
-      <VinylModal
-        inCollection={inCollection}
-        onToggleCollection={onToggleCollection}
-        inFavorites={inFavorites}
-        onToggleFavorites={onToggleFavorites}
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        itemId={itemId}
-      />
+      {isModalOpen && (
+        <VinylModal
+          inCollection={inCollection}
+          onToggleCollection={onToggleCollection}
+          inFavorites={inFavorites}
+          onToggleFavorites={onToggleFavorites}
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          itemId={itemId}
+        />
+      )}
     </>
   );
 }
