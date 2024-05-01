@@ -77,7 +77,6 @@ export function MusicCard({
         onToggleFavorites={onToggleFavorites}
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        music={music}
         itemId={itemId}
       />
     </>
