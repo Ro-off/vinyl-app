@@ -36,5 +36,4 @@ export function GenreCard(props) {
 GenreCard.propTypes = {
   title: PropTypes.string.isRequired,
   genreId: PropTypes.number.isRequired,
-  background: PropTypes.string.isRequired,
 };
