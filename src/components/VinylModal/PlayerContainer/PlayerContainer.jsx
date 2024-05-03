@@ -1,4 +1,5 @@
 import { PlayIcon } from "../../Icon/Play";
+import { PauseIcon } from "../../Icon/Pause";
 import { HeartFilledIcon } from "../../Icon/HeartFilled";
 import { HeartOutlineIcon } from "../../Icon/HeartOutline";
 import { IconButton } from "../../buttons/IconButton/IconButton";
@@ -29,7 +30,7 @@ export function PlayerContainer(props) {
         onClick={() => setIsPlaying(!isPlaying)}
         variant="circle"
       >
-        <PlayIcon />
+        {isPlaying ? <PauseIcon /> : <PlayIcon />}
       </IconButton>
       <motion.div
         className={styles.vinylCoverContainer}
