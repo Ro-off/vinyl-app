@@ -14,11 +14,7 @@ export function GenreCard(props) {
   const background = generateColor(title);
 
   const searchParams = {
-    artist: null,
     genre: genreId,
-    year_from: null,
-    year_to: null,
-    decade: null,
     limit: 3,
   };
   const musicList = useMusicList(searchParams);
