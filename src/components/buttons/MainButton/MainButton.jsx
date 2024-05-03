@@ -29,13 +29,7 @@ function buttonChildrenSpan(isActive, children) {
 }
 
 export function MainButton(props) {
-  const {
-    defaultChildren,
-    onActiveChildren = false,
-    isActive,
-    onClick,
-    className,
-  } = props;
+  const { children, isActive, onClick, className } = props;
 
   const buttonVariants = {
     active: { background: "var(--accent-text)" },
@@ -53,15 +47,14 @@ export function MainButton(props) {
       variants={buttonVariants}
       animate={isActive ? "active" : "inactive"}
     >
-      {buttonChildrenSpan(isActive, defaultChildren)}
-      {buttonChildrenSpan(!isActive, onActiveChildren)}
+      {buttonChildrenSpan(isActive, children)}
+      {buttonChildrenSpan(!isActive, children)}
     </motion.button>
   );
 }
 
 MainButton.propTypes = {
-  defaultChildren: PropTypes.node.isRequired,
-  onActiveChildren: PropTypes.node,
+  children: PropTypes.node.isRequired,
   onClick: PropTypes.func.isRequired,
   isActive: PropTypes.bool.isRequired,
   className: PropTypes.string,

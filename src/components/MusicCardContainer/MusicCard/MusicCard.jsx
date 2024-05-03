@@ -68,7 +68,17 @@ export function MusicCard({
           }
           isActive={inCollection}
           onClick={() => onToggleCollection(itemId)}
-        />
+        >
+          {inCollection ? (
+            <>
+              <p>In collection</p> <DoneIcon />{" "}
+            </>
+          ) : (
+            <>
+              <p>Add to Collection</p> <PlusIcon />{" "}
+            </>
+          )}
+        </MainButton>
       </div>
       {isModalOpen && (
         <VinylModal
