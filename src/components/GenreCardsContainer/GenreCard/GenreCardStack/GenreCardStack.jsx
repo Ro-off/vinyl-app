@@ -23,30 +23,15 @@ export function GenreCardStack(props) {
 
   return (
     <div className={styles.stack}>
-      {musicList.data[0] ? (
+      {(musicList.data || []).map((music) => (
         <img
           className={styles.image}
-          style={generateStyle(genreId + musicList.data[0].name)}
-          src={musicList.data[0].imageSrc}
-          alt="img"
+          style={generateStyle(genreId + music.name)}
+          src={music.imageSrc}
+          alt={music.name}
+          key={music.name}
         />
-      ) : null}
-      {musicList.data[1] ? (
-        <img
-          className={styles.image}
-          src={musicList.data[1].imageSrc}
-          style={generateStyle(genreId + musicList.data[1].name)}
-          alt="img"
-        />
-      ) : null}
-      {musicList.data[2] ? (
-        <img
-          className={styles.image}
-          src={musicList.data[2].imageSrc}
-          style={generateStyle(genreId + musicList.data[2].name)}
-          alt="img"
-        />
-      ) : null}
+      ))}
     </div>
   );
 }
