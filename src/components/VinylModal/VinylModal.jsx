@@ -4,14 +4,13 @@ import { MainButton } from "../buttons/MainButton/MainButton";
 import { IconButton } from "../buttons/IconButton/IconButton";
 import { PlusIcon } from "../Icon/Plus";
 import { DoneIcon } from "../Icon/Done";
-import { HeartFilledIcon } from "../Icon/HeartFilled";
-import { HeartOutlineIcon } from "../Icon/HeartOutline";
 import { CloseIcon } from "../Icon/Close";
-import { PlayIcon } from "../Icon/Play";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, Suspense } from "react";
 import { useRelease } from "../../hooks/useRelease";
 import { Loader } from "../Loader/Loader";
+// import { infinite } from "swr/infinite";
+import { PlayerContainer } from "./PlayerContainer/PlayerContainer";
 
 export function VinylModal(props) {
   const {
@@ -25,8 +24,8 @@ export function VinylModal(props) {
 
   const { data } = useRelease({ releaseId: itemId });
   const music = data;
-  const [isPlaying, setIsPlaying] = useState(false);
 
+  const [isPlaying, setIsPlaying] = useState(false);
   return createPortal(
     <Suspense fallback={<Loader />}>
       <AnimatePresence>
@@ -46,26 +45,14 @@ export function VinylModal(props) {
               <h1 className={styles.songName}>{music.name}</h1>
               <h2 className={styles.artistName}>{music.author}</h2>
             </div>
-            <div className={styles.playerContainer}>
-              <IconButton
-                className={styles.likeButton}
-                onClick={() => onToggleFavorites(itemId)}
-              >
-                {inFavorites ? <HeartFilledIcon /> : <HeartOutlineIcon />}
-              </IconButton>
-              <IconButton
-                className={styles.playButton}
-                onClick={() => setIsPlaying(!isPlaying)}
-                variant="circle"
-              >
-                <PlayIcon />
-              </IconButton>
-              <img
-                className={styles.image}
-                src={music.imageSrc}
-                alt="Vinyl cover"
-              />
-            </div>
+            <PlayerContainer
+              imageSrc={music.imageSrc}
+              inFavorites={inFavorites}
+              onToggleFavorites={onToggleFavorites}
+              isPlaying={isPlaying}
+              setIsPlaying={setIsPlaying}
+              itemId={itemId}
+            />
             <div className={styles.infoContainer}>
               <div className={styles.infoRow}>
                 <p>Year released:</p> <p>{music.year}</p>
@@ -79,21 +66,21 @@ export function VinylModal(props) {
             </div>
             <MainButton
               className={styles.collectionButton}
-              defaultChildren={
-                <>
-                  <p>Add to collection</p>
-                  <PlusIcon />
-                </>
-              }
-              onActiveChildren={
+              onClick={() => onToggleCollection(itemId)}
+              isActive={inCollection}
+            >
+              {inCollection ? (
                 <>
                   <p>In collection</p>
                   <DoneIcon />
                 </>
-              }
-              onClick={() => onToggleCollection(itemId)}
-              isActive={inCollection}
-            />
+              ) : (
+                <>
+                  <p>Add to collection</p>
+                  <PlusIcon />
+                </>
+              )}
+            </MainButton>
           </div>
         </motion.div>
 
