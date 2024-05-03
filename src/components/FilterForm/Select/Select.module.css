@@ -1,6 +1,7 @@
 
 
 .selectContainer{
+  z-index: 10;
   display: flex;
   width:160px;
   flex-wrap: wrap;
@@ -16,11 +17,13 @@
 }
 
 .selectContainerClosed:hover{
- filter: brightness(1.1);
+  filter: brightness(1.1);
 }
 
 .selectContainerOpen {
+  z-index: 11;
   filter: brightness(1.1);
+
 }
 
 .isError{
@@ -67,18 +70,24 @@
   transform: rotate(180deg);
 }
 
+.dropdownMenuContainer{
+  overflow: hidden;
+  width: 100%;
+  border-radius: 7px;
+  margin-top: 10px;
+  background: var(--bg-color);
+  outline: var(--gray-border) solid 1px;
+}
+
 .dropdownMenu{
   position: relative;
   z-index: 15;
   display: flex;
-  width: calc(100%);
+  overflow: hidden;
   flex-direction: column;
   padding: 0 0;
-  border-radius: 7px;
-  margin-top: 10px;
-  background: var(--bg-color);
   /* gap: 17px 0; */
-  outline: var(--gray-border) solid 1px;
+
 }
 
 .hidden{
@@ -97,6 +106,7 @@
   text-align: left;
   text-overflow: ellipsis;
   white-space: nowrap;
+
 }
 
 
