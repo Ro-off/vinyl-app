@@ -33,3 +33,12 @@
 .iconButton:active {
   filter: brightness(1.2);
 }
+
+.circle {
+  border-radius: 50%;
+}
+
+.square {
+  border-radius: 5px;
+
+}
