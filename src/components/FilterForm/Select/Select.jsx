@@ -1,6 +1,6 @@
 import styles from "./Select.module.css";
 import propTypes from "prop-types";
-import { useState, useEffect, useCallback } from "react";
+import { useState } from "react";
 import { ChevronDownIcon } from "../../Icon/ChevronDown";
 import clsx from "clsx";
 import { motion, AnimatePresence } from "framer-motion";
