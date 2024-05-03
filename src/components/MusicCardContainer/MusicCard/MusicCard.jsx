@@ -26,10 +26,10 @@ export function MusicCard({
         <IconButton
           className={styles.likeButton}
           onClick={() => onToggleFavorites(itemId)}
-          defaultChildren={<HeartOutlineIcon />}
-          onActiveChildren={<HeartFilledIcon />}
-          isActive={inFavorites}
-        />
+          // children={}
+        >
+          {inFavorites ? <HeartFilledIcon /> : <HeartOutlineIcon />}
+        </IconButton>
         <img src={imageSrc} alt="" />
         <div
           className={styles.infoContainer}

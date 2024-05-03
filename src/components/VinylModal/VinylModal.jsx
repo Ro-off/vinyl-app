@@ -39,11 +39,9 @@ export function VinylModal(props) {
           exit={{ opacity: 0 }}
         >
           <div className={styles.modal}>
-            <IconButton
-              className={styles.closeButton}
-              onClick={onClose}
-              defaultChildren={<CloseIcon />}
-            />
+            <IconButton className={styles.closeButton} onClick={onClose}>
+              <CloseIcon />
+            </IconButton>
             <div className={styles.topBar}>
               <h1 className={styles.songName}>{music.name}</h1>
               <h2 className={styles.artistName}>{music.author}</h2>
@@ -52,17 +50,16 @@ export function VinylModal(props) {
               <IconButton
                 className={styles.likeButton}
                 onClick={() => onToggleFavorites(itemId)}
-                defaultChildren={<HeartOutlineIcon />}
-                onActiveChildren={<HeartFilledIcon />}
-                isActive={inFavorites}
-              />
+              >
+                {inFavorites ? <HeartFilledIcon /> : <HeartOutlineIcon />}
+              </IconButton>
               <IconButton
                 className={styles.playButton}
                 onClick={() => setIsPlaying(!isPlaying)}
-                defaultChildren={<PlayIcon />}
-                isActive={false}
                 variant="circle"
-              />
+              >
+                <PlayIcon />
+              </IconButton>
               <img
                 className={styles.image}
                 src={music.imageSrc}
