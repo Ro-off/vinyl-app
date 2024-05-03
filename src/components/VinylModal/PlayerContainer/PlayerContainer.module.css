@@ -25,7 +25,25 @@
   height: auto;
   border-radius: 15px;
   margin: auto;
+  backface-visibility:hidden;
+  transform-style: preserve-3d
 }
+
+.playerContainer .vinylCoverContainer:after {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  border-radius: 15px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background: var(--bg-color-4);
+  content: '';
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;
+}
+
 .playerContainer .vinylCoverLabel{
   position: absolute;
   /* top: -5px; */
