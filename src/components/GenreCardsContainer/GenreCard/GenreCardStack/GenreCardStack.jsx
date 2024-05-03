@@ -1,4 +1,4 @@
-import styles from "./YMLCardStack.module.css";
+import styles from "./GenreCardStack.module.css";
 import PropTypes from "prop-types";
 import * as seedrandom from "seedrandom";
 
@@ -18,7 +18,7 @@ function generateStyle(seed) {
   };
 }
 
-export function YMLCardStack(props) {
+export function GenreCardStack(props) {
   const { genreId, musicList } = props;
 
   return (
@@ -51,7 +51,7 @@ export function YMLCardStack(props) {
   );
 }
 
-YMLCardStack.propTypes = {
+GenreCardStack.propTypes = {
   genreId: PropTypes.number.isRequired,
   musicList: {
     data: PropTypes.array.isRequired,

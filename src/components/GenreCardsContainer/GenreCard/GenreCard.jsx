@@ -1,7 +1,7 @@
-import styles from "./YMLCard.module.css";
+import styles from "./GenreCard.module.css";
 import PropTypes from "prop-types";
 import * as seedrandom from "seedrandom";
-import { YMLCardStack } from "./YMLCardStack/YMLCardStack";
+import { GenreCardStack } from "./GenreCardStack/GenreCardStack";
 import { motion } from "framer-motion";
 import { useMusicList } from "../../../hooks/useMusicList";
 
@@ -9,7 +9,7 @@ function generateColor(seed) {
   const generator = new seedrandom(seed);
   return `hsl(${generator() * 360}, 74%, 68%)`;
 }
-export function YMLCard(props) {
+export function GenreCard(props) {
   const { title = "Card Title", genreId = 1 } = props;
   const background = generateColor(title);
 
@@ -32,12 +32,12 @@ export function YMLCard(props) {
       viewport={{ once: true }}
     >
       <h3>{title}</h3>
-      <YMLCardStack genreId={genreId} musicList={musicList} />
+      <GenreCardStack genreId={genreId} musicList={musicList} />
     </motion.div>
   ) : null;
 }
 
-YMLCard.propTypes = {
+GenreCard.propTypes = {
   title: PropTypes.string.isRequired,
   genreId: PropTypes.number.isRequired,
   background: PropTypes.string.isRequired,

@@ -1,7 +1,7 @@
 import { FilterForm } from "../components/FilterForm/FilterForm";
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
-import { YMLCardsContainer } from "../components/YMLCardsContainer/YMLCardsContainer";
+import { GenreCardsContainer } from "../components/GenreCardsContainer/GenreCardsContainer";
 // import { VinylModal } from "../components/VinylModal/VinylModal";
 
 export const SearchPage = () => {
@@ -29,7 +29,7 @@ export const SearchPage = () => {
       {/* <VinylModal /> */}
 
       <FilterForm onSubmit={onSubmit} />
-      <YMLCardsContainer />
+      <GenreCardsContainer />
     </>
   );
 };

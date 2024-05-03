@@ -1,8 +1,8 @@
-import styles from "./YMLCardsContainer.module.css";
-import { YMLCard } from "./YMLCard/YMLCard";
+import styles from "./GenreCardsContainer.module.css";
+import { GenreCard } from "./GenreCard/GenreCard";
 import { useGenres } from "../../hooks/useGenres";
 
-export function YMLCardsContainer() {
+export function GenreCardsContainer() {
   const genres = useGenres();
   return (
     <div className={styles.container}>
@@ -10,7 +10,7 @@ export function YMLCardsContainer() {
       <div className={styles.cardScrollContainer}>
         <div className={styles.cards}>
           {genres.data.map((genre) => (
-            <YMLCard key={genre.id} title={genre.title} genreId={genre.id} />
+            <GenreCard key={genre.id} title={genre.title} genreId={genre.id} />
           ))}
         </div>
       </div>
