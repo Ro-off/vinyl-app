@@ -7,28 +7,23 @@ import { Helmet } from "react-helmet-async";
 export const HomePage = () => {
   const { collection, toggleCollection, favorites, toggleFavorites } =
     useOutletContext();
-  const musicList = useMusicList();
   let itemsOnPage = 12;
-
-  const pagesCount = Math.ceil(musicList.length / itemsOnPage);
-
   const [params, setParams] = useSearchParams();
 
   const currentPage = Number(
     params.get("page") === null
       ? 1
-      : Number(params.get("page")) > pagesCount
-      ? pagesCount
-      : Number(params.get("page"))
+      : // : Number(params.get("page")) > pagesCount
+        // ? pagesCount
+        Number(params.get("page"))
   );
 
-  function filterItemsOnPage(element, index) {
-    if (
-      index < currentPage * itemsOnPage &&
-      index >= itemsOnPage * (currentPage - 1)
-    )
-      return true;
-  }
+  const musicList = useMusicList({
+    limit: currentPage * itemsOnPage - itemsOnPage,
+    offset: 0,
+  });
+
+  const pagesCount = Math.ceil(musicList.size / itemsOnPage);
 
   function handlePageChange(e) {
     changeSearchFilter("page", e);
@@ -46,9 +41,8 @@ export const HomePage = () => {
       <Helmet>
         <title>Home</title>
       </Helmet>
-
       <MusicCardContainer
-        musicList={musicList.filter(filterItemsOnPage)}
+        musicList={musicList.data}
         collection={collection}
         favorites={favorites}
         toggleCollection={toggleCollection}

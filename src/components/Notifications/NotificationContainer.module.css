@@ -1,0 +1,14 @@
+
+.notificationContainer {
+  position: fixed;
+  z-index: 1000;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  max-width: 400px;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 1rem;
+  gap: 1rem;
+}

@@ -1,0 +1,31 @@
+
+.container{
+  margin: 0 20px;
+}
+
+
+.container h2{
+  color: var(--text-1);
+}
+
+.cards {
+  display: flex;
+  overflow: visible;
+  width: max-content;
+  flex-wrap: nowrap;
+  gap: 10px;
+  scrollbar-width: none;
+}
+
+.cardScrollContainer{
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+
+}
+.cardScrollContainer::-webkit-scrollbar, .cards::-webkit-scrollbar {
+  display: none;
+}
+
+

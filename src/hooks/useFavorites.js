@@ -1,19 +1,31 @@
 import { useState } from "react";
-
-const favorites = [3, 4, 7];
+import { useNotification } from "./useNotification";
 
 export function useFavorites() {
-  const [value, setValue] = useState(favorites);
+  const { createNotification } = useNotification();
+  const [value, setValue] = useState(
+    localStorage.getItem("Favorites")
+      ? JSON.parse(localStorage.getItem("Favorites"))
+      : []
+  );
+
+  function syncLocalStorageWithValue(value) {
+    localStorage.setItem("Favorites", JSON.stringify(value));
+  }
 
   function addToValueArr(elem) {
     const newValue = [...value, elem];
     setValue(newValue);
+    syncLocalStorageWithValue(newValue);
+    createNotification({ text: "Added to favorites" });
   }
 
   function removeFromValueArr(elem) {
     if (value.includes(elem)) {
       const newValue = value.filter((e) => e !== elem);
       setValue(newValue);
+      syncLocalStorageWithValue(newValue);
+      createNotification({ text: "Removed from favorites" });
     }
   }
 

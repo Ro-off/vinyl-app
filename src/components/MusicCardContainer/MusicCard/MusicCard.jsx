@@ -1,10 +1,13 @@
-import clsx from "clsx";
 import PropTypes from "prop-types";
 import styles from "./MusicCard.module.css";
 import { HeartFilledIcon } from "../../Icon/HeartFilled";
 import { HeartOutlineIcon } from "../../Icon/HeartOutline";
 import { PlusIcon } from "../../Icon/Plus";
 import { DoneIcon } from "../../Icon/Done";
+import { MainButton } from "../../buttons/MainButton/MainButton";
+import { IconButton } from "../../buttons/IconButton/IconButton";
+import { useState } from "react";
+import { VinylModal } from "../../VinylModal/VinylModal";
 
 export function MusicCard({
   music,
@@ -15,53 +18,80 @@ export function MusicCard({
 }) {
   const { itemId, name, year, author, imageSrc, genre, country } = music;
 
-  return (
-    <div className={styles.item}>
-      <button
-        type="button"
-        className={clsx(styles.likeButton)}
-        title="like-button"
-        onClick={() => onToggleFavorites(itemId)}
-      >
-        {inFavorites ? (
-          <HeartFilledIcon className={styles.icon} />
-        ) : (
-          <HeartOutlineIcon className={styles.icon} />
-        )}
-      </button>
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-      <img src={imageSrc} alt="" />
-      <div className={styles.infoContainer}>
-        <h5>{name}</h5>
-        <h6>{author}</h6>
-        <div className={styles.itemInfo}>
-          <div>
-            <p>Genre:</p>
-            <p>{genre}</p>
-          </div>
-          <div>
-            <p>Year:</p>
-            <p>{year}</p>
-          </div>
-          <div>
-            <p>Country:</p>
-            <p>{country}</p>
+  return (
+    <>
+      <div className={styles.item}>
+        <IconButton
+          className={styles.likeButton}
+          onClick={() => onToggleFavorites(itemId)}
+          // children={}
+        >
+          {inFavorites ? <HeartFilledIcon /> : <HeartOutlineIcon />}
+        </IconButton>
+        <img src={imageSrc} alt="" />
+        <div
+          className={styles.infoContainer}
+          onClick={() => setIsModalOpen(true)}
+          role="button"
+          tabIndex="0"
+        >
+          <h5>{name}</h5>
+          <h6>{author}</h6>
+          <div className={styles.itemInfo}>
+            <div>
+              <p>Genre:</p>
+              <p>{genre}</p>
+            </div>
+            <div>
+              <p>Year:</p>
+              <p>{year}</p>
+            </div>
+            <div>
+              <p>Country:</p>
+              <p>{country}</p>
+            </div>
           </div>
         </div>
+
+        <MainButton
+          defaultChildren={
+            <>
+              <p>Add to Collection</p> <PlusIcon />
+            </>
+          }
+          onActiveChildren={
+            <>
+              <p>In collection</p> <DoneIcon />
+            </>
+          }
+          isActive={inCollection}
+          onClick={() => onToggleCollection(itemId)}
+        >
+          {inCollection ? (
+            <>
+              <p>In collection</p> <DoneIcon />{" "}
+            </>
+          ) : (
+            <>
+              <p>Add to Collection</p> <PlusIcon />{" "}
+            </>
+          )}
+        </MainButton>
       </div>
-      <button
-        className={clsx(styles.button, { [styles.removeButton]: inCollection })}
-        type="button"
-        onClick={() => onToggleCollection(itemId)}
-      >
-        <p>{inCollection ? "Remove" : "Add"}</p>
-        {inCollection ? (
-          <DoneIcon className={styles.icon} />
-        ) : (
-          <PlusIcon className={styles.icon} />
-        )}
-      </button>
-    </div>
+      {isModalOpen && (
+        <VinylModal
+          inCollection={inCollection}
+          onToggleCollection={onToggleCollection}
+          inFavorites={inFavorites}
+          onToggleFavorites={onToggleFavorites}
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          itemId={itemId}
+        />
+      )}
+    </>
   );
 }
 

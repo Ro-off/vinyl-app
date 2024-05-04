@@ -7,6 +7,13 @@ import { SearchPage } from "./pages/SearchPage";
 import { ResultsPage } from "./pages/ResultsPage";
 import { HelmetProvider } from "react-helmet-async";
 
+async function bootstrap() {
+  // if (import.meta.env.DEV) {
+  const { worker } = await import("./mocks/browser.js");
+  worker.start();
+  // }
+}
+
 const appElement = document.getElementById("app");
 const root = createRoot(appElement);
 
@@ -33,10 +40,13 @@ const router = createBrowserRouter([
     ],
   },
 ]);
-root.render(
-  <StrictMode>
-    <HelmetProvider>
-      <RouterProvider router={router} />
-    </HelmetProvider>
-  </StrictMode>
-);
+
+bootstrap().then(() => {
+  root.render(
+    <StrictMode>
+      <HelmetProvider>
+        <RouterProvider router={router} />
+      </HelmetProvider>
+    </StrictMode>
+  );
+});

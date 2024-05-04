@@ -3,6 +3,7 @@ import propTypes from "prop-types";
 import { useState } from "react";
 import { ChevronDownIcon } from "../../Icon/ChevronDown";
 import clsx from "clsx";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function Select(props) {
   const {
@@ -13,6 +14,7 @@ export function Select(props) {
     title = "Select value",
     onChange,
     error,
+    isLoading = false,
   } = props;
 
   const [isOpen, setIsOpen] = useState(false);
@@ -53,26 +55,38 @@ export function Select(props) {
         {error}
       </p>
 
-      <div
-        className={clsx(styles.dropdownMenu, {
-          [styles.hidden]: !isOpen,
-          [styles.dropdownMenuEmpty]: !options,
-        })}
-      >
-        {!options ? (
-          <p>No results</p>
-        ) : (
-          options.map((option) => (
-            <button
-              type="button"
-              onClick={() => handleChange(option.value)}
-              key={option.value}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            className={styles.dropdownMenuContainer}
+            initial={{ height: 0, y: -20, opacity: 0 }}
+            animate={{ height: "auto", y: 0, opacity: 1 }}
+            exit={{ height: 0, y: -20, opacity: 0 }}
+          >
+            <div
+              className={clsx(styles.dropdownMenu, {
+                [styles.dropdownMenuEmpty]: !options,
+              })}
             >
-              {option.title}
-            </button>
-          ))
+              {isLoading ? (
+                <p>Loading...</p>
+              ) : !options ? (
+                <p>No results</p>
+              ) : (
+                options.map((option) => (
+                  <button
+                    type="button"
+                    onClick={() => handleChange(option.value)}
+                    key={option.value}
+                  >
+                    {option.title}
+                  </button>
+                ))
+              )}
+            </div>
+          </motion.div>
         )}
-      </div>
+      </AnimatePresence>
     </div>
   );
 }
@@ -85,4 +99,5 @@ Select.propTypes = {
   onChange: propTypes.func.isRequired,
   title: propTypes.string,
   error: propTypes.func,
+  isLoading: propTypes.bool,
 };
