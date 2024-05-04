@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useNotification } from "./useNotification";
 
 export function useCollection() {
+  const { createNotification } = useNotification();
   const [value, setValue] = useState(
     localStorage.getItem("Collection")
       ? JSON.parse(localStorage.getItem("Collection"))
@@ -11,6 +13,7 @@ export function useCollection() {
     const newValue = [...value, elem];
     setValue(newValue);
     syncLocalStorageWithValue(newValue);
+    createNotification({ text: "Removed from collection" });
   }
 
   function removeFromValueArr(elem) {
@@ -18,6 +21,7 @@ export function useCollection() {
       const newValue = value.filter((e) => e !== elem);
       setValue(newValue);
       syncLocalStorageWithValue(newValue);
+      createNotification({ text: "Added to collection" });
     }
   }
 

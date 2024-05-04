@@ -46,13 +46,15 @@ export function useMusicList(
   const genres = useGenres();
   const countries = useCountries();
 
-  const { data, isLoading, error } = useSWR(["/api/search", searchParams], () =>
-    fetcher(
-      translateLocalSearchParamsToServerUrl("/api/search", searchParams),
-      {
-        suspense: true,
-      }
-    )
+  const { data, isLoading, error } = useSWR(
+    ["/api/search", searchParams],
+    () =>
+      fetcher(
+        translateLocalSearchParamsToServerUrl("/api/search", searchParams)
+      ),
+    {
+      suspense: true,
+    }
   );
   // console.log(data);
 

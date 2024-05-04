@@ -5,7 +5,8 @@ import { useFavorites } from "./hooks/useFavorites";
 import { Suspense } from "react";
 import { Loader } from "./components/Loader/Loader";
 import { ErrorBoundary } from "react-error-boundary";
-import { Notification } from "./components/Notification/Notification";
+import { NotificationContainer } from "./components/Notifications/NotificationContainer";
+import { Notification } from "./components/Notifications/Notification/Notification";
 
 export const Application = () => {
   const { collection, toggleCollection } = useCollection();
@@ -26,6 +27,7 @@ export const Application = () => {
           />
         </ErrorBoundary>
       </Suspense>
+      <NotificationContainer />
     </>
   );
 };

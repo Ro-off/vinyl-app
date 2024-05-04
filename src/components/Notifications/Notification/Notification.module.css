@@ -1,11 +1,11 @@
 .notificationContainer{
-  position: fixed;
   z-index: 100;
   right: 10px;
   bottom: 10px;
-  width: 400px;
+  width: calc(80% - 30px);
   padding: 0px 15px;
   border-radius: 20px;
+  margin: 0 10px;
   /* outline: 3px solid var(--accent-color); */
 }
 

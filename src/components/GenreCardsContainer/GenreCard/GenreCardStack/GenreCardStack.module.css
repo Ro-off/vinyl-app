@@ -1,0 +1,12 @@
+.stack{
+  position: relative;
+  z-index: 1;
+}
+
+.image{
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+}
