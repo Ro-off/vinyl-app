@@ -12,10 +12,8 @@ export function useRelease(props) {
 
   const { releaseId } = props;
 
-  const { data, isLoading, error } = useSWR(
-    ["/api/releases/", releaseId],
-    () => fetcher("/api/releases/" + releaseId),
-    { suspense: true }
+  const { data, isLoading, error } = useSWR(["/api/releases/", releaseId], () =>
+    fetcher("/api/releases/" + releaseId)
   );
 
   return {
@@ -43,5 +41,7 @@ export function useRelease(props) {
             name: data.release.title,
             author: data.release.artist,
           },
+    isLoading,
+    error,
   };
 }

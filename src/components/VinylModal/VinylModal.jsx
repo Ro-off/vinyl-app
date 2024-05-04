@@ -6,7 +6,7 @@ import { PlusIcon } from "../Icon/Plus";
 import { DoneIcon } from "../Icon/Done";
 import { CloseIcon } from "../Icon/Close";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, Suspense } from "react";
+import { useState } from "react";
 import { useRelease } from "../../hooks/useRelease";
 import { Loader } from "../Loader/Loader";
 // import { infinite } from "swr/infinite";
@@ -22,12 +22,15 @@ export function VinylModal(props) {
     itemId,
   } = props;
 
-  const { data } = useRelease({ releaseId: itemId });
+  const { data, isLoading } = useRelease({ releaseId: itemId });
   const music = data;
 
   const [isPlaying, setIsPlaying] = useState(false);
   return createPortal(
-    <Suspense fallback={<Loader />}>
+    // <Suspense fallback={<Loader />}>
+    isLoading ? (
+      <Loader />
+    ) : (
       <AnimatePresence>
         {/* {isOpen && ( */}
 
@@ -86,7 +89,8 @@ export function VinylModal(props) {
 
         {/* )} */}
       </AnimatePresence>
-    </Suspense>,
+    ),
+    // </Suspense>
     document.getElementById("app")
   );
 }
