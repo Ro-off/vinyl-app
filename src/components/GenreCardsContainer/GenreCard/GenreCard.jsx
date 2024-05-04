@@ -28,7 +28,7 @@ export function GenreCard(props) {
       viewport={{ once: true }}
     >
       <h3>{title}</h3>
-      <GenreCardStack genreId={genreId} musicList={musicList} />
+      <GenreCardStack genreId={genreId} musicList={[...musicList.data]} />
     </motion.div>
   ) : null;
 }

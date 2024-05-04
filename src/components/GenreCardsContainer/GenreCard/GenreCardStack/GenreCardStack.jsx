@@ -23,7 +23,7 @@ export function GenreCardStack(props) {
 
   return (
     <div className={styles.stack}>
-      {(musicList.data || []).map((music) => (
+      {(musicList || []).map((music) => (
         <img
           className={styles.image}
           style={generateStyle(genreId + music.name)}
@@ -38,7 +38,10 @@ export function GenreCardStack(props) {
 
 GenreCardStack.propTypes = {
   genreId: PropTypes.number.isRequired,
-  musicList: {
-    data: PropTypes.array.isRequired,
-  },
+  musicList: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      imageSrc: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
