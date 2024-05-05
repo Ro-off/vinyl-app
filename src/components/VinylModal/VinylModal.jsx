@@ -37,7 +37,18 @@ export function VinylModal(props) {
         demoAudio.current.pause();
       }
     }
-  });
+
+    function changeIsPlayingStatusOnKeyPress(event) {
+      if (event.keyCode === 32) {
+        setIsPlaying(!isPlaying);
+      }
+    }
+    window.addEventListener("keydown", changeIsPlayingStatusOnKeyPress);
+
+    return () => {
+      window.removeEventListener("keydown", changeIsPlayingStatusOnKeyPress);
+    };
+  }, [setIsPlaying, isPlaying]);
 
   return createPortal(
     // <Suspense fallback={<Loader />}>
