@@ -6,7 +6,7 @@ import { PlusIcon } from "../Icon/Plus";
 import { DoneIcon } from "../Icon/Done";
 import { CloseIcon } from "../Icon/Close";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useRelease } from "../../hooks/useRelease";
 import { Loader } from "../Loader/Loader";
 // import { infinite } from "swr/infinite";
@@ -26,6 +26,19 @@ export function VinylModal(props) {
   const music = data;
 
   const [isPlaying, setIsPlaying] = useState(false);
+
+  const demoAudio = useRef(null);
+
+  useEffect(() => {
+    if (demoAudio.current) {
+      if (isPlaying) {
+        demoAudio.current.play();
+      } else {
+        demoAudio.current.pause();
+      }
+    }
+  });
+
   return createPortal(
     // <Suspense fallback={<Loader />}>
     isLoading ? (
@@ -56,6 +69,10 @@ export function VinylModal(props) {
               setIsPlaying={setIsPlaying}
               itemId={itemId}
             />
+            <audio ref={demoAudio} src="audio/audioplayback.mp3">
+              <track kind="captions" />
+            </audio>
+
             <div className={styles.infoContainer}>
               <div className={styles.infoRow}>
                 <p>Year released:</p> <p>{music.year}</p>
