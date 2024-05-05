@@ -16,6 +16,7 @@ export function IconButton(props) {
       initial={{ scale: 1 }}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
+      onKeyUp={(e) => e.preventDefault()}
     >
       {children}
     </motion.button>
