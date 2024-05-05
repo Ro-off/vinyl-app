@@ -17,6 +17,7 @@ export function PlayerContainer(props) {
     setIsPlaying,
     itemId,
   } = props;
+
   return (
     <div className={styles.playerContainer}>
       <IconButton
@@ -51,7 +52,7 @@ export function PlayerContainer(props) {
             exit={{ opacity: 0 }}
           >
             <div className={styles.vinylDisk}>
-              <img src="public\img\VinylDisk.png" alt="Vinyl disk" />
+              <img src="\img\VinylDisk.png" alt="Vinyl disk" />
               <motion.img
                 src={imageSrc}
                 animate={{ rotate: 360 }}
@@ -60,7 +61,7 @@ export function PlayerContainer(props) {
                 alt="Vinyl cover"
               />
               <img
-                src="public\img\ToneArm.png"
+                src="\img\ToneArm.png"
                 className={styles.toneArmImg}
                 alt="Tone arm"
               />
