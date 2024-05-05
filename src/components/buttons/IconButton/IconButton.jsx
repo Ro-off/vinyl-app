@@ -2,9 +2,9 @@ import PropTypes from "prop-types";
 import styles from "./IconButton.module.css";
 import clsx from "clsx";
 import { motion } from "framer-motion";
-// import { Children } from "react";
+import { forwardRef } from "react";
 
-export function IconButton(props) {
+export const IconButton = forwardRef(function IconButton(props, ref) {
   const { onClick, className, variant = "square", children } = props;
 
   return (
@@ -17,11 +17,12 @@ export function IconButton(props) {
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       onKeyUp={(e) => e.preventDefault()}
+      ref={ref}
     >
       {children}
     </motion.button>
   );
-}
+});
 
 IconButton.propTypes = {
   className: PropTypes.string,
