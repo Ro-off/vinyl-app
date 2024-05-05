@@ -2,7 +2,7 @@
   position: absolute;
   z-index: 100;
   width: max-content;
-  width: 200px;
+  width: 150px;
   max-width: 90%;
   margin: 0 10px;
   filter: drop-shadow(rgba(0, 0, 0, 0.35) 0px 5px 15px);

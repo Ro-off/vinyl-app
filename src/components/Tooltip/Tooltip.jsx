@@ -19,7 +19,7 @@ export function Tooltip(props) {
 
     setPosition({
       top: parentTop + window.scrollY - 5 - 54.4,
-      left: parentLeft + parentWidth / 2 - 105,
+      left: parentLeft + parentWidth / 2 - 85,
     });
   }
 
