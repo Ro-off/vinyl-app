@@ -48,7 +48,7 @@ export function VinylModal(props) {
     return () => {
       window.removeEventListener("keydown", changeIsPlayingStatusOnKeyPress);
     };
-  }, [setIsPlaying, isPlaying]);
+  }, [isPlaying]);
 
   return createPortal(
     // <Suspense fallback={<Loader />}>
