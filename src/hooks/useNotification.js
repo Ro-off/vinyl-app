@@ -13,7 +13,7 @@ export function useNotification() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setNotifications([...notifications.slice(1)]);
+      setNotifications([]);
     }, timeout);
 
     return () => clearTimeout(timer);

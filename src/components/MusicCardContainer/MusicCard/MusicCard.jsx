@@ -6,8 +6,9 @@ import { PlusIcon } from "../../Icon/Plus";
 import { DoneIcon } from "../../Icon/Done";
 import { MainButton } from "../../buttons/MainButton/MainButton";
 import { IconButton } from "../../buttons/IconButton/IconButton";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { VinylModal } from "../../VinylModal/VinylModal";
+import { Tooltip } from "../../Tooltip/Tooltip";
 
 export function MusicCard({
   music,
@@ -20,16 +21,22 @@ export function MusicCard({
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const favoriteRef = useRef();
+
   return (
     <>
       <div className={styles.item}>
         <IconButton
           className={styles.likeButton}
           onClick={() => onToggleFavorites(itemId)}
+          ref={favoriteRef}
           // children={}
         >
           {inFavorites ? <HeartFilledIcon /> : <HeartOutlineIcon />}
         </IconButton>
+        <Tooltip parentRef={favoriteRef}>
+          <p>Add to favorites</p>
+        </Tooltip>
         <img src={imageSrc} alt="" />
         <div
           className={styles.infoContainer}
