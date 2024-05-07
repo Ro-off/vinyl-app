@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import styles from "./Tooltip.module.css";
 import propTypes from "prop-types";
 import { createPortal } from "react-dom";
@@ -9,27 +9,29 @@ export function Tooltip(props) {
   // const rect = parentRef ? { top: 10, left: 20 } : null;
 
   const [position, setPosition] = useState(null);
-
-  function handlePointerEnter() {
-    const {
-      left: parentLeft,
-      top: parentTop,
-      width: parentWidth,
-    } = parentRef.current.getBoundingClientRect();
-
-    setPosition({
-      top: parentTop + window.scrollY - 5 - 54.4,
-      left: parentLeft + parentWidth / 2 - 85,
-    });
-  }
-
-  function handlePointerLeave() {
-    window.setTimeout(() => {
-      if (!parentRef.current.matches(":hover")) setPosition(null);
-    }, 1000);
-  }
+  const timeOutRef = useRef(null);
 
   useEffect(() => {
+    function handlePointerEnter() {
+      const {
+        left: parentLeft,
+        top: parentTop,
+        width: parentWidth,
+      } = parentRef.current.getBoundingClientRect();
+
+      setPosition({
+        top: parentTop + window.scrollY - 5 - 54.4,
+        left: parentLeft + parentWidth / 2 - 85,
+      });
+    }
+
+    function handlePointerLeave() {
+      timeOutRef.current = window.setTimeout(() => {
+        if (!parentRef.current.matches(":hover")) setPosition(null);
+      }, 1000);
+    }
+
+    if (!parentRef.current) return;
     const ref = parentRef.current;
     ref.addEventListener("mouseenter", handlePointerEnter);
     ref.addEventListener("mouseleave", handlePointerLeave);
@@ -37,8 +39,10 @@ export function Tooltip(props) {
     return () => {
       ref.removeEventListener("mouseenter", handlePointerEnter);
       ref.removeEventListener("mouseleave", handlePointerLeave);
+      clearTimeout(timeOutRef.current);
     };
-  });
+  }, [parentRef]);
+  // });
 
   return position
     ? createPortal(
