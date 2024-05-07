@@ -11,6 +11,7 @@ import { useRelease } from "../../hooks/useRelease";
 import { Loader } from "../Loader/Loader";
 // import { infinite } from "swr/infinite";
 import { PlayerContainer } from "./PlayerContainer/PlayerContainer";
+import { useKeyPress } from "../../hooks/useKeyPress";
 
 export function VinylModal(props) {
   const {
@@ -26,6 +27,7 @@ export function VinylModal(props) {
   const music = data;
 
   const [isPlaying, setIsPlaying] = useState(false);
+  useKeyPress(32, () => setIsPlaying(!isPlaying));
 
   const demoAudio = useRef(null);
 
@@ -37,17 +39,6 @@ export function VinylModal(props) {
         demoAudio.current.pause();
       }
     }
-
-    function changeIsPlayingStatusOnKeyPress(event) {
-      if (event.keyCode === 32) {
-        setIsPlaying(!isPlaying);
-      }
-    }
-    window.addEventListener("keydown", changeIsPlayingStatusOnKeyPress);
-
-    return () => {
-      window.removeEventListener("keydown", changeIsPlayingStatusOnKeyPress);
-    };
   }, [isPlaying]);
 
   return createPortal(
