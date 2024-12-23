@@ -52,7 +52,7 @@ export function PlayerContainer(props) {
             exit={{ opacity: 0 }}
           >
             <div className={styles.vinylDisk}>
-              <img src="\mg\VinylDisk.png" alt="Vinyl disk" />
+              <img src="img/VinylDisk.png" alt="Vinyl disk" />
               <motion.img
                 src={imageSrc}
                 animate={{ rotate: 360 }}
@@ -61,7 +61,7 @@ export function PlayerContainer(props) {
                 alt="Vinyl cover"
               />
               <img
-                src="img\ToneArm.png"
+                src="img/ToneArm.png"
                 className={styles.toneArmImg}
                 alt="Tone arm"
               />
