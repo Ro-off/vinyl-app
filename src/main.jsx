@@ -16,26 +16,27 @@ async function bootstrap() {
 
 const appElement = document.getElementById("app");
 const root = createRoot(appElement);
+const baseUrl = import.meta.env.BASE_URL;
 
 const router = createBrowserRouter([
   {
     element: <Application />,
     children: [
       {
-        path: "/",
+        path: baseUrl,
         element: <HomePage />,
       },
       {
-        path: "/search",
+        path: baseUrl + "search",
         element: <SearchPage />,
       },
       {
-        path: "/search/results",
+        path: baseUrl + "search/results",
         element: <ResultsPage />,
       },
       {
-        path: "*",
-        element: <p>Page no found</p>,
+        path: baseUrl + "*",
+        element: <p>404 - Page not found</p>,
       },
     ],
   },

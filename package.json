@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
+    "@prjctr-react/vite-starter": "file:",
     "clsx": "^2.1.0",
     "framer-motion": "^11.1.7",
     "react": "^18.2.0",

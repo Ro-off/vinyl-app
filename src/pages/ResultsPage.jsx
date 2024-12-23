@@ -11,6 +11,8 @@ export const ResultsPage = () => {
 
   const [params, setParams] = useSearchParams();
 
+  const baseUrl = import.meta.env.BASE_URL;
+
   const searchParams = {
     genre: params.get("genre"),
     artist: params.get("artist"),
@@ -44,7 +46,7 @@ export const ResultsPage = () => {
     !searchParams.country &&
     !searchParams.decade
   ) {
-    return <Navigate to="/search" />;
+    return <Navigate to={baseUrl + "search"} />;
   }
 
   function removeSearchFilter(id, value) {
