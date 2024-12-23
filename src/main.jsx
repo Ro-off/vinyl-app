@@ -10,7 +10,11 @@ import { HelmetProvider } from "react-helmet-async";
 async function bootstrap() {
   // if (import.meta.env.DEV) {
   const { worker } = await import("./mocks/browser.js");
-  worker.start();
+  worker.start({
+    serviceWorker: {
+      url: `${import.meta.env.BASE_URL}mockServiceWorker.js`,
+    },
+  });
   // }
 }
 
