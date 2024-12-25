@@ -1,6 +1,6 @@
 import { createRoot } from "react-dom/client";
 import { StrictMode } from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, HashRouter } from "react-router-dom";
 import { Application } from "./Application";
 import { HomePage } from "./pages/HomePage";
 import { SearchPage } from "./pages/SearchPage";
@@ -50,7 +50,7 @@ bootstrap().then(() => {
   root.render(
     <StrictMode>
       <HelmetProvider>
-        <RouterProvider router={router} />
+        <HashRouter router={router} />
       </HelmetProvider>
     </StrictMode>
   );
