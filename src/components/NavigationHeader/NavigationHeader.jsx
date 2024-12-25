@@ -18,7 +18,7 @@ export function NavigationHeader() {
           className={styles.headerMainButton}
           role="button"
           tabIndex={0}
-          onClick={() => navigate(basePath + "search")}
+          onClick={() => navigate("/search")}
         >
           <SearchIcon className={styles.icon} />
           <p>Search</p>
