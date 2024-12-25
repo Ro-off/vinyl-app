@@ -20,26 +20,26 @@ async function bootstrap() {
 
 const appElement = document.getElementById("app");
 const root = createRoot(appElement);
-const baseUrl = import.meta.env.BASE_URL;
+//const baseUrl = import.meta.env.BASE_URL;
 
 const router = createHashRouter([
   {
     element: <Application />,
     children: [
       {
-        path: baseUrl,
+        path: "/",
         element: <HomePage />,
       },
       {
-        path: baseUrl + "search",
+        path: "/" + "search",
         element: <SearchPage />,
       },
       {
-        path: baseUrl + "search/results",
+        path: "/" + "search/results",
         element: <ResultsPage />,
       },
       {
-        path: baseUrl + "*",
+        path: "/" + "*",
         element: <p>404 - Page not found</p>,
       },
     ],
