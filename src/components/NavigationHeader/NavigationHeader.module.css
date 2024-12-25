@@ -17,11 +17,11 @@ header * {
 }
 
 
-.backButton .icon :only-child{
+.headerMainButton .icon :only-child{
   stroke: var(--text-1)
 }
 
-.backButton p {
+.headerMainButton p {
   align-self: center;
   margin: 10px;
   font-size: 18px;
@@ -41,7 +41,7 @@ header * {
   justify-self: center;
 }
 
-.backButton {
+.headerMainButton {
   display: inline-flex;
   height: 50px;
   flex-direction: row;
@@ -57,14 +57,14 @@ header * {
   user-select: none;
 }
 
-.backButton:hover {
+.headerMainButton:hover {
   padding-right: 5px;
   cursor: pointer;
   filter: brightness(1.1);
   transform: translate(-5px, 0px);
 }
 
-.backButton:active {
+.headerMainButton:active {
   padding-right: 20px;
   filter: brightness(1.1);
   transform: translate(-20px, 0px);
