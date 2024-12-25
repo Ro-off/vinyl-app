@@ -65,12 +65,12 @@ export function MusicCard({
         <MainButton
           defaultChildren={
             <>
-              <p>Add to Collection</p> <PlusIcon />
+              <p>to Collection</p> <PlusIcon />
             </>
           }
           onActiveChildren={
             <>
-              <p>In collection</p> <DoneIcon />
+              <p>in collection</p> <DoneIcon />
             </>
           }
           isActive={inCollection}
@@ -78,11 +78,11 @@ export function MusicCard({
         >
           {inCollection ? (
             <>
-              <p>In collection</p> <DoneIcon />{" "}
+              <p>in collection</p> <DoneIcon />{" "}
             </>
           ) : (
             <>
-              <p>Add to Collection</p> <PlusIcon />{" "}
+              <p>to collection</p> <PlusIcon />{" "}
             </>
           )}
         </MainButton>
