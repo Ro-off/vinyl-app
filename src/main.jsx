@@ -31,15 +31,15 @@ const router = createHashRouter([
         element: <HomePage />,
       },
       {
-        path: "/" + "search",
+        path: "/search",
         element: <SearchPage />,
       },
       {
-        path: "/" + "search/results",
+        path: "/search/results",
         element: <ResultsPage />,
       },
       {
-        path: "/" + "*",
+        path: "/*",
         element: <p>404 - Page not found</p>,
       },
     ],
