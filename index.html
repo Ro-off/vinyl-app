@@ -6,11 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Vinyl Store</title>
-  <script type="module" crossorigin src="/assets/index-9feaabf3.js"></script>
+  <script type="module" crossorigin src="/assets/main-01096222.js"></script>
   <link rel="stylesheet" href="/assets/index-27c75100.css">
 </head>
 <body data-theme="auto">
   <div id="app"></div>
   
+  <script>
+    (() => {
+      const redirect = sessionStorage.redirect;
+      delete sessionStorage.redirect;
+      if (redirect && redirect !== location.href) {
+        history.replaceState(null, null, redirect);
+      }
+    })();
+  </script>
 </body>
 </html>
