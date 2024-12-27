@@ -39,10 +39,10 @@ const router = createBrowserRouter([
         path: "/search/results",
         element: <ResultsPage />,
       },
-      {
-        path: "/*",
-        element: <p>404 - Page not found</p>,
-      },
+      // {
+      //   path: "/*",
+      //   element: <p>404 - Page not found</p>,
+      // },
     ],
   },
 ]);
