@@ -50,6 +50,7 @@ header * {
   margin-left: 20px;
   color: var(--text-1);
   text-align: center;
+  text-decoration-line: none;
   transition-duration: 0.1s;
   transition-property: transform;
   transition-timing-function: ease-in-out;

@@ -1,6 +1,6 @@
 import { createRoot } from "react-dom/client";
 import { StrictMode } from "react";
-import { createHashRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Application } from "./Application";
 import { HomePage } from "./pages/HomePage";
 import { SearchPage } from "./pages/SearchPage";
@@ -22,7 +22,7 @@ const appElement = document.getElementById("app");
 const root = createRoot(appElement);
 //const baseUrl = import.meta.env.BASE_URL;
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   {
     element: <Application />,
     path: "/",
