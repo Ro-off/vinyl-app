@@ -22,35 +22,30 @@ const appElement = document.getElementById("app");
 const root = createRoot(appElement);
 //const baseUrl = import.meta.env.BASE_URL;
 
-const router = createBrowserRouter(
-  [
-    {
-      element: <Application />,
-      path: "/",
-      children: [
-        {
-          path: "/",
-          element: <HomePage />,
-        },
-        {
-          path: "/search",
-          element: <SearchPage />,
-        },
-        {
-          path: "/search/results",
-          element: <ResultsPage />,
-        },
-        {
-          path: "/*",
-          element: <p>404 - Page not found</p>,
-        },
-      ],
-    },
-  ],
+const router = createBrowserRouter([
   {
-    basename: "/",
-  }
-);
+    element: <Application />,
+    path: "/",
+    children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
+      {
+        path: "/search",
+        element: <SearchPage />,
+      },
+      {
+        path: "/search/results",
+        element: <ResultsPage />,
+      },
+      {
+        path: "/*",
+        element: <p>404 - Page not found</p>,
+      },
+    ],
+  },
+]);
 
 bootstrap().then(() => {
   root.render(
