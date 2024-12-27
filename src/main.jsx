@@ -12,7 +12,7 @@ async function bootstrap() {
   const { worker } = await import("./mocks/browser.js");
   worker.start({
     serviceWorker: {
-      url: `${import.meta.env.BASE_URL}mockServiceWorker.js`,
+      url: `/mockServiceWorker.js`,
     },
   });
   // }
