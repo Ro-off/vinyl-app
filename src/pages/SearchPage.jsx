@@ -6,7 +6,7 @@ import { GenreCardsContainer } from "../components/GenreCardsContainer/GenreCard
 
 export const SearchPage = () => {
   const navigate = useNavigate();
-  const baseUrl = import.meta.env.BASE_URL;
+  //const baseUrl = import.meta.env.BASE_URL;
 
   function navigateToResultsPage(data) {
     let searchParams = new URLSearchParams();
@@ -14,8 +14,7 @@ export const SearchPage = () => {
     if (data.genre) searchParams.append("genre", data.genre);
     if (data.country) searchParams.append("country", data.country);
     if (data.decade) searchParams.append("decade", data.decade);
-    if (searchParams.size !== 0)
-      navigate(baseUrl + "search/results?" + searchParams);
+    if (searchParams.size !== 0) navigate("/search/results?" + searchParams);
   }
 
   function onSubmit(values) {
