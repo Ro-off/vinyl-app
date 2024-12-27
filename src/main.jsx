@@ -25,6 +25,7 @@ const root = createRoot(appElement);
 const router = createHashRouter([
   {
     element: <Application />,
+    path: "/",
     children: [
       {
         path: "/",
